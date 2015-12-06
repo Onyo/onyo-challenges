@@ -12,7 +12,8 @@ class VerifyTicketView(APIView):
 
     def post(self, request):
         ticket = TicketSerializer(
-            data=request.data)
+            data=request.data
+        )
 
         if ticket.is_valid():
             return Response({'winner': ticket.winner()})
