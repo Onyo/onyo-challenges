@@ -1,4 +1,5 @@
 from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.views import APIView
 from powerball_checker.serializers import TicketSerializer
 
@@ -10,8 +11,12 @@ class VerifyTicketView(APIView):
     """
 
     def post(self, request):
-        t = TicketSerializer(
+        ticket = TicketSerializer(
             data=request.data)
 
-        if t.is_valid():
-            return Response({'winner': t.winner()})
+        if ticket.is_valid():
+            return Response({'winner': ticket.winner()})
+
+        return Response(
+            ticket.errors, status=status.HTTP_400_BAD_REQUEST
+        )

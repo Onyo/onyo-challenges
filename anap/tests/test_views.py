@@ -24,3 +24,16 @@ def test_verify_ticket(mock):
         tester.dispatch_view(view).render().content.decode("utf-8")
     )
     assert response['winner']
+
+
+def test_invalid_parameters(mock):
+    ticket_mock = mock.patch("powerball_checker.views.TicketSerializer")
+    ticket_mock.return_value.is_valid.return_value = False
+    ticket_mock.return_value.errors = []
+
+    request = RequestFactory().post('/path', data={})
+
+    tester = BootstrapViewTest()
+    view = tester.setup_view(VerifyTicketView(), request)
+
+    assert tester.dispatch_view(view).status_code == 400

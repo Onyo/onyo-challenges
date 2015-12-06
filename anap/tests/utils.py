@@ -2,6 +2,12 @@
 
 class BootstrapViewTest:
 
+    """
+    Lightweight way of testing views. With few lines of code
+    you can test your views without a deep understand of the
+    Django core's dispatching of views
+    """
+
     def setup_view(self, view, request, user=None, *args, **kwargs):
         """Retirado de
         <http://tech.novapost.fr/django-unit-test-your-views-en.html>
