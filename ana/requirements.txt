@@ -1,3 +1,8 @@
 Django
 djangorestframework
 django-toolbelt
+pytest
+pytest-django
+pytest-pythonpath
+requests
+jsonfield
