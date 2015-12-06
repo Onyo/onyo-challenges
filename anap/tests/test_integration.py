@@ -1,5 +1,4 @@
 import requests
-import datetime
 
 
 def test_winning_numbers():
@@ -11,4 +10,4 @@ def test_winning_numbers():
         data={'ticket': winning_ticket, 'draw_date': draw_date}
     ).json()
 
-    assert ticket['winner'], False
+    assert ticket['winner']

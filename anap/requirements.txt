@@ -3,6 +3,6 @@ djangorestframework
 django-toolbelt
 pytest
 pytest-django
-pytest-pythonpath
+pytest-mock
 requests
 jsonfield
