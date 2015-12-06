@@ -25,7 +25,11 @@ SECRET_KEY = '^6!j#p7p@auktdte8ehxd3ss(0r#vnste@&q^4*npt#-*4w+$o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,6 +85,8 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+DATABASES['default'].update(dj_database_url.config())
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -118,4 +124,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+# Static asset configuration
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
