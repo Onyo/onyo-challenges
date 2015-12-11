@@ -9,6 +9,6 @@ class TicketSerializer(serializers.Serializer):
     def winner(self):
         # return self.validated_data["draw_date"].month == 9
         return BobGateway().is_a_winner_ticket(
-            self.cleaned_data["draw_date"],
-            self.cleaned_data["ticket"],
+            self.validated_data["draw_date"].strftime('%d/%m/%Y'),
+            self.validated_data["ticket"],
         )
