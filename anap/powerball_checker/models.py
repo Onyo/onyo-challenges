@@ -9,7 +9,10 @@ class Prize(models.Model):
 
 
 class Ticket(models.Model):
-    prize = models.ForeignKey(Prize)
+    prize = models.ForeignKey(Prize, related_name="tickets")
     numbers = JSONField()
     winning = models.NullBooleanField()
     code = models.CharField(max_length=100)
+
+    def drawed(self):
+        return self.winning is not None

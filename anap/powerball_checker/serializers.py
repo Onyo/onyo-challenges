@@ -8,11 +8,31 @@ class TicketSerializer(serializers.Serializer):
     ticket = serializers.JSONField()
 
     def winner(self):
-        # return self.validated_data["draw_date"].month == 9
-        return BobGateway().is_a_winner_ticket(
-            self.validated_data["draw_date"].strftime('%d/%m/%Y'),
-            self.validated_data["ticket"],
+        """
+        If the object is stored, return this value.
+
+        if not, search on the backend and updates the local object
+        """
+        ticket = Ticket.objects.filter(
+            prize__draw_date=self.validated_data["draw_date"],
+            numbers=self.validated_data["ticket"]
         )
+        if not ticket:
+            raise Exception('Not Found')
+
+        ticket = ticket[0]
+
+        if ticket.drawed():
+            return ticket.winning
+        else:
+            iswinner = BobGateway().is_a_winner_ticket(
+                self.validated_data["draw_date"].strftime('%d/%m/%Y'),
+                self.validated_data["ticket"],
+            )
+            ticket.winning = iswinner
+            ticket.save()
+
+            return iswinner
 
     def save(self):
         tkt = BobGateway().create_ticket(

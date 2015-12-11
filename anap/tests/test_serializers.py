@@ -1,8 +1,33 @@
 from powerball_checker.serializers import TicketSerializer
 
 
-def test_is_winner(mock):
+def test_not_acess_bob(mock):
     bob = mock.patch('powerball_checker.serializers.BobGateway')
+    model_ticket = mock.patch('powerball_checker.serializers.Ticket')
+
+    object_ticket = mock.Mock()
+    object_ticket.drawed.return_value = True
+    object_ticket.winning = False
+    model_ticket.objects.filter.return_value = [object_ticket]
+
+    t = TicketSerializer(
+        data={'ticket': '[1,2,4,5]', 'draw_date': '2015-1-15'}
+    )
+
+    assert t.is_valid()
+    assert t.winner() is False
+
+    bob.return_value.is_a_winner_ticket.assert_not_called()
+
+
+def test_accessing_bob(mock):
+    bob = mock.patch('powerball_checker.serializers.BobGateway')
+    model_ticket = mock.patch('powerball_checker.serializers.Ticket')
+
+    object_ticket = mock.Mock()
+    object_ticket.drawed.return_value = False
+    model_ticket.objects.filter.return_value = [object_ticket]
+
     bob.return_value.is_a_winner_ticket.return_value = True
 
     t = TicketSerializer(
