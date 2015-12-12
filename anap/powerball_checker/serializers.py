@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from powerball_checker.bobgtw import BobGateway
 from powerball_checker.models import Ticket, Prize
+from django.http import Http404
 
 
 class TicketSerializer(serializers.Serializer):
@@ -18,9 +19,10 @@ class TicketSerializer(serializers.Serializer):
             numbers=self.validated_data["ticket"]
         )
         if not ticket:
-            raise Exception('Not Found')
+            raise Http404()
 
-        ticket = ticket[0]
+        # not hadling duplicate ones
+        ticket = ticket[len(ticket) - 1]
 
         if ticket.drawed():
             return ticket.winning

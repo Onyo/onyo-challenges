@@ -144,4 +144,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-BOB_URL = "http://localhost:5001"
+#BOB_URL = "http://localhost:5001/"
+
+BOB_URL = "http://demo8318341.mockable.io/"
