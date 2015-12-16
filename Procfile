@@ -1,1 +1,1 @@
-web: gunicorn ana.wsgi
+web: gunicorn ana.wsgi --worker-class gevent
