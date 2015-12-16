@@ -28,7 +28,7 @@ class TicketSerializer(serializers.Serializer):
             return ticket.winning
         else:
             iswinner = BobGateway().is_a_winner_ticket(
-                self.validated_data["draw_date"].strftime('%d/%m/%Y'),
+                self.validated_data["draw_date"].strftime('%Y-%m-%d'),
                 self.validated_data["ticket"],
             )
             ticket.winning = iswinner
@@ -38,7 +38,7 @@ class TicketSerializer(serializers.Serializer):
 
     def save(self):
         tkt = BobGateway().create_ticket(
-            self.validated_data["draw_date"].strftime('%d/%m/%Y'),
+            self.validated_data["draw_date"].strftime('%Y-%m-%d'),
             self.validated_data["ticket"],
         )
 

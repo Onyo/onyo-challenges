@@ -38,7 +38,7 @@ def test_accessing_bob(mock):
     assert t.winner()
 
     bob.return_value.is_a_winner_ticket.assert_called_with(
-        "15/01/2015", "[1,2,4,5]"
+        '2015-01-15', "[1,2,4,5]"
     )
 
 
