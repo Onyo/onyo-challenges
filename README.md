@@ -47,12 +47,12 @@ O sistema como um todo não está com muitas validações, ele é um pouco ingê
 
     [OK] antes de chamar bob ana deve ter algum tipo de cache (verifica no model, algo assim, confere nos requirements)
 
-    As chamadas de ana para bob devem ser assincronas
+    [OK] As chamadas de ana para bob devem ser assincronas
 
-    tratar caso de ana chamar bob  e bob não estar disponivel
+    tratar caso de ana chamar bob e bob não estar disponivel
     criar alguns tratamentos de erro na comunicação ana/bob
 
-    atualmente para cada requisição de criação eu estou criando um novo
+    [OK] atualmente para cada requisição de criação eu estou criando um novo
     prize. devemos ver se um existe na data, se não lançar erro. quem cria um prize é o backend
 
     os métodos em Bob devem ser autenticados, só ana que deve ser pública

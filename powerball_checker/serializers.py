@@ -4,6 +4,13 @@ from powerball_checker.models import Ticket, Prize
 from django.http import Http404
 
 
+class PrizeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Prize
+        fields = ('draw_date', )
+
+
 class TicketSerializer(serializers.Serializer):
     draw_date = serializers.DateField()
     ticket = serializers.JSONField()

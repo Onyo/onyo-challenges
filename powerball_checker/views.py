@@ -1,10 +1,16 @@
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-from powerball_checker.serializers import TicketSerializer
-from powerball_checker.models import Ticket
+from rest_framework.generics import ListAPIView
+from powerball_checker.serializers import TicketSerializer, PrizeSerializer
+from powerball_checker.models import Ticket, Prize
 from rest_framework import mixins
 from rest_framework import generics
+
+
+class ListPrizesView(ListAPIView):
+    queryset = Prize.objects.all().order_by('draw_date')
+    serializer_class = PrizeSerializer
 
 
 class VerifyTicketView(APIView):
