@@ -49,11 +49,12 @@ class TicketSerializer(serializers.Serializer):
             self.validated_data["ticket"],
         )
 
-        prize = Prize(
+        prize, created = Prize.objects.get_or_create(
             draw_date=self.validated_data["draw_date"],
-            code=tkt['prize_code']
         )
-        prize.save()
+        if created:
+            prize.code = tkt['prize_code']
+            prize.save()
 
         ticket = Ticket(
             prize=prize,
