@@ -19,6 +19,7 @@ melhores. Entretanto ela demonstra habilidade e desenvoltura para aprender.
 ## Métricas de Qualidade de Software ##
 
 Test coverage: 90%
+
 Developed under atom+flake8 plugin. Code PEP8 compliant
 
 ## O sistema: Gerenciamento de Loterias ##
