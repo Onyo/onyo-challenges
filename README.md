@@ -16,6 +16,11 @@ esta decisão pode ter algum custo, pois como não tenho larga experiência com
 estas ferramentas, talvez algumas decisões arquiteturais não tenham sido as
 melhores. Entretanto ela demonstra habilidade e desenvoltura para aprender.
 
+## Métricas de Qualidade de Software ##
+
+Test coverage: 90%
+Developed under atom+flake8 plugin. Code PEP8 compliant
+
 ## O sistema: Gerenciamento de Loterias ##
 
 A ideia é descrever um serviço onde as pessoas registram seus bilhetes, e
