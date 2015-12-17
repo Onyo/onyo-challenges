@@ -16,27 +16,37 @@ esta decisão pode ter algum custo, pois como não tenho larga experiência com
 estas ferramentas, talvez algumas decisões arquiteturais não tenham sido as
 melhores. Entretanto ela demonstra habilidade e desenvoltura para aprender.
 
-## Métricas de Qualidade de Software ##
-
-Test coverage: 90%
-
-Developed under atom+flake8 plugin. Code PEP8 compliant
-
 ## O sistema: Gerenciamento de Loterias ##
 
 A ideia é descrever um serviço onde as pessoas registram seus bilhetes, e
 conseguem verificar se o seu bilhete foi sorteado. O servidor Bob gerencia
 os sorteios enquanto Ana faz a interface com o usuário.
 
-Este serviço de loteria tem os seguintes pontos de contato:
-
-* POST /power-ball/v1/check/ - Verifica se um bilhete foi sorteado
-* POST /power-ball/v1/create/ - Cria um novo bilhete
-
 Nestes serviços, um sorteio é representado pela data em que ele irá ocorrer
 (draw_date), e o ticket de um usuário é representado por uma lista de 6 números.
 
 O sistema como um todo não está com muitas validações, ele é um pouco ingênuo
+
+Há basicamente dois perfis de usuário previstos, o primeiro deles é
+o usuário consumidor que irá criar bilhetes e conferir se suas apostas foram
+sorteadas (utilizará as 3 urls abaixo, como uma API REST). O url do
+sistema para usuário consumidor é http://onyo-ana.herokuapp.com, e terá as seguintes
+endpoints.
+
+* POST /power-ball/v1/ - Mostra data dos sorteios
+* POST /power-ball/v1/create/ - Cria um novo bilhete
+* POST /power-ball/v1/check/ - Verifica se algum bilhete foi sorteado
+
+O gerente dos sorteios, que terá acesso administrativo e terá controle sobre os
+sorteios. URL http://onyo-bob.herokuapp.com. O acesso administrativo será
+feito pela url http://onyo-bob.herokuapp.com/admin (usuario: admin senhao: onyoonyo).
+
+Além disso, o sistema administrativo tem seus próprios endpoints para se comunicar
+com sistemas clientes:
+
+* POST /power-ball-core/v1/ticket/create/ - Cria um novo bilhete
+* POST /power-ball-core/v1/ticket/check/ - Verifica se algum bilhete foi sorteado
+
 
 ## Planejamento básico ##
     Project Ana
