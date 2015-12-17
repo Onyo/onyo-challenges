@@ -145,5 +145,5 @@ STATICFILES_DIRS = (
 )
 
 #BOB_URL = "http://localhost:5001/"
-
-BOB_URL = "http://demo8318341.mockable.io/"
+#BOB_URL = "http://demo8318341.mockable.io/"
+BOB_URL = "https://onyo-bob.herokuapp.com/"
