@@ -1,0 +1,9 @@
+Django
+djangorestframework
+django-toolbelt
+pytest
+pytest-django
+pytest-mock
+requests
+jsonfield
+gevent==1.1rc2

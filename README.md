@@ -1,3 +1,82 @@
+# Notes, and Design Decisions #
+
+## Introdução ##
+Um desafio de programação é interessante pois ficamos inclinados a demonstrar
+capacidade, o que pode levar a complexidade artificial e prejudicial.
+
+O projeto foi desenvolvido em TDD, o que pode ser conferido pelos commits.
+A biblioteca de testes que utilizei foi pytest, primeira vez que a uso, estou
+aproveitando a oportunidade para aprender seu funcionamento.
+
+Aproveitei a oportunidade de fazer este projeto para utilizar uma série de
+ferramentas que eu estava querendo testar: além de py.test, esta é a primeira
+vez que efetuo deploys na heroku, primeira vez que utilizo django-rest-framework,
+encontrei uma forma de criar mockups de APIs através de um serviço. Infelizmente
+esta decisão pode ter algum custo, pois como não tenho larga experiência com
+estas ferramentas, talvez algumas decisões arquiteturais não tenham sido as
+melhores. Entretanto ela demonstra habilidade e desenvoltura para aprender.
+
+## O sistema: Gerenciamento de Loterias ##
+
+A ideia é descrever um serviço onde as pessoas registram seus bilhetes, e
+conseguem verificar se o seu bilhete foi sorteado. O servidor Bob gerencia
+os sorteios enquanto Ana faz a interface com o usuário.
+
+Nestes serviços, um sorteio é representado pela data em que ele irá ocorrer
+(draw_date), e o ticket de um usuário é representado por uma lista de 6 números.
+
+O sistema como um todo não está com muitas validações, ele é um pouco ingênuo
+
+Há basicamente dois perfis de usuário previstos, o primeiro deles é
+o usuário consumidor que irá criar bilhetes e conferir se suas apostas foram
+sorteadas (utilizará as 3 urls abaixo, como uma API REST). O url do
+sistema para usuário consumidor é http://onyo-ana.herokuapp.com, e terá as seguintes
+endpoints.
+
+* POST /power-ball/v1/ - Mostra data dos sorteios
+* POST /power-ball/v1/create/ - Cria um novo bilhete
+* POST /power-ball/v1/check/ - Verifica se algum bilhete foi sorteado
+
+O gerente dos sorteios, que terá acesso administrativo e terá controle sobre os
+sorteios. URL http://onyo-bob.herokuapp.com. O acesso administrativo será
+feito pela url http://onyo-bob.herokuapp.com/admin (usuario: admin senhao: onyoonyo).
+
+Além disso, o sistema administrativo tem seus próprios endpoints para se comunicar
+com sistemas clientes:
+
+* POST /power-ball-core/v1/ticket/create/ - Cria um novo bilhete
+* POST /power-ball-core/v1/ticket/check/ - Verifica se algum bilhete foi sorteado
+
+
+## Planejamento básico ##
+    Project Ana
+        [OK] Teste de integração para checar um bilhete
+        [OK] criar metodo que check bilhete, chamando Bob
+        [OK] criar método de criar um bilhete
+        [OK] fazer que o método de checar bilhete veja no banco se está checado
+        [OK] fazer que ele também va em bob se não estiver checado, confirme, altere no banco
+
+    Project Bob
+        o bilhete vai ser salvo no banco de dados, criar model
+        criar fixture com alguma regra para popular datas e bilhetes premiados
+        criar uma url no rest que é uma view na verdade, vai checar e vai retornar
+
+    [OK] antes de chamar bob ana deve ter algum tipo de cache (verifica no model, algo assim, confere nos requirements)
+
+    [OK] As chamadas de ana para bob devem ser assincronas
+
+    tratar caso de ana chamar bob e bob não estar disponivel
+    criar alguns tratamentos de erro na comunicação ana/bob
+
+    [OK] atualmente para cada requisição de criação eu estou criando um novo
+    prize. devemos ver se um existe na data, se não lançar erro. quem cria um prize é o backend
+
+    os métodos em Bob devem ser autenticados, só ana que deve ser pública
+
+    Report coverage, pep8
+
+
+
 # Onyo Challenge #
 
 Here we have some challenges for the following areas Backend, iOS and Android. Please feel free to enjoy our challenge and let us know if you have any question.
@@ -20,12 +99,12 @@ Fell free to follow any topic, but please make sure you have understood the purp
 * Integrations tests
 * Documentation
 * Deployment (Heroku, Openshift, DigitalOcean)
-* Clean, readable, maintainable, and extensible code 
+* Clean, readable, maintainable, and extensible code
 * Decoupling on two different folders
 
 ### **Optional, but recommended** ###
 
-* Django Rest Framework 
+* Django Rest Framework
 * Interface
 
 ### **ATENTION** ###
