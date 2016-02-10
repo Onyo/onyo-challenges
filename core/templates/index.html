@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Onyo Challenge - Lotto Ticket</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/darkly/bootstrap.min.css">
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1>Onyo Challenge</h1>
+            <p>Lotto Ticket Results API</p>
+            <p><a href="https://github.com/lucianoratamero/onyo-challenges">Github Repository</a></p>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Well...</h2>
+                <p>...there's nothing much to see here.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-4 col-md-offset-4">
+                <div class="well">
+                    {% if 'api.v0.ana' in installed_apps %}
+                        <div>
+                            If you wish to use Ana's API, <a href="{% url 'ana:lotto_ticket_result' %}">click here. =)</a>
+                        </div>
+                    {% endif %}
+                    {% if 'api.v0.bob' in installed_apps %}
+                        <div>
+                            If you wish to use Bob's API, <a href="{% url 'bob:lotto_ticket_result' %}">click here. ;D</a>
+                        </div>
+                    {% endif %}
+                    And to access admin interface, <a href="{% url 'admin:index' %}">here :3</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>For documentation and everything else...</h4>
+                <p>...check the <a href="https://github.com/lucianoratamero/onyo-challenges">Github Repository</a> or contact <a href="https://fb.com/lucianoratamero/">me on Facebook.</a></p>
+                <p>Bye-bye!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-body">
+                        <p>Made with love by Luciano Ratamero.</p>
+                        <p><a href="https://lucianoratamero.github.io/">https://lucianoratamero.github.io/</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

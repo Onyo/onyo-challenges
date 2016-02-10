@@ -1,0 +1,9 @@
+{
+  "name": "Onyo Challenge",
+  "description": "",
+  "logo": "",
+  "image": "heroku/python",
+  "repository": "https://github.com/lucianoratamero/onyo-challenges",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}

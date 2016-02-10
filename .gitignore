@@ -1,0 +1,11 @@
+.DS_Store
+.Python
+pip-selfcheck.json
+venv
+*.pyc
+staticfiles
+.env
+db.sqlite3
+bin/
+lib/
+include/

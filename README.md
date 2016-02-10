@@ -1,92 +1,165 @@
-# Onyo Challenge #
+# Lotto Check Service (made for Onyo`s Admissional Challenge)
 
-Here we have some challenges for the following areas Backend, iOS and Android. Please feel free to enjoy our challenge and let us know if you have any question.
+This is a Lotto Check Service made for Onyo`s Admissional Challenge and does not have any production application whatsoever. But it works, of course ;)
 
-# Backend Challenge #
+### Live demo
 
-The main goal of this challenge is to exercise some concepts of API Rest, microservices and integrations. The basic goal is to create two APIs (microservices) using Django Rest Framework or similar web frameworks. These microservices should communicate with each other by JSONs, but should keep their databases separated. Both of them should answer to simple CRUD requests -- Get, Post, Put, Delete. We'll have two APIs, let's consider the first API "Ana" and the second one "Bob". When having a POST to Ana, Ana should perform a request to Bob and will save the answer of Bob on its own database. Bob should have API calls to return random values when its created, so when we have the same input coming from Ana we should have the same answer from Bob. In order to do it, Bob will have to store some data on its own database. The main reason is the needed decoupling between them.
+To see the live demos, use any of these links:
 
-The models, views and business rules may be created at your own criteria. We're interested on the dynamics that these parts will connect to each other.
+Ana: [http://lucianoratamero-onyo-ana.herokuapp.com/](http://lucianoratamero-onyo-ana.herokuapp.com/)
 
-As a topic we have a few suggestion:
-- Bob could serve Postal Code Information (Street, City, State, etc) given a Postal Code it will return information. Ana should consume Bob and propagate its answer.
-- Bob could be serving Lotto Check Service. Given 6 number, Bob will tell Ana if its a winner combination or not. Ana should cache its answer in order to avoid calling Bob many times.
+Bob: [http://lucianoratamero-onyo-bob.herokuapp.com/](http://lucianoratamero-onyo-bob.herokuapp.com/)
 
-Fell free to follow any topic, but please make sure you have understood the purpose of its challenge.
+All: [http://lucianoratamero-onyo-all.herokuapp.com/](http://lucianoratamero-onyo-all.herokuapp.com/)
 
-### **Must have** ###
+To access the admin interface, use the username **onyo** and the password **onyo-challenge**.
 
-* Unit tests
-* Integrations tests
-* Documentation
-* Deployment (Heroku, Openshift, DigitalOcean)
-* Clean, readable, maintainable, and extensible code 
-* Decoupling on two different folders
+### How to use the APIs
 
-### **Optional, but recommended** ###
+Both Ana and Bob answer to POST requests in the following format:
 
-* Django Rest Framework 
-* Interface
+```
+{"numbers": [list-of-six-numbers-between-1-and-60]}
+```
 
-### **ATENTION** ###
-1. Don't worry about the topic you'll chose to work on. Fell free to work on a confortable topic.
-2. You should not try to push changes directly to this repository.
+### Development setup
 
-### **Submission Process** ###
-The candidate must implement the APIs and send a Pull Request to this repository with the solution.
+To setup this project to development, you need to clone this project, create and activate a virtualenv, install the dependencies and setup databases.
 
-The Pull request process works this way:
+First, install some OS dependencies. This differs from distro to distro, so **I will only tell how to do it on Ubuntu 14.04**:
 
-1. The candidate forks the repository (should not clone it directly)
-2. Works on the code using the forked repository.
-3. Commits and push changes to the forked repository.
-4. Using the GitHub interface, send the pull request.
+```
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install python-dev libncurses-dev python-setuptools postgresql-9.5 postgresql-server-dev-9.5 git
+```
 
-# iOS Challenge #
+After that, you need to install the virtualenv package through pip:
 
-The main goal of the challenge is to create an iOS app to fetch the API information of companies and categories and show them according to the provided screenshots.
+```
+sudo easy_install pip
+sudo pip install virtualenv
+```
 
-![ios-challenge-image.png](ios-challenge-image.png)
-### **API** ###
+Then, we can install our project :)
 
-Company list: [http://api.staging.onyo.com/v1/mobile/brand/1/company](http://api.staging.onyo.com/v1/mobile/brand/1/company)
+```
+git clone https://github.com/lucianoratamero/onyo-challenges.git
+virtualenv onyo-challenges
+cd onyo-challenges
+source bin/activate
+pip install -r requirements.txt
+```
 
-### **Must have** ###
+#### Databases setup
 
-* Customized UINavigationBar
-* Company list
-* Category list
-* Follow design on the provided screenshots.
-* Asynchronous and on demand image loading
-* Dependency management system (CocoaPods, Gradle, ...)
-* Minimum iOS version 8.0
-* Swift 2.0
+Before running migration to prepare your databases schema, you need to create ana_db and bob_db databases on postgres.
 
-### **Optional, but recommended** ###
+```
+sudo -u postgres createdb ana_db
+sudo -u postgres createdb bob_db
+```
 
-* Customized tabs
-* API Communication Framework (Alamofire, ...)
-* ORM Framework (CoreData, Realm, MagicRecord, ...)
-* Image loading and cache Framework (SDWebImage, Alamofire, Fast Image Cache, ...)
-* Unit Testing (XCTest, KIF, Kiwi, Quick, ...)
-* Functional tests (Appium, UIAutomation, ...)
+With the databases created, you need to configure the username and password to access postgresql databases. I usually use the role 'postgres', changing it's password to a random one.
 
-*The frameworks are just a suggestion. You can use any other frameworks and _surprise us_!*
+```
+sudo -u postgres psql
+\password postgres
+[the-password-you-want]
+[the-password-you-want-again]
+\q
+```
 
-### **ATENTION** ###
-1. You should not try to push changes directly to this repository.
+Then, export the username and password as DB_USER and DB_PASS so our Django apps know how to connect to postgresql databases. I usually export both using the postactivate script, which is executed each time you activate this virtualenv. What you need to do is this:
 
-### **Submission Process** ###
-The candidate must implement the app and send a Pull Request to this repository with the solution.
+```
+export DB_USER=postgres && echo 'export DB_USER=postgres' >> bin/postactivate
+export DB_PASS=[the-password-you-set-into-postgres] && echo 'export DB_PASS=[the-password-you-set-into-postgres]' >> bin/postactivate
+```
 
-The Pull request process works this way:
+Phew! Almost done! Now, all you need to do is to run the migration commands:
 
-1. The candidate forks the repository (should not clone it directly)
-2. Works on the code using the forked repository.
-3. Commits and push changes to the forked repository.
-4. Using the GitHub interface, send the pull request.
+```
+python manage.py migrate
+python manage.py migrate --database=ana_db
+python manage.py migrate --database=bob_db
+```
 
+If you have problems with postgresql peer authentication (as always ><), follow [these steps](http://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge) to fix it.
 
-# Android Challenge #
+...aaaand that's it! To run the tests:
 
-The Android Challenge is available at: [android-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/android-challenge.md)
+```
+python manage.py test
+```
+
+To run you local server:
+
+```
+python manage.py runserver
+```
+
+### Deploying to heroku
+
+To deploy this app to heroku, there's no need to be able to run the project locally - you just need to have cloned this project and have [heroku toolbelt installed](https://toolbelt.heroku.com/debian) =)
+
+But before deploying, you need to [create and configure a new heroku app](https://devcenter.heroku.com/articles/git#creating-a-heroku-remote), so we can deploy to it. Remember your created heroku app name, it will be **very** important.
+
+Then, you need to [set heroku configs accordingly](https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application), so heroku knows which Django settings to use. The available options are 'config.heroku.ana.settings', 'config.heroku.bob.settings' and 'config.heroku.all.settings', to deploy Ana, Bob or All:
+
+```
+heroku config:set -a [heroku-app-name] DJANGO_SETTINGS_MODULE=[path.to.settings]
+```
+
+Then, push the changes to your heroku app:
+
+```
+git push heroku master
+```
+
+After pushing changes to heroku and with the app running, you need to setup your databases.
+
+#### Heroku databases
+
+If you are deploying **only Bob or Ana**, you need to setup that app's database specifically.
+
+```
+heroku run -a [heroku-app-name] python manage.py migrate --database=[django-app-name]_db
+```
+
+But if you're running **all**, you don't need to specify which database to use.
+
+```
+heroku run -a [heroku-app-name] python manage.py migrate
+```
+
+**Remember:** since Ana is **completely** decoupled from Bob but **depends** on it, if you are hosting Ana, you **need to configure** Bob's API URL on its environment - **even if it is running at the same host**:
+
+```
+heroku config:set -a [heroku-app-name] CURRENT_BOB_API_URL=[full-url-to-bob]
+```
+
+### Explaining some decisions
+
+#### App structure
+
+I decided on the approach of having only one Django project with decoupled apps to facilitate testing, make it easy to reuse code and have everything in only one codebase. The tradeoffs were the need of different settings for each kind of deployment and the need to have one big integration test that uses the [LiveServerTestCase](https://docs.djangoproject.com/en/1.9/topics/testing/tools/#django.test.LiveServerTestCase), which is usually used in acceptance/Selenium tests.
+
+This app structure also decouples versions of API, and only needs the reconfiguration of core urls and settings to enable use of a new version of the API. The tradeoff is, well, the need to reconfigure core urls and settings to use a new version :P
+
+#### Database structure
+
+Well, managing databases is always nasty. In this case, since all databases needed to be decoupled (and heroku does **not** like **nor** enable multiple databases on free plans), the configurations for development and production were really different - and most of my time was wasted trying to get everything to work on heroku. But, really, deploying something like this to Amazon would be a breeze.
+
+The thing is: heroku is not good to deploy real apps, bit is easy do configure and deploy simple apps. Since it was really easy to manage heroku applications using heroku toolbelt, I saw no need to make a fabfile for deployment. I know how to make one, but just thought that it wasn't necessary. Pragmatism, man, pragmatism.
+
+#### Code decisions
+
+My first idea was to make a full-fledged DDD app, with the domain layer completely decoupled from the view/serializer/model layers; and I tried. The tradeoff was the proliferation of files and confusion in recognizing each one's responsability, and I saw that everything became more confusing each time I attempted - so, instead, I decided to make it simple. The only design pattern I used, and barely, was the Repository, to Ana's API, because it needed to get info from Bob and I wanted to shield the view layer from the service layer. Beyond that, I saw no need to complicate things.
+
+### That's all, folks!
+
+Thanks for your time and for this challenge; it really brought me to think a lot of stuff I'm not used to. Too many months away from the back end makes you rusty. I hope that you enjoyed my code as much as I enjoyed making all this stuff up =)
+
+See ya, guys! o/
