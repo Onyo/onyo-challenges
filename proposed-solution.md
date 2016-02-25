@@ -7,7 +7,7 @@ Upload images to a service. The service will split the image in *tiles*, and pro
 
 The [**Slapchop**](https://github.com/billyninja/slapchop) service acts as an upload front-end, with image handling functionalities, as well as a fileserver for delivering the uploaded images (just because it was easy to do so, instead of through a reverse proxy setup).
 
-Every image uploaded to Slapchop may be subsequentially posted to [**Puzzler**](https://github.com/billyninja/slapchop) project, *if* the *-puzzler* flag is setted in the *Slapchop* project. If that's the case, the `POST /chopit` response will retrieve a *puzzler_href* field.
+Every image uploaded to Slapchop may be subsequentially posted to [**Puzzler**](https://github.com/billyninja/slapchop) project, *if* the *-puzzler* flag is setted in the *Slapchop* project. If that's the case, the `POST /chopit` response will retrieve a *puzzle_href* and *solution_href* fields.
 
 
 ![Proposed Solution](proposed_solution.png "Proposed Solution")
@@ -31,7 +31,7 @@ Every image uploaded to Slapchop may be subsequentially posted to [**Puzzler**](
 `cd $GOPATH/src/github.com/billyninja/slapchop`
 `go build .`
 
-`./slapchop -port=9000 -puzzler=localhost:8001`
+`./slapchop -port=9000 -puzzler=username:pwd@localhost:8001`
 
 >**NOTE**: You can pick whichever ports you want for slapchop and puzzler settings.
 
