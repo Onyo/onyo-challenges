@@ -1,0 +1,1 @@
+web: gunicorn $DJANGO_MODULE_SETTINGS.wsgi --log-file -

@@ -20,10 +20,11 @@ As a topic we have a few suggestion:
 [x] creates app secretary
 [x] creates base settings
 [x] run both apps local
-[ ] create app postman on heroku
-[ ] define DJANGO_MODULE_SETTINGS = postman
-[ ] create app secretary on heroku
-[ ] define DJANGO_MODULE_SETTINGS = secretary
+[x] create app postman on heroku
+[x] define env_var DJANGO_MODULE_SETTINGS = postman on heroku postman app
+[x] create app secretary on heroku
+[x] define env_var DJANGO_MODULE_SETTINGS = secretary on heroku postman app
+[ ] create command to deploy both apps into heroku
 [ ] deploy postman on heroku
 [ ] deploy secretary on heroku
 [ ] pull request
