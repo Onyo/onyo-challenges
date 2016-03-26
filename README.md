@@ -14,9 +14,9 @@ As a topic we have a few suggestion:
 
 # TODO #
 
-[ ] Fork challenge
-[ ] creates django projects onyo-challenge
-[ ] creates app postman
+[x] Fork challenge
+[x] creates django projects onyo-challenge
+[x] creates app postman
 [ ] creates app secretary
 [ ] create app postman on heroku
 [ ] define DJANGO_MODULE_SETTINGS = postman
