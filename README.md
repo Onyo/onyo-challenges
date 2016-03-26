@@ -47,6 +47,7 @@ Contacts microservice
 [ ] creates test save contact
 [ ] creates secretary view get
 [ ] creates secretary view post
+[ ] define postman service url
 [ ] get address information on postman service
 [ ] creates secretary view delete
 [ ] creates secretary view update
