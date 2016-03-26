@@ -17,7 +17,8 @@ As a topic we have a few suggestion:
 [x] Fork challenge
 [x] creates django projects onyo-challenge
 [x] creates app postman
-[ ] creates app secretary
+[x] creates app secretary
+[ ] run both apps local
 [ ] create app postman on heroku
 [ ] define DJANGO_MODULE_SETTINGS = postman
 [ ] create app secretary on heroku
