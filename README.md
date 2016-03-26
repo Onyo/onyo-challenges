@@ -18,7 +18,8 @@ As a topic we have a few suggestion:
 [x] creates django projects onyo-challenge
 [x] creates app postman
 [x] creates app secretary
-[ ] run both apps local
+[x] creates base settings
+[x] run both apps local
 [ ] create app postman on heroku
 [ ] define DJANGO_MODULE_SETTINGS = postman
 [ ] create app secretary on heroku

@@ -1,24 +1,20 @@
 from base.settings import *
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '(ss1^u3cy=4zj7us50^k^$j1t%$uc18h2bob@l&47=gaa1h98w'
 
-# Application definition
 
-INSTALLED_APPS += [
-    'secretary'
-]
+INSTALLED_APPS += ["postman", "secretary"]	
 
-ROOT_URLCONF = 'secretary.urls'
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+ROOT_URLCONF = 'urls'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'secretary.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'local.sqlite3'),
     }
 }
