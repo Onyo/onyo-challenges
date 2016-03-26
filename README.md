@@ -25,16 +25,16 @@ As a topic we have a few suggestion:
 [x] create app secretary on heroku
 [x] define env_var DJANGO_MODULE_SETTINGS = secretary on heroku postman app
 [ ] create command to deploy both apps into heroku
-[ ] deploy postman on heroku
-[ ] deploy secretary on heroku
+[x] deploy postman on heroku
+[x] deploy secretary on heroku
 [ ] pull request
 
 
 ## App Postman
 Postal Code Information microservice
 
-[ ] creates model address 
-[ ] creates test save address
+[x] creates model location
+[x] creates test save location
 [ ] creates postman view get
 [ ] creates postman view post
 [ ] creates postman view delete
