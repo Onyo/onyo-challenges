@@ -40,6 +40,7 @@ Postal Code Information microservice
 [x] creates postman view delete
 [x] creates postman view update
 [x] creates test view
+[ ] configure heroku db
 [ ] loaddata postman
 
 
