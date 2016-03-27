@@ -31,3 +31,10 @@ class LocationApiTests(APITestCase):
         response = self.client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['postcode'], new_postcode)
+
+    def test_delete_location(self):
+        locations_count_before_delete = Location.objects.count()
+        url = reverse('location-detail', args=[1])
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(Location.objects.count(), locations_count_before_delete - 1)
