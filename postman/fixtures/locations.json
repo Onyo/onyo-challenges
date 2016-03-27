@@ -1,0 +1,18 @@
+[
+	{
+	    "model": "postman.location",
+	    "pk": 1,
+	    "fields": {
+	        "postcode": "21050530",
+	        "address": "Rua Pacheco Jordão"
+	    }
+	},
+	{
+	    "model": "postman.location",
+	    "pk": 2,
+	    "fields": {
+	        "postcode": "21051480",
+	        "address": "Rua Dr. Tavares de Macedo"
+	    }
+	}
+]
