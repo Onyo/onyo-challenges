@@ -35,11 +35,11 @@ Postal Code Information microservice
 
 [x] creates model location
 [x] creates test save location
-[ ] creates postman view get
-[ ] creates postman view post
-[ ] creates postman view delete
-[ ] creates postman view update
-[ ] creates test view
+[x] creates postman view get
+[x] creates postman view post
+[x] creates postman view delete
+[x] creates postman view update
+[x] creates test view
 [ ] loaddata postman
 
 
