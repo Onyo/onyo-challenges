@@ -38,3 +38,10 @@ class LocationApiTests(APITestCase):
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Location.objects.count(), locations_count_before_delete - 1)
+
+    def test_get_locations(self):
+        url = reverse('locations')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), Location.objects.count())
+

@@ -6,6 +6,11 @@ from .serializers import LocationSerializer
 
 
 class Locations(APIView):
+    def get(self, request, format=None):
+        locations = Location.objects.all()
+        serializer = LocationSerializer(locations, many=True)
+        return Response(serializer.data)
+
     def post(self, request, format=None):
         serializer = LocationSerializer(data=request.data)
         if serializer.is_valid():
