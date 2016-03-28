@@ -42,6 +42,7 @@ Postal Code Information microservice
 [x] creates postman view update
 [x] creates test view
 [x] configure heroku db
+[ ] create a new address when sent a postcode that does not exist
 [ ] loaddata postman
 
 
@@ -56,7 +57,7 @@ Contacts microservice
 [x] creates secretary view post
 [ ] define postman service url
 [ ] get address information on postman service
-[ ] creates secretary view delete
+[x] creates secretary view delete
 [ ] creates secretary view update
-[ ] creates test view
+[x] creates test view
 

@@ -5,6 +5,7 @@ from rest_framework.test import APITestCase
 from .models import Contact
 
 class ContactApiTests(APITestCase):
+    fixtures = ['contacts.json']
 
     def test_create_contact(self):
         #number of contacts before post
@@ -24,3 +25,9 @@ class ContactApiTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), Contact.objects.count())
 
+    def test_delete_contact(self):
+        contacts_count_before_delete = Contact.objects.count()
+        url = reverse('contact-detail', args=[1])
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(Contact.objects.count(), contacts_count_before_delete - 1)

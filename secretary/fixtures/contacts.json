@@ -1,0 +1,22 @@
+[
+    {
+        "model": "secretary.contact",
+        "pk": 1,
+        "fields": {
+            "name": "Neusa Melo",
+            "postcode": "22753340",
+            "address": "Rua o tempo e o vento",
+            "number": 236
+        }
+    },
+    {
+        "model": "secretary.contact",
+        "pk": 2,
+        "fields": {
+            "name": "Antonio Carlos",
+            "postcode": "21051480",
+            "address": "Rua Dr. Tavares de Macedo",
+            "number": 112
+        }
+    }
+]
