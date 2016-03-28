@@ -25,12 +25,18 @@ class ContactApiTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), Contact.objects.count())
 
-
-    def test_get_location(self):
+    def test_get_contact(self):
         url = reverse('contact-detail', args=[1])
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    def test_update_contact(self):
+        new_postcode = "21051481"
+        data = {"address": "Rua Dr. Tavares de Macedo", "postcode": new_postcode, "name": "Antonio Carlos", "numero": 112}
+        url = reverse('contact-detail', args=[2])
+        response = self.client.put(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['postcode'], new_postcode)
 
     def test_delete_contact(self):
         contacts_count_before_delete = Contact.objects.count()
