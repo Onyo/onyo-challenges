@@ -26,6 +26,11 @@ class ContactDetail(APIView):
         except Contact.DoesNotExist:
             raise Http404
 
+    def get(self, request, pk, format=None):
+        contact = self.get_object(pk)
+        serializer = ContactSerializer(contact)
+        return Response(serializer.data)
+
     def delete(self, request, pk, format=None):
         contact = self.get_object(pk)
         contact.delete()

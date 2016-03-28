@@ -58,6 +58,6 @@ Contacts microservice
 [ ] define postman service url
 [ ] get address information on postman service
 [x] creates secretary view delete
-[ ] creates secretary view update
+[x] creates secretary view update
 [x] creates test view
 
