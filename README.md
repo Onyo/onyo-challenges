@@ -34,21 +34,24 @@ As a topic we have a few suggestion:
 Postal Code Information microservice
 
 [x] creates model location
+[x] creates model migration
 [x] creates test save location
 [x] creates postman view get
 [x] creates postman view post
 [x] creates postman view delete
 [x] creates postman view update
 [x] creates test view
-[ ] configure heroku db
+[x] configure heroku db
 [ ] loaddata postman
 
 
 ## App Secretary
 Contacts microservice
 
-[ ] creates model contact
-[ ] creates test save contact
+[x] creates model contact
+[x] creates model migration
+[x] configure heroku db
+[x] creates test save contact
 [ ] creates secretary view get
 [ ] creates secretary view post
 [ ] define postman service url

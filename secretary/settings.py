@@ -13,6 +13,7 @@ INSTALLED_APPS += [
 
 ROOT_URLCONF = 'secretary.urls'
 
+
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 if os.getenv("DATABASE_URL", None):
