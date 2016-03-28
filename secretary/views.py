@@ -6,7 +6,11 @@ from .serializers import ContactSerializer
 
 
 class Contacts(APIView):
-   
+    def get(self, request, format=None):
+        contacts = Contact.objects.all()
+        serializer = ContactSerializer(contacts, many=True)
+        return Response(serializer.data)
+
     def post(self, request, format=None):
         serializer = ContactSerializer(data=request.data)
         if serializer.is_valid():

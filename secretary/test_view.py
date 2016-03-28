@@ -17,3 +17,10 @@ class ContactApiTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Contact.objects.count(), contacts_count_before_post + 1)
         self.assertEqual(response.data['postcode'], postcode)
+
+    def test_get_contacts(self):
+        url = reverse('contacts')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), Contact.objects.count())
+

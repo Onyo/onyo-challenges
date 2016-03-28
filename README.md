@@ -52,7 +52,7 @@ Contacts microservice
 [x] creates model migration
 [x] configure heroku db
 [x] creates test save contact
-[ ] creates secretary view get
+[x] creates secretary view get
 [x] creates secretary view post
 [ ] define postman service url
 [ ] get address information on postman service
