@@ -29,52 +29,52 @@ As a topic we have a few suggestion:
 
 # TODO #
 
-[x] Fork challenge
-[x] creates django projects onyo-challenge
-[x] creates app postman
-[x] creates app secretary
-[x] creates base settings
-[x] run both apps local
-[x] create app postman on heroku
-[x] define env_var DJANGO_MODULE_SETTINGS = postman on heroku postman app
-[x] create app secretary on heroku
-[x] define env_var DJANGO_MODULE_SETTINGS = secretary on heroku postman app
-[ ] create command to deploy both apps into heroku
-[x] deploy postman on heroku
-[x] deploy secretary on heroku
-[ ] pull request
-[ ] documentantion
+- [x] Fork challenge
+- [x] creates django projects onyo-challenge
+- [x] creates app postman
+- [x] creates app secretary
+- [x] creates base settings
+- [x] run both apps local
+- [x] create app postman on heroku
+- [x] define env_var DJANGO_MODULE_SETTINGS = postman on heroku postman app
+- [x] create app secretary on heroku
+- [x] define env_var DJANGO_MODULE_SETTINGS = secretary on heroku postman app
+- [ ] create command to deploy both apps into heroku
+- [x] deploy postman on heroku
+- [x] deploy secretary on heroku
+- [ ] pull request
+- [ ] documentantion
 
 
 ## App Postman
 Postal Code Information microservice
 
-[x] creates model location
-[x] creates model migration
-[x] creates test save location
-[x] creates postman view get
-[x] creates postman view post
-[x] creates postman view delete
-[x] creates postman view update
-[x] creates test view
-[x] configure heroku db
-[x] create a new address when sent a postcode that does not exist
-[ ] loaddata postman
-[ ] fill locations page
+- [x] creates model location
+- [x] creates model migration
+- [x] creates test save location
+- [x] creates postman view get
+- [x] creates postman view post
+- [x] creates postman view delete
+- [x] creates postman view update
+- [x] creates test view
+- [x] configure heroku db
+- [x] create a new address when sent a postcode that does not exist
+- [ ] loaddata postman
+- [ ] fill locations page
 
 
 ## App Secretary
 Contacts microservice
 
-[x] creates model contact
-[x] creates model migration
-[x] configure heroku db
-[x] creates test save contact
-[x] creates secretary view get
-[x] creates secretary view post
-[x] define postman service url
-[x] get address information on postman service
-[x] creates secretary view delete
-[x] creates secretary view update
-[x] creates test view
-[ ] crud page for contacts
+- [x] creates model contact
+- [x] creates model migration
+- [x] configure heroku db
+- [x] creates test save contact
+- [x] creates secretary view get
+- [x] creates secretary view post
+- [x] define postman service url
+- [x] get address information on postman service
+- [x] creates secretary view delete
+- [x] creates secretary view update
+- [x] creates test view
+- [ ] crud page for contacts
