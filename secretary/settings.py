@@ -13,6 +13,7 @@ INSTALLED_APPS += [
 
 ROOT_URLCONF = 'secretary.urls'
 
+POSTMAN_SERVICE_URL = os.getenv("POSTMAN_SERVICE_URL", "http://localhost:8000/locations/")
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases

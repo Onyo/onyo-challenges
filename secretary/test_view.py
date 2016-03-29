@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.core.urlresolvers import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
@@ -13,11 +15,13 @@ class ContactApiTests(APITestCase):
         postcode = "22753340"
 
         url = reverse('contacts')
-        data = {"address": "Rua o tempo e o vento", "postcode": postcode, "name": "Neusa Melo", "numero": 236}
+        data = {"postcode": postcode, "name": "Neusa Melo", "number": 236}
+        
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Contact.objects.count(), contacts_count_before_post + 1)
         self.assertEqual(response.data['postcode'], postcode)
+        self.assertTrue(response.data['address'] != None)
 
     def test_get_contacts(self):
         url = reverse('contacts')
@@ -32,7 +36,7 @@ class ContactApiTests(APITestCase):
 
     def test_update_contact(self):
         new_postcode = "21051481"
-        data = {"address": "Rua Dr. Tavares de Macedo", "postcode": new_postcode, "name": "Antonio Carlos", "numero": 112}
+        data = {"postcode": new_postcode, "name": "Antonio Carlos", "number": 112}
         url = reverse('contact-detail', args=[2])
         response = self.client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)

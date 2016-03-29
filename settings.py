@@ -12,6 +12,8 @@ INSTALLED_APPS += ["postman", "secretary"]
 
 ROOT_URLCONF = 'urls'
 
+POSTMAN_SERVICE_URL = os.getenv("POSTMAN_SERVICE_URL", "http://localhost:8000/locations/")
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

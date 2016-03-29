@@ -28,6 +28,7 @@ As a topic we have a few suggestion:
 [x] deploy postman on heroku
 [x] deploy secretary on heroku
 [ ] pull request
+[ ] documentantion
 
 
 ## App Postman
@@ -44,6 +45,7 @@ Postal Code Information microservice
 [x] configure heroku db
 [x] create a new address when sent a postcode that does not exist
 [ ] loaddata postman
+[ ] fill locations page
 
 
 ## App Secretary
@@ -55,9 +57,10 @@ Contacts microservice
 [x] creates test save contact
 [x] creates secretary view get
 [x] creates secretary view post
-[ ] define postman service url
-[ ] get address information on postman service
+[x] define postman service url
+[x] get address information on postman service
 [x] creates secretary view delete
 [x] creates secretary view update
 [x] creates test view
+[ ] crud page for contacts
 

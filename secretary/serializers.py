@@ -4,4 +4,5 @@ from .models import Contact
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Contact        
+        model = Contact 
+        read_only_fields = ('address',)

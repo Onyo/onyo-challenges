@@ -3,9 +3,7 @@ from postman.models import Location
 from django.db.utils import IntegrityError
 
 class LocationTestCase(TestCase):
-    def setUp(self):
-        Location.objects.create(address="Rua o tempo e o vento", postcode="22753340")
-        Location.objects.create(address="Rua Dr. Tavares de Macedo", postcode="21051480")
+    fixtures = ['locations.json']
 
     def test_find_location_by_postcode(self):
         location = Location.objects.get(postcode="22753340")
