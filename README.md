@@ -42,7 +42,7 @@ Postal Code Information microservice
 [x] creates postman view update
 [x] creates test view
 [x] configure heroku db
-[ ] create a new address when sent a postcode that does not exist
+[x] create a new address when sent a postcode that does not exist
 [ ] loaddata postman
 
 

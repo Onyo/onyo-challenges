@@ -19,26 +19,27 @@ class Locations(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LocationDetail(APIView):
-    def get_object(self, pk):
+    def get_object(self, postcode):
         try:
-            return Location.objects.get(pk=pk)
+            return Location.objects.get(postcode=postcode)
         except Location.DoesNotExist:
-            raise Http404
+            #generate a random address name
+            return Location.objects.create(address=Location.generate_address_name(), postcode=postcode)
 
-    def get(self, request, pk, format=None):
-        location = self.get_object(pk)
+    def get(self, request, postcode, format=None):
+        location = self.get_object(postcode)
         serializer = LocationSerializer(location)
         return Response(serializer.data)
 
-    def put(self, request, pk, format=None):
-        location = self.get_object(pk)
+    def put(self, request, postcode, format=None):
+        location = self.get_object(postcode)
         serializer = LocationSerializer(location, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, pk, format=None):
-        location = self.get_object(pk)
+    def delete(self, request, postcode, format=None):
+        location = self.get_object(postcode)
         location.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

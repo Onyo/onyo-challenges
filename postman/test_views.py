@@ -20,21 +20,21 @@ class LocationApiTests(APITestCase):
         self.assertEqual(response.data['postcode'], postcode)
 
     def test_get_location(self):
-        url = reverse('location-detail', args=[1])
+        url = reverse('location-detail', args=[21050530])
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_update_location(self):
         new_postcode = "21051481"
         data = {"address": "Rua Dr. Tavares de Macedo", "postcode": new_postcode}
-        url = reverse('location-detail', args=[2])
+        url = reverse('location-detail', args=[21051480])
         response = self.client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['postcode'], new_postcode)
 
     def test_delete_location(self):
         locations_count_before_delete = Location.objects.count()
-        url = reverse('location-detail', args=[1])
+        url = reverse('location-detail', args=[21050530])
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Location.objects.count(), locations_count_before_delete - 1)
@@ -45,3 +45,9 @@ class LocationApiTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), Location.objects.count())
 
+    def test_get_new_location(self):
+        locations_count_before_post = Location.objects.count()
+        url = reverse('location-detail', args=[21540330])
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(Location.objects.count(), locations_count_before_post + 1)
