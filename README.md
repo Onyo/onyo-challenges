@@ -12,6 +12,21 @@ As a topic we have a few suggestion:
 - Bob could serve Postal Code Information (Street, City, State, etc) given a Postal Code it will return information. Ana should consume Bob and propagate its answer.
 
 
+# Usage #
+
+## Heroku Bob
+[Locations Endpoint](http://marina-onyo-postman.herokuapp.com/locations)
+```bash
+	$ curl -H "Content-Type: application/json" http://marina-onyo-postman.herokuapp.com/locations -d '{"address": "Avenida Presidente Vargas", "postcode": "20040010"}'
+```
+
+## Heroku Ana
+[Contacts Endpoint](http://marina-onyo-secretary.herokuapp.com/contacts)
+```bash
+	$ curl -H "Content-Type: application/json"  http://marina-onyo-secretary.herokuapp.com/contacts -d '{"postcode": "20040010", "name": "Luciane Pierre", "number":20}' --verbose
+```
+
+
 # TODO #
 
 [x] Fork challenge
@@ -63,4 +78,3 @@ Contacts microservice
 [x] creates secretary view update
 [x] creates test view
 [ ] crud page for contacts
-
