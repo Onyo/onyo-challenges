@@ -4,3 +4,4 @@ djangorestframework==3.3.3
 dj-database-url==0.4.0
 psycopg2==2.6.1
 requests==2.9.1
+whitenoise==3.0
