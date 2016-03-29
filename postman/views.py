@@ -3,6 +3,13 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Location
 from .serializers import LocationSerializer
+from django.shortcuts import render_to_response
+
+
+def index(request):
+    locations = Location.objects.all()
+    return render_to_response('postman-index.html', {"locations": locations, 'server_url': request.get_host()
+})
 
 
 class Locations(APIView):
