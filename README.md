@@ -19,12 +19,15 @@ As a topic we have a few suggestion:
 ```bash
 	$ curl -H "Content-Type: application/json" http://marina-onyo-postman.herokuapp.com/locations -d '{"address": "Avenida Presidente Vargas", "postcode": "20040010"}'
 ```
+There is a page that can be accessed through: [http://marina-onyo-postman.herokuapp.com/contacts/index](http://marina-onyo-postman.herokuapp.com/locations/index)
+
 
 ## Heroku Ana
 [Contacts Endpoint](http://marina-onyo-secretary.herokuapp.com/contacts)
 ```bash
 	$ curl -H "Content-Type: application/json"  http://marina-onyo-secretary.herokuapp.com/contacts -d '{"postcode": "20040010", "name": "Luciane Pierre", "number":20}' --verbose
 ```
+There is a page that can be accessed through: [http://marina-onyo-secretary.herokuapp.com/contacts/index](http://marina-onyo-secretary.herokuapp.com/contacts/index)
 
 
 # TODO #
@@ -61,6 +64,7 @@ Postal Code Information microservice
 - [x] create a new address when sent a postcode that does not exist
 - [ ] loaddata postman
 - [ ] fill locations page
+- [x] crud page for locations
 
 
 ## App Secretary
@@ -77,4 +81,4 @@ Contacts microservice
 - [x] creates secretary view delete
 - [x] creates secretary view update
 - [x] creates test view
-- [ ] crud page for contacts
+- [x] crud page for contacts
