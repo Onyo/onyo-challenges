@@ -19,7 +19,7 @@ As a topic we have a few suggestion:
 ```bash
 	$ curl -H "Content-Type: application/json" http://marina-onyo-postman.herokuapp.com/locations -d '{"address": "Avenida Presidente Vargas", "postcode": "20040010"}'
 ```
-There is a page that can be accessed through: [http://marina-onyo-postman.herokuapp.com/contacts/index](http://marina-onyo-postman.herokuapp.com/locations/index)
+There is a page that can be accessed through: [http://marina-onyo-postman.herokuapp.com/locations/index](http://marina-onyo-postman.herokuapp.com/locations/index)
 
 
 ## Heroku Ana
