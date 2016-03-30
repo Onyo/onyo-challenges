@@ -8,7 +8,7 @@ from django.shortcuts import render_to_response
 
 def index(request):
     locations = Location.objects.all()
-    return render_to_response('location-index.html', {"locations": locations, 'server_url': request.get_host()
+    return render_to_response('locations-index.html', {"locations": locations, 'server_url': request.get_host()
 })
 
 

@@ -8,7 +8,7 @@ from django.shortcuts import render_to_response
 
 def index(request):
     contacts = Contact.objects.all()
-    return render_to_response('secretary-index.html', {"contacts": contacts, 'server_url': request.get_host()
+    return render_to_response('contacts-index.html', {"contacts": contacts, 'server_url': request.get_host()
 })
 
 
