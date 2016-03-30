@@ -1,10 +1,10 @@
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from django.shortcuts import render_to_response
+from django.http import Http404
 from .models import Location
 from .serializers import LocationSerializer
-from django.shortcuts import render_to_response
-
 
 def index(request):
     locations = Location.objects.all()
@@ -14,11 +14,22 @@ def index(request):
 
 class Locations(APIView):
     def get(self, request, format=None):
+        """
+        Retrieve all locations
+        ---
+        serializer: LocationSerializer
+        """
+
         locations = Location.objects.all()
         serializer = LocationSerializer(locations, many=True)
         return Response(serializer.data)
 
     def post(self, request, format=None):
+        """
+        Create a new location
+        ---
+        serializer: LocationSerializer
+        """        
         serializer = LocationSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -26,19 +37,31 @@ class Locations(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LocationDetail(APIView):
-    def get_object(self, postcode):
+    def get_object(self, postcode, create=False):
         try:
             return Location.objects.get(postcode=postcode)
         except Location.DoesNotExist:
-            #generate a random address name
-            return Location.objects.create(address=Location.generate_address_name(), postcode=postcode)
+            if create:
+                #generate a random address name
+                return Location.objects.create(address=Location.generate_address_name(), postcode=postcode)
+            raise Http404
 
     def get(self, request, postcode, format=None):
-        location = self.get_object(postcode)
+        """
+        Retrieve a location, if not found, create a new one with random address
+        ---
+        serializer: LocationSerializer
+        """        
+        location = self.get_object(postcode, True)
         serializer = LocationSerializer(location)
         return Response(serializer.data)
 
     def put(self, request, postcode, format=None):
+        """
+        Update a location, raise a Http404 exception when not found
+        ---
+        serializer: LocationSerializer
+        """        
         location = self.get_object(postcode)
         serializer = LocationSerializer(location, data=request.data)
         if serializer.is_valid():
@@ -47,6 +70,12 @@ class LocationDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, postcode, format=None):
+        """
+        Delete a location, raise a Http404 exception when not found
+        ---
+        serializer: LocationSerializer
+        """        
+
         location = self.get_object(postcode)
         location.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

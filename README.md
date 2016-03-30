@@ -34,8 +34,12 @@ There is a page that can be accessed through: [http://marina-onyo-secretary.hero
 
 ## API Endpoints
 
+### Heroku Bob
+[http://marina-onyo-postman.herokuapp.com/docs/](http://marina-onyo-postman.herokuapp.com/docs/)
 
 
+### Heroku Ana
+[http://marina-onyo-secretary.herokuapp.com/docs/](http://marina-onyo-secretary.herokuapp.com/docs/)
 
 # TODO #
 
