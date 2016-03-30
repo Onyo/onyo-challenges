@@ -13,12 +13,12 @@ As a topic we have a few suggestion:
 
 
 # Documentation 
-This solution is a Django application, that defines 2 microservices.
-Each one can be deployed apart. Each one use its own database.
+This solution is a Django project, which implements 2 microservices as Django applications.
+Each one should be deployed on separate servers, since each one use its own database.
 
 Ana is the secretary app. When a contact is created, Ana makes a request to Bob(postman) using the postcode, to retrieve the address.
 
-Bob is the postman app. When it receives a get, with a postcode not found, creates a new location with this postcode and a random address.
+Bob is the postman app. When it receives a get, retrieve the location associated with the postcode. When the postcode is not found, creates a new location with this postcode and a random address.
 
 Each app has its own settings
 
