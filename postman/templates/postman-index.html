@@ -15,16 +15,39 @@
 	    <script type="text/javascript">
 			var SERVER_URL = "http://{{server_url}}";
 
+			function edit_location(row){
+				tr = $(row).parent().parent();
+				$("#postcode").val($(tr).find(".postcode").text());
+				$("#address").val($(tr).find(".address").text());	
+				$("#id").val($(tr).find(".id").text());	
+				$("#method-button").val("PUT");
+			}
+
     		function make_request(){
-    			data = {"postcode": $("#postcode").val(), "address": $("#address").val()};
+    			url = SERVER_URL + "/locations";
+    			postcode = $("#postcode").val();
+    			data = {"postcode": postcode, "address": $("#address").val()};
+    			id = $("#id").val();
+    			if(id){
+    				url += "/" + postcode;
+    			}
+
     			method = $("#method-button").val();
 	    		$.ajax({
 				    type: method,
-				    url: SERVER_URL + "/locations",
+				    url: url,
 				    data: data,
 				    success: function(response){
-					      html = "<tr><td>"+response['id']+"</td><td>"+response['postcode']+"</td><td>"+response['address']+"</td></tr>";
-					      $(".list").append(html);
+				    	//Verifies with is a new location or updated one
+				    	html = "<tr data-id='"+response['id']+"'><td class='id'>"+response['id']+"</td><td class='postcode'>"+response['postcode']+"</td><td><span class='address'>"+response['address']+"</span><button type='button' class='btn btn-xs btn-primary' style='float:right;' onclick='edit_location(this)'>Edit</button></td></tr>";
+
+				    	tr = $("tr[data-id="+response['id']+"]");
+				    	if(tr.length > 0){
+				    		tr.replaceWith(html);
+				    	}else{
+					      $(".list").append(html);	
+				    	}
+					      
 					      $("#postcode").val("");
 					      $("#address").val("");
 				    },
@@ -37,39 +60,42 @@
 	    </script>
 	</head>
 	<body>
-	    <div class="page-header">
-	        <h1>Locations</h1>
-		</div>
-		<div class="row">
-	        <div class="col-md-6">
-	          	<table class="table">
-	            	<thead>
-	              		<tr>
-	                		<th>#</th>
-			                <th>Postcode</th>
-			                <th>Address</th>
-			            </tr>
-			        </thead>
-			        <tbody class="list">
-		            	{% for location in locations %}
-			              	<tr>
-			              		<td>{{location.id}}</td>
-			                	<td>{{location.postcode}}</td>
-			                	<td>{{location.address}}</td>
+		<div class="container">
+		    <div class="page-header">
+		        <h1>Locations</h1>
+			</div>
+			<div class="row">
+		        <div class="col-md-8">
+		          	<table class="table table-striped">
+		            	<thead>
+		              		<tr>
+		                		<th>#</th>
+				                <th>Postcode</th>
+				                <th>Address</th>
+				            </tr>
+				        </thead>
+				        <tbody class="list">
+			            	{% for location in locations %}
+				              	<tr data-id="{{location.id}}">
+				              		<td class="id">{{location.id}}</td>
+				                	<td class="postcode">{{location.postcode}}</td>
+				                	<td><span class="address">{{location.address}}</span>
+				                		<button type="button" class="btn btn-xs btn-primary" style="float:right;" onclick="edit_location(this)">Edit</button>
+				                	</td>
+				              	</tr>
+	              			{% endfor %}
+		            	</tbody>
+		            	<tbody class="form">
+	            			<tr>
+			              		<input type="hidden" id="id" name="id" value=""/>
+			                	<td><input type="number" id="postcode" name="postcode" value="" max="9999999"/></td>
+			                	<td colspan="2"><input type="text" id="address" name="address" value="" size="70"/>
+			                	<button id="method-button" type="button" class="btn btn-xs btn-success" onclick="make_request()" value="POST" style="float:right;" >Save</button></td>
 			              	</tr>
-              			{% endfor %}
-	            	</tbody>
-	            	<tbody class="form">
-            			<tr>
-		              		<input type="hidden" id="id" name="id" value=""/>
-		                	<td><input type="number" id="postcode" name="postcode" value="" max="9999999"/></td>
-		                	<td><input type="text" id="address" name="address" value=""/></td>
-		                	<td><button id="method-button" type="button" class="btn btn-xs btn-success" onclick="make_request()" value="POST">Save</button></td>
-		              	</tr>
-	            	</tbody>
-	          	</table>
-	        </div>
-    	</div>
-
+		            	</tbody>
+		          	</table>
+		        </div>
+	    	</div>
+	    </div>
 	</body>
 </html>
