@@ -1,0 +1,59 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	    <meta charset="utf-8">
+
+	    <title>Locations</title>
+	    
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.2.min.js' %}"></script>	
+	    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>	
+	    <script type="text/javascript" src="{% static 'js/location.js' %}"></script>	
+	    <script type="text/javascript">
+			var SERVER_URL = "http://{{server_url}}";
+	    </script>
+	</head>
+	<body>
+		<div class="container">
+		    <div class="page-header">
+		        <h1>Locations</h1>
+			</div>
+			<div class="row">
+		        <div class="col-md-8">
+		          	<table class="table table-striped">
+		            	<thead>
+		              		<tr>
+		                		<th>#</th>
+				                <th>Postcode</th>
+				                <th>Address</th>
+				            </tr>
+							<tr>
+			              		<input type="hidden" id="id" name="id" value=""/>
+			                	<td colspan="2"><input type="number" id="postcode" name="postcode" value="" max="99999999"/></td>
+			                	<td><input type="text" id="address" name="address" value="" size="70"/>
+			                	<button id="method-button" type="button" class="btn btn-xs btn-success" onclick="make_request()" value="POST" style="float:right;" >Save</button>
+			                	<button id="method-button" type="button" class="btn btn-xs btn-info" onclick="clear_form()" style="float:right;margin-right: 5px;" >Reset</button></td>
+			              	</tr>				            
+				        </thead>
+				        <tbody class="list">
+			            	{% for location in locations %}
+				              	<tr data-postcode="{{location.postcode}}">
+				              		<td class="id">{{location.id}}</td>
+				                	<td class="postcode">{{location.postcode}}</td>
+				                	<td><span class="address">{{location.address}}</span>
+				                		<button type="button" class="btn btn-xs btn-danger" style="float:right;" onclick="delete_location(this)">Delete</button>
+				                		<button type="button" class="btn btn-xs btn-primary" style="float:right;margin-right: 5px;" onclick="edit_location(this)">Edit</button>
+				                	</td>
+				              	</tr>
+	              			{% endfor %}
+		            	</tbody>
+		          	</table>
+		        </div>
+	    	</div>
+	    </div>
+	</body>
+</html>
