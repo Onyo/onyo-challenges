@@ -92,6 +92,12 @@
 				                <th>Postcode</th>
 				                <th>Address</th>
 				            </tr>
+							<tr>
+			              		<input type="hidden" id="id" name="id" value=""/>
+			                	<td colspan="2"><input type="number" id="postcode" name="postcode" value="" max="9999999"/></td>
+			                	<td><input type="text" id="address" name="address" value="" size="70"/>
+			                	<button id="method-button" type="button" class="btn btn-xs btn-success" onclick="make_request()" value="POST" style="float:right;" >Save</button></td>
+			              	</tr>				            
 				        </thead>
 				        <tbody class="list">
 			            	{% for location in locations %}
@@ -104,14 +110,6 @@
 				                	</td>
 				              	</tr>
 	              			{% endfor %}
-		            	</tbody>
-		            	<tbody class="form">
-	            			<tr>
-			              		<input type="hidden" id="id" name="id" value=""/>
-			                	<td><input type="number" id="postcode" name="postcode" value="" max="9999999"/></td>
-			                	<td colspan="2"><input type="text" id="address" name="address" value="" size="70"/>
-			                	<button id="method-button" type="button" class="btn btn-xs btn-success" onclick="make_request()" value="POST" style="float:right;" >Save</button></td>
-			              	</tr>
 		            	</tbody>
 		          	</table>
 		        </div>
