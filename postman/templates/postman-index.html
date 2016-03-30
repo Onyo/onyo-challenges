@@ -15,6 +15,25 @@
 	    <script type="text/javascript">
 			var SERVER_URL = "http://{{server_url}}";
 
+			function delete_location(row){
+				if (confirm("Do you want delete this location?") == true) {
+			        tr = $(row).parent().parent();
+					postcode = $(tr).find(".postcode").text()
+					url = SERVER_URL + "/locations/" + postcode;
+		    		$.ajax({
+					    type: "DELETE",
+					    url: url,
+					    success: function(response){
+					    	$("tr[data-postcode="+postcode+"]").remove();						      
+					    },
+					    error: function(response){
+					      console.log(response.responseText);
+					    },
+					    dataType: "json"
+					});	  					
+			    } 
+			}
+
 			function edit_location(row){
 				tr = $(row).parent().parent();
 				$("#postcode").val($(tr).find(".postcode").text());
@@ -39,9 +58,9 @@
 				    data: data,
 				    success: function(response){
 				    	//Verifies with is a new location or updated one
-				    	html = "<tr data-id='"+response['id']+"'><td class='id'>"+response['id']+"</td><td class='postcode'>"+response['postcode']+"</td><td><span class='address'>"+response['address']+"</span><button type='button' class='btn btn-xs btn-primary' style='float:right;' onclick='edit_location(this)'>Edit</button></td></tr>";
+				    	html = "<tr data-postcode='"+response['postcode']+"'><td class='id'>"+response['id']+"</td><td class='postcode'>"+response['postcode']+"</td><td><span class='address'>"+response['address']+"</span><button type='button' class='btn btn-xs btn-danger' style='float:right;' onclick='delete_location(this)'>Delete</button><button type='button' class='btn btn-xs btn-primary' style='float:right;' onclick='edit_location(this)'>Edit</button></td></tr>";
 
-				    	tr = $("tr[data-id="+response['id']+"]");
+				    	tr = $("tr[data-postcode="+response['postcode']+"]");
 				    	if(tr.length > 0){
 				    		tr.replaceWith(html);
 				    	}else{
@@ -76,11 +95,12 @@
 				        </thead>
 				        <tbody class="list">
 			            	{% for location in locations %}
-				              	<tr data-id="{{location.id}}">
+				              	<tr data-postcode="{{location.postcode}}">
 				              		<td class="id">{{location.id}}</td>
 				                	<td class="postcode">{{location.postcode}}</td>
 				                	<td><span class="address">{{location.address}}</span>
-				                		<button type="button" class="btn btn-xs btn-primary" style="float:right;" onclick="edit_location(this)">Edit</button>
+				                		<button type="button" class="btn btn-xs btn-danger" style="float:right;" onclick="delete_location(this)">Delete</button>
+				                		<button type="button" class="btn btn-xs btn-primary" style="float:right" onclick="edit_location(this)">Edit</button>
 				                	</td>
 				              	</tr>
 	              			{% endfor %}
