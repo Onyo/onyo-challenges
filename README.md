@@ -13,10 +13,34 @@ As a topic we have a few suggestion:
 
 
 # Documentation 
+This solution is a Django application, that defines 2 microservices.
+Each one can be deployed apart. Each one use its own database.
+
+Ana is the secretary app. When a contact is created, Ana makes a request to Bob(postman) using the postcode, to retrieve the address.
+
+Bob is the postman app. When it receives a get, with a postcode not found, creates a new location with this postcode and a random address.
+
+Each app has its own settings
+
+
+## Deploy
+Deploy was made in heroku. 
+Each app run alone on server, using the DJANGO_SETTINGS_MODULE var, that defines which settings load.
+
+Environment variables needed on server:
+### Bob microservice
+ * DJANGO_DEFAULT_MODULE: postman => Used on Procfile to load postman wsgi
+ * DJANGO_SETTINGS_MODULE: postman.settings => Used to define that postman app must run
+
+### Ana microservice
+ * DJANGO_DEFAULT_MODULE: secretary => Used on Procfile to load secretary wsgi
+ * DJANGO_SETTINGS_MODULE: secretary.settings => Used to define that secretary app must run
+ * POSTMAN_SERVICE_URL: http://marina-onyo-postman.herokuapp.com/locations/ => Postman url for Ana proceed request
+
 
 ## Usage
 
-### Heroku Bob
+### Bob
 [Locations Endpoint](http://marina-onyo-postman.herokuapp.com/locations)
 ```bash
 	$ curl -H "Content-Type: application/json" http://marina-onyo-postman.herokuapp.com/locations -d '{"address": "Avenida Presidente Vargas", "postcode": "20040010"}'
@@ -24,7 +48,7 @@ As a topic we have a few suggestion:
 There is a page that can be accessed through: [http://marina-onyo-postman.herokuapp.com/locations/index](http://marina-onyo-postman.herokuapp.com/locations/index)
 
 
-### Heroku Ana
+### Ana
 [Contacts Endpoint](http://marina-onyo-secretary.herokuapp.com/contacts)
 ```bash
 	$ curl -H "Content-Type: application/json"  http://marina-onyo-secretary.herokuapp.com/contacts -d '{"postcode": "20040010", "name": "Luciane Pierre", "number":20}' --verbose
@@ -34,12 +58,13 @@ There is a page that can be accessed through: [http://marina-onyo-secretary.hero
 
 ## API Endpoints
 
-### Heroku Bob
-[http://marina-onyo-postman.herokuapp.com/docs/](http://marina-onyo-postman.herokuapp.com/docs/)
+### Bob
+About the API
+[http://marina-onyo-postman.herokuapp.com/locations/docs/](http://marina-onyo-postman.herokuapp.com/locations/docs/)
 
-
-### Heroku Ana
-[http://marina-onyo-secretary.herokuapp.com/docs/](http://marina-onyo-secretary.herokuapp.com/docs/)
+### Ana
+About the API
+[http://marina-onyo-secretary.herokuapp.com/contacts/docs/](http://marina-onyo-secretary.herokuapp.com/contacts/docs/)
 
 # TODO #
 
