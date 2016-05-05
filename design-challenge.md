@@ -24,12 +24,12 @@ Each place has the following informations:
 * Long Description
 * Image
 
-You should worry with:
+You should worry about:
 * Pretty long names
 * Places that don`t have images
 * Different screen sizes
-* The app could not be able to retreive user location
-* Conform to Onyo branding
+* Provide a good UX, even if it’s unable to retrieve the user location, either for access restrictions or for lack of GPS signal.
+* Conform to a restaurant brand of your choice.
 
 You should not worry about:
 * Image format and presentation (it could be a square, rectangle, triangle or even a dodecagon)
