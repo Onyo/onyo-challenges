@@ -29,7 +29,7 @@ class Command(BaseCommand):
         with open(options['file'], 'r') as csvfile:
             spamreader = csv.reader(csvfile, delimiter=';')
             for row in spamreader:
-                self.stdout.write('Data: ' + row)
+                self.stdout.write('Data: ' + str(row))
                 data = {
                     'post_code': row[0],
                     'locality': row[1],
