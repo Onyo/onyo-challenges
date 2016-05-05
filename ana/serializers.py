@@ -1,1 +1,3 @@
-__author__ = 'fdsantos'
+# -*- coding: utf-8 -*-
+from rest_framework.serializers import ModelSerializer
+
