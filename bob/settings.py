@@ -10,7 +10,7 @@ INSTALLED_APPS += [
     'bob',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'bob.urls'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
