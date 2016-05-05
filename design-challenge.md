@@ -1,11 +1,11 @@
 # Onyo Design Challenge #
 
 The main goal of the challenge is to create a UI prototype of a Mobile Application, keeping in mind:
-# Accessibility
-# The best user expirience
-# Difference between plataforms (Android and iOS)
-# Mobile platforms design guidelines (Apple Design Guidelines and Google Material Design)
-# Beautiful screens 
+* Accessibility
+* The best user expirience
+* Difference between plataforms (Android and iOS)
+* Mobile platforms design guidelines (Apple Design Guidelines and Google Material Design)
+* Beautiful screens 
 
 ## Problem Description ##
 
