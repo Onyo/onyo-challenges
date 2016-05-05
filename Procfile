@@ -1,1 +1,1 @@
-web: gunicorn $DJANGO_DEFAULT_MODULE.wsgi --log-file -
+web: gunicorn bob.wsgi --log-file -
