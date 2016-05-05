@@ -49,3 +49,7 @@ The iOS Challenge is available at: [ios-challenge.md](https://github.com/Onyo/on
 # Android Challenge #
 
 The Android Challenge is available at: [android-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/android-challenge.md)
+
+# Design Challenge #
+
+The Design Challenge is available at: [design-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/design-challenge.md)
