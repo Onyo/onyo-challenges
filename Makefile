@@ -32,3 +32,7 @@ run_migrate: # run all migrations
 
 run: # run local server
 	python manage.py runserver 0.0.0.0:8000 $(filter-out $@,$(MAKECMDGOALS))
+
+heroku_config: # set DJANGO_SETTINGS_MODULE in heroku
+    heroku config:set -a flavio-onyo-ana DJANGO_SETTINGS_MODULE=ana.settings
+    heroku config:set -a flavio-onyo-bob DJANGO_SETTINGS_MODULE=bob.settings
