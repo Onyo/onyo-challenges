@@ -11,7 +11,7 @@ INSTALLED_APPS += [
     'ana',
 ]
 
-ROOT_URLCONF = 'core.urls'
+ROOT_URLCONF = 'urls'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
