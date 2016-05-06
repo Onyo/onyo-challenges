@@ -10,9 +10,9 @@ INSTALLED_APPS += [
     'ana',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'ana.urls'
 
-BOB_URL = os.getenv('BOB_URL', None)
+BOB_URL = os.getenv('BOB_URL', 'http://localhost:8000/addresses')
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases

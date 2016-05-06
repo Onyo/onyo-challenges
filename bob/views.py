@@ -2,15 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
-from django.shortcuts import render_to_response
 
 from .models import Address
 from .serializers import AddressSerialiazer
-
-
-def index(request):
-    addresses = Address.objects.all()
-    return render_to_response('index.html', {'addresses': addresses, 'url': request.get_host()})
 
 
 class Addresses(APIView):

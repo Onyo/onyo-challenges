@@ -6,4 +6,5 @@ dj-database-url
 djangorestframework
 Markdown
 PyYAML
+requests
 whitenoise
