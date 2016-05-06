@@ -81,6 +81,31 @@ Heroku run unit tests bob
 
     make heroku_test_bob
 
+# Usage #
+
+## Bob
+
+[Addresses Endpoint] (http://flavio-onyo-bob.herokuapp.com/addresses/)
+
+    $ curl -X POST -H "Content-Type: application/json" http://flavio-onyo-bob.herokuapp.com/addresses/ -d '{"post_code": "54100200", "locality": "Av. Governador Agamenon Magalhães", "street_number": "2345", "country": "Brasil", "state": "Pernambuco", "city": "Recife"}'
+
+## Ana
+
+[Records Endpoint] (http://flavio-onyo-ana.herokuapp.com/records/)
+
+    $ curl -X POST -H "Content-Type: application/json" http://flavio-onyo-ana.herokuapp.com/records/ -d '{"post_code": "49160210", "name": "Flavio Henrique", "email":"flavio@test.com"}' --verbose
+
+# API Endpoints #
+
+## Bob
+
+About the API [http://flavio-onyo-bob.herokuapp.com/addresses/docs/] (http://flavio-onyo-bob.herokuapp.com/addresses/docs/)
+
+## Ana
+
+About the API [http://flavio-onyo-ana.herokuapp.com/records/docs/] (http://flavio-onyo-ana.herokuapp.com/records/docs/)
+
+
 # Onyo Challenge #
 
 Here we have some challenges for the following areas Backend, iOS and Android. Please feel free to enjoy our challenge and let us know if you have any question.
