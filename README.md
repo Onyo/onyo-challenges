@@ -22,6 +22,8 @@ Make commands
 - heroku_sqlmigrate     # run sqlmigrate in the heroku
 - heroku_migrate        # run migrate in the heroku
 - heroku_import         # import addresses in the heroku
+- heroku_test_ana       # run unit tests ana
+- heroku_test_bob       # run unit tests bob
 
 
 Setup your local environment
@@ -70,6 +72,14 @@ Heroku run sqlmigrate
 Heroku run command 'importaddresses' to populate bob's addresses
 
     make heroku_import
+
+Heroku run unit tests ana
+
+    make heroku_test_ana
+
+Heroku run unit tests bob
+
+    make heroku_test_bob
 
 # Onyo Challenge #
 

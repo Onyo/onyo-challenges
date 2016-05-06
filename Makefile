@@ -65,3 +65,9 @@ heroku_migrate: # run migrate in the heroku
 
 heroku_import: # import addresses in the heroku
 	heroku run -a flavio-onyo-bob python manage.py importaddresses addresses.csv
+
+heroku_test_ana: # run unit tests ana
+	heroku run -a flavio-onyo-ana python manage.py test ana
+
+heroku_test_bob: # run unit tests bob
+	heroku run -a flavio-onyo-bob python manage.py test bob

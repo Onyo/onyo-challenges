@@ -13,3 +13,6 @@ class Address(models.Model):
 
     class Meta:
         verbose_name_plural = _('Addresses')
+
+    def __str__(self):
+        return self.post_code

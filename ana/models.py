@@ -17,6 +17,9 @@ class Record(models.Model):
     class Meta:
         verbose_name_plural = _('Records')
 
+    def __str__(self):
+        return self.name
+
 
 @receiver(post_save, sender=Record)
 def get_address(sender, instance, **kwargs):

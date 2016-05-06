@@ -13,6 +13,8 @@ INSTALLED_APPS += [
 
 ROOT_URLCONF = 'urls'
 
+BOB_URL = os.getenv('BOB_URL', 'http://localhost:8000/addresses')
+
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
