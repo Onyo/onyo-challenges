@@ -7,3 +7,4 @@ class RecordSerializer(ModelSerializer):
 
     class Meta:
         model = Record
+        read_only_fields = ('address',)
