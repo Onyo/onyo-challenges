@@ -18,7 +18,7 @@ class Records(APIView):
     def get(self, request, format=None):
         records = Record.objects.all()
         serializer = RecordSerializer(records, many=True)
-        Response(serializer.data)
+        return Response(serializer.data)
 
 
 def get_object(func):

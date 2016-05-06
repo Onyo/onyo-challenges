@@ -33,7 +33,15 @@ run_migrate: # run all migrations
 run: # run local server
 	python manage.py runserver 0.0.0.0:8000 $(filter-out $@,$(MAKECMDGOALS))
 
-deploy: # deploy in heroku
+deploy_ana: # deploy ana in heroku
+	git push origin master
+	git push -u heroku --all
+
+deploy_bob: # deploy bob in heroku
+	git push origin master
+	git push -u heroku-bob --all
+
+deploy_all: # deploy all in heroku
 	git push origin master
 	git push -u heroku-bob --all
 	git push -u heroku --all
@@ -41,5 +49,9 @@ deploy: # deploy in heroku
 heroku_config: # set DJANGO_SETTINGS_MODULE and DJANGO_DEFAULT_MODULE in the heroku
 	heroku config:set -a flavio-onyo-ana DJANGO_SETTINGS_MODULE=ana.settings
 	heroku config:set -a flavio-onyo-ana DJANGO_DEFAULT_MODULE=ana
+	heroku config:set -a flavio-onyo-ana BOB_URL=http://flavio-onyo-bob.herokuapp.com/addresses/
 	heroku config:set -a flavio-onyo-bob DJANGO_SETTINGS_MODULE=bob.settings
 	heroku config:set -a flavio-onyo-bob DJANGO_DEFAULT_MODULE=bob
+
+heroku_import: # import addresses in the heroku
+	heroku run -a flavio-onyo-bob python manage.py importaddresses addresses.csv
