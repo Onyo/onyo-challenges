@@ -1,3 +1,76 @@
+# Desafio Onyo #
+
+Requirements
+============
+
+* python >= 3.5.1
+* virtualenvwrapper >= 3.5
+* django >= 1.9.6
+
+Make commands
+=============
+
+- clean                 # remove temporary files
+- pip                   # install pip libraries
+- pip_local             # install pip local libraries
+- run_migrate           # run local all migrations
+- run                   # run local server
+- deploy_ana            # deploy ana in heroku
+- deploy_bob            # deploy bob in heroku
+- deploy_all            # deploy all in heroku
+- heroku_config         # set DJANGO_SETTINGS_MODULE, DJANGO_DEFAULT_MODULE and BOB_URL in the heroku
+- heroku_sqlmigrate     # run sqlmigrate in the heroku
+- heroku_migrate        # run migrate in the heroku
+- heroku_import         # import addresses in the heroku
+
+
+Setup your local environment
+============================
+
+    mkvirtualenv onyo
+
+Install the required python packages.
+
+    make pip_local
+    
+Run local migrate.
+
+    make run_migrate
+
+Run server
+
+    make run
+
+
+Deploy heroku
+============================
+
+Create remote branches
+
+    git branch add origin https://github.com/flaviohenriqu/onyo-challenges.git
+    git branch add heroku https://git.heroku.com/flavio-onyo-ana.git
+    git branch add heroku-bob https://git.heroku.com/flavio-onyo-bob.git
+    
+Push and deploy heroku
+
+    make deploy_all
+    
+Set config environment in the heroku
+
+    make heroku_config
+    
+Heroku run sqlmigrate
+
+    make heroku_sqlmigrate
+
+Heroku run sqlmigrate
+
+    make heroku_migrate
+
+Heroku run command 'importaddresses' to populate bob's addresses
+
+    make heroku_import
+
 # Onyo Challenge #
 
 Here we have some challenges for the following areas Backend, iOS and Android. Please feel free to enjoy our challenge and let us know if you have any question.
