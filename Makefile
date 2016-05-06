@@ -49,7 +49,7 @@ deploy_all: # deploy all in heroku
 heroku_config: # set DJANGO_SETTINGS_MODULE and DJANGO_DEFAULT_MODULE in the heroku
 	heroku config:set -a flavio-onyo-ana DJANGO_SETTINGS_MODULE=ana.settings
 	heroku config:set -a flavio-onyo-ana DJANGO_DEFAULT_MODULE=ana
-	heroku config:set -a flavio-onyo-ana BOB_URL=http://flavio-onyo-bob.herokuapp.com/addresses/
+	heroku config:set -a flavio-onyo-ana BOB_URL=http://flavio-onyo-bob.herokuapp.com/addresses
 	heroku config:set -a flavio-onyo-bob DJANGO_SETTINGS_MODULE=bob.settings
 	heroku config:set -a flavio-onyo-bob DJANGO_DEFAULT_MODULE=bob
 

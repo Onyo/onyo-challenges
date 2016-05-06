@@ -27,12 +27,9 @@ def get_address(sender, instance, **kwargs):
 
             result = response.json()
             instance.address = ' - '.join(
-                (result['post_code'], result['locality'], result['street_number'],
+                (result['locality'], result['street_number'],
                  result['country'], result['state'], result['city'])
             )
             instance.save()
-        except HTTPError:
-            instance.name = None
-            instance.email = None
-            instance.post_code = None
-            instance.address = None
+        except HTTPError as error:
+            raise error
