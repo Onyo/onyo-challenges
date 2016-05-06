@@ -1,11 +1,11 @@
 from django.conf import settings
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
-from django.db.models.signals import pre_save
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.translation import ugettext_lazy as _
 
 import requests
+from requests import HTTPError
 
 
 class Record(models.Model):
@@ -18,7 +18,7 @@ class Record(models.Model):
         verbose_name_plural = _('Records')
 
 
-@receiver(pre_save, sender=Record)
+@receiver(post_save, sender=Record)
 def get_address(sender, instance, **kwargs):
     if kwargs['created']:
         url = '%s/%s/' % (settings.BOB_URL, instance.post_code)
@@ -31,7 +31,7 @@ def get_address(sender, instance, **kwargs):
                  result['country'], result['state'], result['city'])
             )
             instance.save()
-        except requests.HTTPError:
+        except HTTPError:
             instance.name = None
             instance.email = None
             instance.post_code = None
