@@ -26,7 +26,7 @@ def get_address(sender, instance, **kwargs):
             response = requests.get(url)
 
             result = response.json()
-            instance.post_code = ' - '.join(
+            instance.address = ' - '.join(
                 (result['post_code'], result['locality'], result['street_number'],
                  result['country'], result['state'], result['city'])
             )
