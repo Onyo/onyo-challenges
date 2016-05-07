@@ -22,24 +22,24 @@ class Records(APIView):
 
 
 def get_object(func):
-    def func_wrapper(self, request, postcode):
+    def func_wrapper(self, request, pk):
         try:
-            record = Record.objects.get(post_code=postcode)
+            record = Record.objects.get(pk=pk)
         except Record.DoesNotExist:
             raise Http404
-        return func(self, request, postcode, record)
+        return func(self, request, pk, record)
     return func_wrapper
 
 
 class RecordDetail(APIView):
 
     @get_object
-    def get(self, request, postcode, record, format=None):
+    def get(self, request, pk, record, format=None):
         serializer = RecordSerializer(record)
         return Response(serializer.data)
 
     @get_object
-    def put(self, request, postcode, record, format=None):
+    def put(self, request, pk, record, format=None):
         serializer = RecordSerializer(record, data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -47,6 +47,6 @@ class RecordDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @get_object
-    def delete(self, request, postcode, record, format=None):
+    def delete(self, request, pk, record, format=None):
         record.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
