@@ -1,0 +1,10 @@
+Django
+django-rest-swagger
+psycopg2
+prettyconf
+dj-database-url
+djangorestframework
+Markdown
+PyYAML
+requests
+whitenoise

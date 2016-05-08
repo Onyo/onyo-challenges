@@ -1,3 +1,112 @@
+# Desafio Onyo #
+
+Requirements
+============
+
+* python >= 3.5.1
+* virtualenvwrapper >= 3.5
+* django >= 1.9.6
+
+Make commands
+=============
+
+- clean                 # remove temporary files
+- pip                   # install pip libraries
+- pip_local             # install pip local libraries
+- run_migrate           # run local all migrations
+- run                   # run local server
+- deploy_ana            # deploy ana in heroku
+- deploy_bob            # deploy bob in heroku
+- deploy_all            # deploy all in heroku
+- heroku_config         # set DJANGO_SETTINGS_MODULE, DJANGO_DEFAULT_MODULE and BOB_URL in the heroku
+- heroku_sqlmigrate     # run sqlmigrate in the heroku
+- heroku_migrate        # run migrate in the heroku
+- heroku_import         # import addresses in the heroku
+- heroku_test_ana       # run unit tests ana
+- heroku_test_bob       # run unit tests bob
+
+
+Setup your local environment
+============================
+
+    mkvirtualenv onyo
+    workon onyo
+
+Install the required python packages.
+
+    make pip_local
+    
+Run local migrate.
+
+    make run_migrate
+
+Run server
+
+    make run
+
+
+Deploy heroku
+============================
+
+Create remote branches
+
+    git remote add origin https://github.com/flaviohenriqu/onyo-challenges.git
+    git remote add heroku https://git.heroku.com/flavio-onyo-ana.git
+    git remote add heroku-bob https://git.heroku.com/flavio-onyo-bob.git
+    
+Push and deploy heroku
+
+    make deploy_all
+    
+Set config environment in the heroku
+
+    make heroku_config
+    
+Heroku run sqlmigrate
+
+    make heroku_sqlmigrate
+
+Heroku run sqlmigrate
+
+    make heroku_migrate
+
+Heroku run command 'importaddresses' to populate bob's addresses
+
+    make heroku_import
+
+Heroku run unit tests ana
+
+    make heroku_test_ana
+
+Heroku run unit tests bob
+
+    make heroku_test_bob
+
+# Usage #
+
+## Bob
+
+[Addresses Endpoint] (http://flavio-onyo-bob.herokuapp.com/addresses/)
+
+    $ curl -X POST -H "Content-Type: application/json" http://flavio-onyo-bob.herokuapp.com/addresses/ -d '{"post_code": "54100200", "locality": "Av. Governador Agamenon Magalhães", "street_number": "2345", "country": "Brasil", "state": "Pernambuco", "city": "Recife"}'
+
+## Ana
+
+[Records Endpoint] (http://flavio-onyo-ana.herokuapp.com/records/)
+
+    $ curl -X POST -H "Content-Type: application/json" http://flavio-onyo-ana.herokuapp.com/records/ -d '{"post_code": "49160210", "name": "Flavio Henrique", "email":"flavio@test.com"}' --verbose
+
+# API Endpoints #
+
+## Bob
+
+About the API [http://flavio-onyo-bob.herokuapp.com/addresses/docs/] (http://flavio-onyo-bob.herokuapp.com/addresses/docs/)
+
+## Ana
+
+About the API [http://flavio-onyo-ana.herokuapp.com/records/docs/] (http://flavio-onyo-ana.herokuapp.com/records/docs/)
+
+
 # Onyo Challenge #
 
 Here we have some challenges for the following areas Backend, iOS and Android. Please feel free to enjoy our challenge and let us know if you have any question.
