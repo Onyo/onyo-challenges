@@ -30,6 +30,7 @@ Setup your local environment
 ============================
 
     mkvirtualenv onyo
+    workon onyo
 
 Install the required python packages.
 
@@ -49,9 +50,9 @@ Deploy heroku
 
 Create remote branches
 
-    git branch add origin https://github.com/flaviohenriqu/onyo-challenges.git
-    git branch add heroku https://git.heroku.com/flavio-onyo-ana.git
-    git branch add heroku-bob https://git.heroku.com/flavio-onyo-bob.git
+    git remote add origin https://github.com/flaviohenriqu/onyo-challenges.git
+    git remote add heroku https://git.heroku.com/flavio-onyo-ana.git
+    git remote add heroku-bob https://git.heroku.com/flavio-onyo-bob.git
     
 Push and deploy heroku
 

@@ -31,5 +31,5 @@ class RecordSerializer(ModelSerializer):
             raise error
 
         if not validated_data['address']:
-            raise ValidationError('Postcode Not Found!')
+            raise ValidationError({'error': 'Postcode Not Found!'})
         return Record.objects.create(**validated_data)
