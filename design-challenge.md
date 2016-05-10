@@ -9,7 +9,7 @@ The main goal of the challenge is to create a UI prototype of a Mobile Applicati
 
 ## Problem Description ##
 
-The app has basically one feature that is show Places information.
+The app has basically one goal that is show Places information.
 It must have the following features:
 * Show list of Places
 * Allow the user to search on the list
