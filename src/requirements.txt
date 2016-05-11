@@ -1,7 +1,10 @@
 Django==1.9.6
 django-filter==0.13.0
 djangorestframework==3.3.3
+fake-factory==0.5.7
+gunicorn==19.4.5
 Markdown==2.6.6
 python-dateutil==2.5.3
 requests==2.10.0
 six==1.10.0
+whitenoise==3.0
