@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-BOB_API_URL = "http://localhost:8000/cep/?cep={0}"
+BOB_API_URL = "http://localhost:8000/zipcode?number={0}"
 
 # Application definition
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cliente',
+    'customer',
     'rest_framework',
 ]
 

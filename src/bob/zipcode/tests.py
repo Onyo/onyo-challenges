@@ -1,17 +1,17 @@
 from django.test import TestCase
-from zipcode.models import Cep
+from zipcode.models import ZipCode
 
-class CepTestCase(TestCase):
+class ZipCodeTestCase(TestCase):
 
     def setUp(self):
         pass
 
     def test_save(self):
-        cep = Cep()
-        cep.cep = 5533
-        cep.rua = "street 1"
-        cep.cidade = "city example"
-        cep.estado = "state example"
+        zipcode = ZipCode()
+        zipcode.number = 5533
+        zipcode.street = "street 1"
+        zipcode.city = "city example"
+        zipcode.state = "state example"
 
-        cep.save()
-        self.assertEqual(cep.id, 1)
+        zipcode.save()
+        self.assertEqual(zipcode.id, 1)
