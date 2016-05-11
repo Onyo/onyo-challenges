@@ -49,4 +49,4 @@ In the Bob API have many ZipCode for tests
 
 ## Why two applications ?
 
-Simple, becouse in this way is more easy to scale the spplications in separeted environments, generating high disponibility and performance for both.
+Simple, becouse in this way is more easy to scale the applications in separated environments, generating high disponibility and performance for both.
