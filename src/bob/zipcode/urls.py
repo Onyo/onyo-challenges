@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from bob.cep import views
+from bob.zipcode import views
 
 router = routers.DefaultRouter()
 
-router.register(r'cep', views.UserViewSet)
+router.register(r'zipcode', views.UserViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
