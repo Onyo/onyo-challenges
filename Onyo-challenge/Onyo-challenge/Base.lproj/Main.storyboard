@@ -1,25 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Restaurant View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RestaurantViewController" customModule="Onyo_challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="279" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMI-ef-a5p">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompanyCellIdentifier" rowHeight="270" id="eua-Mc-Bqa" customClass="CompanyTableViewCell" customModule="Onyo_challenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="270"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eua-Mc-Bqa" id="nuK-uM-vlU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="269.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sX-3e-tpe">
+                                                    <rect key="frame" x="15" y="15" width="345" height="184"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="5sX-3e-tpe" secondAttribute="height" multiplier="675:360" id="6yk-6E-ylY"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-bh-jEh">
+                                                    <rect key="frame" x="15" y="209" width="345" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdM-C2-d2K">
+                                                    <rect key="frame" x="15" y="233" width="345" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Yws-bh-jEh" firstAttribute="leading" secondItem="nuK-uM-vlU" secondAttribute="leading" constant="15" id="9ji-T2-ydC"/>
+                                                <constraint firstItem="5sX-3e-tpe" firstAttribute="leading" secondItem="nuK-uM-vlU" secondAttribute="leading" constant="15" id="B4o-JZ-Mdx"/>
+                                                <constraint firstItem="Yws-bh-jEh" firstAttribute="top" secondItem="5sX-3e-tpe" secondAttribute="bottom" constant="10" id="IeX-A6-6bO"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yws-bh-jEh" secondAttribute="trailing" constant="15" id="Kqf-kk-KA8"/>
+                                                <constraint firstAttribute="bottom" secondItem="5sX-3e-tpe" secondAttribute="bottom" constant="15" id="Njx-G5-GsN"/>
+                                                <constraint firstItem="bdM-C2-d2K" firstAttribute="leading" secondItem="nuK-uM-vlU" secondAttribute="leading" constant="15" id="a1p-dP-Z2g"/>
+                                                <constraint firstAttribute="trailing" secondItem="5sX-3e-tpe" secondAttribute="trailing" constant="15" id="acM-1X-L8D"/>
+                                                <constraint firstAttribute="bottom" secondItem="bdM-C2-d2K" secondAttribute="bottom" constant="15" id="gIX-PY-NMx"/>
+                                                <constraint firstAttribute="trailing" secondItem="bdM-C2-d2K" secondAttribute="trailing" constant="15" id="hq5-A3-IQ8"/>
+                                                <constraint firstItem="bdM-C2-d2K" firstAttribute="top" secondItem="Yws-bh-jEh" secondAttribute="bottom" constant="3" id="ihN-SV-tYn"/>
+                                                <constraint firstItem="5sX-3e-tpe" firstAttribute="top" secondItem="nuK-uM-vlU" secondAttribute="top" constant="15" id="uSw-xj-7TJ"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Njx-G5-GsN"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="companyAddress" destination="bdM-C2-d2K" id="JPW-ZW-udW"/>
+                                            <outlet property="companyImage" destination="5sX-3e-tpe" id="8c0-vq-Sp8"/>
+                                            <outlet property="companyNameDistance" destination="Yws-bh-jEh" id="4dq-vb-0rF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NtG-5D-1nF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YN1-B5-GWs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HMI-ef-a5p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dla-5I-hIY"/>
+                            <constraint firstAttribute="trailing" secondItem="HMI-ef-a5p" secondAttribute="trailing" id="QuF-T6-yy6"/>
+                            <constraint firstItem="HMI-ef-a5p" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zTL-du-XPi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HMI-ef-a5p" secondAttribute="bottom" id="zZo-Q1-Cwt"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="HMI-ef-a5p" id="NF8-AG-gPk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="459.5" y="384.5"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,24 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Onyo-challenge' do
+
+pod 'Alamofire', '~> 3.4'
+pod ‘AlamofireImage’, '~> 2.4.0’
+
+end
+
+target 'Onyo-challengeTests' do
+
+pod 'Alamofire', '~> 3.4'
+pod ‘AlamofireImage’, '~> 2.4.0’
+
+end
+
+target 'Onyo-challengeUITests' do
+
+pod 'Alamofire', '~> 3.4'
+pod ‘AlamofireImage’, '~> 2.4.0’
+
+end
+

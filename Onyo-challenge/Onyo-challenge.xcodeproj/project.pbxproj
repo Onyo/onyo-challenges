@@ -7,13 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0661BEEDE77824248477B59A /* Pods_Onyo_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844BE11F7B15A50EB575012B /* Pods_Onyo_challengeTests.framework */; };
+		0AD37308631061B0C7F9C908 /* Pods_Onyo_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E810245FE042DA8610482EF2 /* Pods_Onyo_challenge.framework */; };
 		3864FBEA1CE65552006C6484 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBE91CE65552006C6484 /* AppDelegate.swift */; };
-		3864FBEC1CE65552006C6484 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* ViewController.swift */; };
+		3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */; };
 		3864FBEF1CE65552006C6484 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBED1CE65552006C6484 /* Main.storyboard */; };
 		3864FBF11CE65552006C6484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF01CE65552006C6484 /* Assets.xcassets */; };
 		3864FBF41CE65552006C6484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */; };
 		3864FBFF1CE65552006C6484 /* Onyo_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBFE1CE65552006C6484 /* Onyo_challengeTests.swift */; };
 		3864FC0A1CE65552006C6484 /* Onyo_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FC091CE65552006C6484 /* Onyo_challengeUITests.swift */; };
+		388555681CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
+		388555691CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
+		3885556A1CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
+		3885556B1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */; };
+		3885556C1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */; };
+		3885556F1CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */; };
+		388555701CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */; };
+		388555711CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */; };
+		388555741CE7698B006D8ED9 /* NibObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555731CE7698B006D8ED9 /* NibObjects.swift */; };
+		388555751CE7698B006D8ED9 /* NibObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555731CE7698B006D8ED9 /* NibObjects.swift */; };
+		388555761CE7698B006D8ED9 /* NibObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555731CE7698B006D8ED9 /* NibObjects.swift */; };
+		388555771CE76BA5006D8ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBED1CE65552006C6484 /* Main.storyboard */; };
+		388555781CE76BA5006D8ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBED1CE65552006C6484 /* Main.storyboard */; };
+		388555791CE76BA9006D8ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */; };
+		3885557A1CE76BA9006D8ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */; };
+		3885557B1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */; };
+		3885557C1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */; };
+		38CC0F131CE69085004A0FC0 /* OnyoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */; };
+		38CC0F191CE69138004A0FC0 /* URIs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CC0F181CE69138004A0FC0 /* URIs.plist */; };
+		7C5B7D75FBBCBEA3C8359AE0 /* Pods_Onyo_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0ECA86C11A3566472E9F46 /* Pods_Onyo_challengeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0825644DDAB78E6716BF849D /* Pods-Onyo-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challenge/Pods-Onyo-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		246E29800DBF2D735856EE95 /* Pods-Onyo-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challengeUITests/Pods-Onyo-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3864FBE61CE65552006C6484 /* Onyo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Onyo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3864FBE91CE65552006C6484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3864FBEB1CE65552006C6484 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		3864FBEE1CE65552006C6484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3864FBF01CE65552006C6484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3864FBF31CE65552006C6484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +71,18 @@
 		3864FC051CE65552006C6484 /* Onyo-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Onyo-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3864FC091CE65552006C6484 /* Onyo_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onyo_challengeUITests.swift; sourceTree = "<group>"; };
 		3864FC0B1CE65552006C6484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		388555671CE75E73006D8ED9 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
+		388555731CE7698B006D8ED9 /* NibObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibObjects.swift; sourceTree = "<group>"; };
+		38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnyoAPIManager.swift; sourceTree = "<group>"; };
+		38CC0F181CE69138004A0FC0 /* URIs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = URIs.plist; sourceTree = "<group>"; };
+		52BC3A29C17AD8E19D6A6006 /* Pods-Onyo-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challenge/Pods-Onyo-challenge.release.xcconfig"; sourceTree = "<group>"; };
+		5AC3D9CB870599AAF625DCF5 /* Pods-Onyo-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challengeUITests/Pods-Onyo-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5FCF458BFEA61C1496395411 /* Pods-Onyo-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challengeTests/Pods-Onyo-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		6A0ECA86C11A3566472E9F46 /* Pods_Onyo_challengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onyo_challengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		844BE11F7B15A50EB575012B /* Pods_Onyo_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onyo_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C173804BCEE7BF8D0C260A7C /* Pods-Onyo-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challengeTests/Pods-Onyo-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E810245FE042DA8610482EF2 /* Pods_Onyo_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onyo_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD37308631061B0C7F9C908 /* Pods_Onyo_challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0661BEEDE77824248477B59A /* Pods_Onyo_challengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +106,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C5B7D75FBBCBEA3C8359AE0 /* Pods_Onyo_challengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07909768C15CC023E583BA88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0825644DDAB78E6716BF849D /* Pods-Onyo-challenge.debug.xcconfig */,
+				52BC3A29C17AD8E19D6A6006 /* Pods-Onyo-challenge.release.xcconfig */,
+				C173804BCEE7BF8D0C260A7C /* Pods-Onyo-challengeTests.debug.xcconfig */,
+				5FCF458BFEA61C1496395411 /* Pods-Onyo-challengeTests.release.xcconfig */,
+				246E29800DBF2D735856EE95 /* Pods-Onyo-challengeUITests.debug.xcconfig */,
+				5AC3D9CB870599AAF625DCF5 /* Pods-Onyo-challengeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3864FBDD1CE65552006C6484 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +133,8 @@
 				3864FBFD1CE65552006C6484 /* Onyo-challengeTests */,
 				3864FC081CE65552006C6484 /* Onyo-challengeUITests */,
 				3864FBE71CE65552006C6484 /* Products */,
+				07909768C15CC023E583BA88 /* Pods */,
+				984D8B96086CEA7E4EFB25FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +151,12 @@
 		3864FBE81CE65552006C6484 /* Onyo-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				38CC0F0F1CE69050004A0FC0 /* Model */,
+				38CC0F101CE69054004A0FC0 /* View */,
+				38CC0F111CE69059004A0FC0 /* ViewModel */,
 				3864FBE91CE65552006C6484 /* AppDelegate.swift */,
-				3864FBEB1CE65552006C6484 /* ViewController.swift */,
-				3864FBED1CE65552006C6484 /* Main.storyboard */,
 				3864FBF01CE65552006C6484 /* Assets.xcassets */,
-				3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */,
-				3864FBF51CE65552006C6484 /* Info.plist */,
+				38CC0F141CE690D3004A0FC0 /* Supporting Files */,
 			);
 			path = "Onyo-challenge";
 			sourceTree = "<group>";
@@ -125,6 +179,93 @@
 			path = "Onyo-challengeUITests";
 			sourceTree = "<group>";
 		};
+		388555651CE75E55006D8ED9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		388555661CE75E5A006D8ED9 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				388555671CE75E73006D8ED9 /* Company.swift */,
+			);
+			name = "Data Models";
+			sourceTree = "<group>";
+		};
+		3885556D1CE7665E006D8ED9 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */,
+			);
+			name = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		388555721CE7697F006D8ED9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				388555731CE7698B006D8ED9 /* NibObjects.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		38CC0F0F1CE69050004A0FC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				388555661CE75E5A006D8ED9 /* Data Models */,
+				388555721CE7697F006D8ED9 /* Helpers */,
+				388555651CE75E55006D8ED9 /* Managers */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38CC0F101CE69054004A0FC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3885556D1CE7665E006D8ED9 /* UITableViewCell */,
+				3864FBED1CE65552006C6484 /* Main.storyboard */,
+				3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		38CC0F111CE69059004A0FC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		38CC0F141CE690D3004A0FC0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				38CC0F151CE6910D004A0FC0 /* OnyoAPIResources */,
+				3864FBF51CE65552006C6484 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38CC0F151CE6910D004A0FC0 /* OnyoAPIResources */ = {
+			isa = PBXGroup;
+			children = (
+				38CC0F181CE69138004A0FC0 /* URIs.plist */,
+			);
+			name = OnyoAPIResources;
+			sourceTree = "<group>";
+		};
+		984D8B96086CEA7E4EFB25FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E810245FE042DA8610482EF2 /* Pods_Onyo_challenge.framework */,
+				844BE11F7B15A50EB575012B /* Pods_Onyo_challengeTests.framework */,
+				6A0ECA86C11A3566472E9F46 /* Pods_Onyo_challengeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3864FC0E1CE65552006C6484 /* Build configuration list for PBXNativeTarget "Onyo-challenge" */;
 			buildPhases = (
+				8F2BE76F24901B7A073B30B6 /* Check Pods Manifest.lock */,
 				3864FBE21CE65552006C6484 /* Sources */,
 				3864FBE31CE65552006C6484 /* Frameworks */,
 				3864FBE41CE65552006C6484 /* Resources */,
+				1F7ADE871BF9E567C3AA2266 /* Embed Pods Frameworks */,
+				6F67D3430CE67CC1C188E217 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +293,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3864FC111CE65552006C6484 /* Build configuration list for PBXNativeTarget "Onyo-challengeTests" */;
 			buildPhases = (
+				CDDD43B9D764EEB0CF9CB555 /* Check Pods Manifest.lock */,
 				3864FBF61CE65552006C6484 /* Sources */,
 				3864FBF71CE65552006C6484 /* Frameworks */,
 				3864FBF81CE65552006C6484 /* Resources */,
+				CFF5E6BB3037CFA066B43D13 /* Embed Pods Frameworks */,
+				E7F2ECF54B9C2B0BC3F52D3A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3864FC141CE65552006C6484 /* Build configuration list for PBXNativeTarget "Onyo-challengeUITests" */;
 			buildPhases = (
+				AC9FBEBF8B395C95EA781658 /* Check Pods Manifest.lock */,
 				3864FC011CE65552006C6484 /* Sources */,
 				3864FC021CE65552006C6484 /* Frameworks */,
 				3864FC031CE65552006C6484 /* Resources */,
+				70BFA72A28DDF8736A752859 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +381,7 @@
 				3864FBF41CE65552006C6484 /* LaunchScreen.storyboard in Resources */,
 				3864FBF11CE65552006C6484 /* Assets.xcassets in Resources */,
 				3864FBEF1CE65552006C6484 /* Main.storyboard in Resources */,
+				38CC0F191CE69138004A0FC0 /* URIs.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +389,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388555781CE76BA5006D8ED9 /* Main.storyboard in Resources */,
+				3885557A1CE76BA9006D8ED9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,17 +398,146 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388555771CE76BA5006D8ED9 /* Main.storyboard in Resources */,
+				388555791CE76BA9006D8ED9 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F7ADE871BF9E567C3AA2266 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Onyo-challenge/Pods-Onyo-challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F67D3430CE67CC1C188E217 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Onyo-challenge/Pods-Onyo-challenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70BFA72A28DDF8736A752859 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Onyo-challengeUITests/Pods-Onyo-challengeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F2BE76F24901B7A073B30B6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9FBEBF8B395C95EA781658 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CDDD43B9D764EEB0CF9CB555 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF5E6BB3037CFA066B43D13 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Onyo-challengeTests/Pods-Onyo-challengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7F2ECF54B9C2B0BC3F52D3A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Onyo-challengeTests/Pods-Onyo-challengeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3864FBE21CE65552006C6484 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3864FBEC1CE65552006C6484 /* ViewController.swift in Sources */,
+				388555741CE7698B006D8ED9 /* NibObjects.swift in Sources */,
+				388555681CE75E73006D8ED9 /* Company.swift in Sources */,
+				3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */,
+				38CC0F131CE69085004A0FC0 /* OnyoAPIManager.swift in Sources */,
+				3885556F1CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 				3864FBEA1CE65552006C6484 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +546,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				388555691CE75E73006D8ED9 /* Company.swift in Sources */,
+				3885557B1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
+				388555751CE7698B006D8ED9 /* NibObjects.swift in Sources */,
+				3885556B1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
 				3864FBFF1CE65552006C6484 /* Onyo_challengeTests.swift in Sources */,
+				388555701CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +559,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3885556A1CE75E73006D8ED9 /* Company.swift in Sources */,
+				3885557C1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
+				388555761CE7698B006D8ED9 /* NibObjects.swift in Sources */,
+				3885556C1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
 				3864FC0A1CE65552006C6484 /* Onyo_challengeUITests.swift in Sources */,
+				388555711CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +688,7 @@
 		};
 		3864FC0F1CE65552006C6484 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0825644DDAB78E6716BF849D /* Pods-Onyo-challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Onyo-challenge/Info.plist";
@@ -408,6 +700,7 @@
 		};
 		3864FC101CE65552006C6484 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52BC3A29C17AD8E19D6A6006 /* Pods-Onyo-challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Onyo-challenge/Info.plist";
@@ -419,6 +712,7 @@
 		};
 		3864FC121CE65552006C6484 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C173804BCEE7BF8D0C260A7C /* Pods-Onyo-challengeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Onyo-challengeTests/Info.plist";
@@ -431,6 +725,7 @@
 		};
 		3864FC131CE65552006C6484 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FCF458BFEA61C1496395411 /* Pods-Onyo-challengeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Onyo-challengeTests/Info.plist";
@@ -443,6 +738,7 @@
 		};
 		3864FC151CE65552006C6484 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 246E29800DBF2D735856EE95 /* Pods-Onyo-challengeUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Onyo-challengeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -454,6 +750,7 @@
 		};
 		3864FC161CE65552006C6484 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AC3D9CB870599AAF625DCF5 /* Pods-Onyo-challengeUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Onyo-challengeUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -482,6 +779,7 @@
 				3864FC101CE65552006C6484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3864FC111CE65552006C6484 /* Build configuration list for PBXNativeTarget "Onyo-challengeTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +788,7 @@
 				3864FC131CE65552006C6484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3864FC141CE65552006C6484 /* Build configuration list for PBXNativeTarget "Onyo-challengeUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +797,7 @@
 				3864FC161CE65552006C6484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
