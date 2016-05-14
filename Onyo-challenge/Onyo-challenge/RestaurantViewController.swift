@@ -30,6 +30,9 @@ class RestaurantViewController: UIViewController {
     func configContent() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 220.0
+        
+        let imageView = UIImageView(image:UIImage(named: "logo"))
+        self.navigationItem.titleView = imageView
     }
     
     // MARK: - API handlers
@@ -55,7 +58,7 @@ extension RestaurantViewController: UITableViewDataSource {
         let cellIdentifier = NibObjects.reuseIdentifierFor(.CompanyTableViewCell)
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CompanyTableViewCell
         
-        cell.configureCellWith(companies[indexPath.row])
+        cell.configureCellWith(companies[indexPath.row], indexPath: indexPath)
         
         return cell
     }

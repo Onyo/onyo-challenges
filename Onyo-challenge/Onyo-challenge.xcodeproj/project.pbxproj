@@ -33,6 +33,9 @@
 		3885557A1CE76BA9006D8ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */; };
 		3885557B1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */; };
 		3885557C1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */; };
+		38ACFBEF1CE7733B00865EA1 /* UIColor+Onyo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACFBEE1CE7733B00865EA1 /* UIColor+Onyo.swift */; };
+		38ACFBF01CE7763100865EA1 /* UIColor+Onyo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACFBEE1CE7733B00865EA1 /* UIColor+Onyo.swift */; };
+		38ACFBF11CE7763100865EA1 /* UIColor+Onyo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ACFBEE1CE7733B00865EA1 /* UIColor+Onyo.swift */; };
 		38CC0F131CE69085004A0FC0 /* OnyoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */; };
 		38CC0F191CE69138004A0FC0 /* URIs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38CC0F181CE69138004A0FC0 /* URIs.plist */; };
 		7C5B7D75FBBCBEA3C8359AE0 /* Pods_Onyo_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A0ECA86C11A3566472E9F46 /* Pods_Onyo_challengeUITests.framework */; };
@@ -74,6 +77,7 @@
 		388555671CE75E73006D8ED9 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		388555731CE7698B006D8ED9 /* NibObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibObjects.swift; sourceTree = "<group>"; };
+		38ACFBEE1CE7733B00865EA1 /* UIColor+Onyo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Onyo.swift"; sourceTree = "<group>"; };
 		38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnyoAPIManager.swift; sourceTree = "<group>"; };
 		38CC0F181CE69138004A0FC0 /* URIs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = URIs.plist; sourceTree = "<group>"; };
 		52BC3A29C17AD8E19D6A6006 /* Pods-Onyo-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challenge/Pods-Onyo-challenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				388555731CE7698B006D8ED9 /* NibObjects.swift */,
+				38ACFBEE1CE7733B00865EA1 /* UIColor+Onyo.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				388555741CE7698B006D8ED9 /* NibObjects.swift in Sources */,
+				38ACFBEF1CE7733B00865EA1 /* UIColor+Onyo.swift in Sources */,
 				388555681CE75E73006D8ED9 /* Company.swift in Sources */,
 				3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */,
 				38CC0F131CE69085004A0FC0 /* OnyoAPIManager.swift in Sources */,
@@ -547,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				388555691CE75E73006D8ED9 /* Company.swift in Sources */,
+				38ACFBF01CE7763100865EA1 /* UIColor+Onyo.swift in Sources */,
 				3885557B1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
 				388555751CE7698B006D8ED9 /* NibObjects.swift in Sources */,
 				3885556B1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
@@ -560,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3885556A1CE75E73006D8ED9 /* Company.swift in Sources */,
+				38ACFBF11CE7763100865EA1 /* UIColor+Onyo.swift in Sources */,
 				3885557C1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
 				388555761CE7698B006D8ED9 /* NibObjects.swift in Sources */,
 				3885556C1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,

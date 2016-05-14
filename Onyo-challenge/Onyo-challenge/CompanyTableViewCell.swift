@@ -23,12 +23,18 @@ class CompanyTableViewCell: UITableViewCell {
     
     // MARK: - Configure Cell
     
-    func configureCellWith(company: Company) {
+    func configureCellWith(company: Company, indexPath: NSIndexPath) {
         if let imageURL = company.imageMainURL {
             companyImage.af_setImageWithURL(NSURL(string: imageURL)!)
         }
         companyNameDistance.text = company.displayName
         companyAddress.text = company.address
+        
+        if indexPath.row % 2 == 1 {
+            backgroundColor = UIColor.onyoGrayColor()
+        } else {
+            backgroundColor = UIColor.whiteColor()
+        }
     }
     
 }
