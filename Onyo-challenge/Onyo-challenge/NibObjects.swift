@@ -10,11 +10,13 @@ import Foundation
 
 enum NibObjects: String {
     
-    case CompanyTableViewCell
+    case CompanyTableViewCell,
+         CategoryCollectionViewCell
     
     static func reuseIdentifierFor(nibTableViewCell: NibObjects) -> String {
         switch nibTableViewCell {
-        case .CompanyTableViewCell: return "CompanyCellIdentifier"
+            case .CompanyTableViewCell: return "CompanyCellIdentifier"
+            case .CategoryCollectionViewCell: return "CategoryCollectionCellIdentifier"
         }
     }
     

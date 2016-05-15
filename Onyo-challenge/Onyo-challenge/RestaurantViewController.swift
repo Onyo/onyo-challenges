@@ -16,6 +16,7 @@ class RestaurantViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var companies = [Company]()
+    var categories = [Category]()
     
     // MARK: - Life Cycle
     
@@ -39,13 +40,24 @@ class RestaurantViewController: UIViewController {
     // MARK: - API handlers
     
     func fetchCompanyList() {
-        OnyoAPIManager.sharedInstance.fetchCompanyList({ (companies) in
+        OnyoAPIManager.sharedInstance.fetchCompanyList({ (companies, categories) in
             self.companies = companies
+            self.categories = categories
+            
             self.tableView.reloadData()
         }) { (error) in
         }
     }
     
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CategoriesSegue" {
+            let destinationBar = segue.destinationViewController as! UITabBarController
+            let destination = destinationBar.viewControllers![0] as! CategoryViewController
+            destination.categories = categories
+        }
+    }
 }
 
 extension RestaurantViewController: UITableViewDataSource {
@@ -76,6 +88,14 @@ extension RestaurantViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+}
+
+extension RestaurantViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("CategoriesSegue", sender: self)
     }
     
 }

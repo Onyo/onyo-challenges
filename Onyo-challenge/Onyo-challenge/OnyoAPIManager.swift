@@ -9,7 +9,7 @@
 import Alamofire
 import UIKit
 
-typealias SuccessHandler = (restaurants: [Company]) -> Void
+typealias SuccessHandler = (companies: [Company], categories: [Category]) -> Void
 typealias ErrorHandler = (error: NSError!) -> Void
 
 class OnyoAPIManager {
@@ -38,6 +38,7 @@ class OnyoAPIManager {
             { response in switch response.result {
             case .Success(let response):
                 var companiesList = [Company]()
+                var categoriesList = [Category]()
                 
                 let companiesReturned = response["companies"] as! [[String: AnyObject]]
                 for company in companiesReturned {
@@ -45,9 +46,13 @@ class OnyoAPIManager {
                     companiesList.append(company)
                 }
                 
-//                let categories = response["categories"] as! [[String: AnyObject]]
+                let categoriesReturned = response["categories"] as! [[String: AnyObject]]
+                for category in categoriesReturned {
+                    let category = Category(dict: category)
+                    categoriesList.append(category)
+                }
 
-                success(restaurants: companiesList)
+                success(companies: companiesList, categories: categoriesList)
             case .Failure(let error):
                 print("Request failed with error: \(error)")
                 failure(error: error)

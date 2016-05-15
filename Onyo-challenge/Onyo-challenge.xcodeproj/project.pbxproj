@@ -19,6 +19,15 @@
 		386EDC8C1CE7ECC9009739D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */; };
 		386EDC8D1CE7F02A009739D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */; };
 		386EDC8E1CE7F02B009739D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */; };
+		386EDC901CE8C04B009739D2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8F1CE8C04B009739D2 /* Category.swift */; };
+		386EDC911CE8C107009739D2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8F1CE8C04B009739D2 /* Category.swift */; };
+		386EDC921CE8C109009739D2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8F1CE8C04B009739D2 /* Category.swift */; };
+		386EDC951CE8CAC7009739D2 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC941CE8CAC7009739D2 /* CategoryCollectionViewCell.swift */; };
+		386EDC971CE8CB1D009739D2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC961CE8CB1D009739D2 /* CategoryViewController.swift */; };
+		386EDC981CE8CB7F009739D2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC961CE8CB1D009739D2 /* CategoryViewController.swift */; };
+		386EDC991CE8CB7F009739D2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC961CE8CB1D009739D2 /* CategoryViewController.swift */; };
+		386EDC9A1CE8CB84009739D2 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC941CE8CAC7009739D2 /* CategoryCollectionViewCell.swift */; };
+		386EDC9B1CE8CB86009739D2 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC941CE8CAC7009739D2 /* CategoryCollectionViewCell.swift */; };
 		388555681CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
 		388555691CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
 		3885556A1CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
@@ -78,6 +87,9 @@
 		3864FC091CE65552006C6484 /* Onyo_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onyo_challengeUITests.swift; sourceTree = "<group>"; };
 		3864FC0B1CE65552006C6484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		386EDC8F1CE8C04B009739D2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		386EDC941CE8CAC7009739D2 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		386EDC961CE8CB1D009739D2 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		388555671CE75E73006D8ED9 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		388555731CE7698B006D8ED9 /* NibObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibObjects.swift; sourceTree = "<group>"; };
@@ -187,6 +199,14 @@
 			path = "Onyo-challengeUITests";
 			sourceTree = "<group>";
 		};
+		386EDC931CE8CAAA009739D2 /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				386EDC941CE8CAC7009739D2 /* CategoryCollectionViewCell.swift */,
+			);
+			name = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
 		388555651CE75E55006D8ED9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				388555671CE75E73006D8ED9 /* Company.swift */,
+				386EDC8F1CE8C04B009739D2 /* Category.swift */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -234,6 +255,7 @@
 		38CC0F101CE69054004A0FC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				386EDC931CE8CAAA009739D2 /* UICollectionViewCell */,
 				3885556D1CE7665E006D8ED9 /* UITableViewCell */,
 				3864FBED1CE65552006C6484 /* Main.storyboard */,
 				3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */,
@@ -245,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */,
+				386EDC961CE8CB1D009739D2 /* CategoryViewController.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -548,8 +571,11 @@
 				388555681CE75E73006D8ED9 /* Company.swift in Sources */,
 				3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */,
 				386EDC8C1CE7ECC9009739D2 /* LocationManager.swift in Sources */,
+				386EDC901CE8C04B009739D2 /* Category.swift in Sources */,
+				386EDC951CE8CAC7009739D2 /* CategoryCollectionViewCell.swift in Sources */,
 				38CC0F131CE69085004A0FC0 /* OnyoAPIManager.swift in Sources */,
 				3885556F1CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
+				386EDC971CE8CB1D009739D2 /* CategoryViewController.swift in Sources */,
 				3864FBEA1CE65552006C6484 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,12 +584,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386EDC981CE8CB7F009739D2 /* CategoryViewController.swift in Sources */,
 				388555691CE75E73006D8ED9 /* Company.swift in Sources */,
 				38ACFBF01CE7763100865EA1 /* UIColor+Onyo.swift in Sources */,
 				3885557B1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
 				388555751CE7698B006D8ED9 /* NibObjects.swift in Sources */,
 				386EDC8D1CE7F02A009739D2 /* LocationManager.swift in Sources */,
+				386EDC911CE8C107009739D2 /* Category.swift in Sources */,
 				3885556B1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
+				386EDC9A1CE8CB84009739D2 /* CategoryCollectionViewCell.swift in Sources */,
 				3864FBFF1CE65552006C6484 /* Onyo_challengeTests.swift in Sources */,
 				388555701CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 			);
@@ -573,12 +602,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386EDC991CE8CB7F009739D2 /* CategoryViewController.swift in Sources */,
 				3885556A1CE75E73006D8ED9 /* Company.swift in Sources */,
 				38ACFBF11CE7763100865EA1 /* UIColor+Onyo.swift in Sources */,
 				3885557C1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
 				388555761CE7698B006D8ED9 /* NibObjects.swift in Sources */,
 				386EDC8E1CE7F02B009739D2 /* LocationManager.swift in Sources */,
+				386EDC921CE8C109009739D2 /* Category.swift in Sources */,
 				3885556C1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
+				386EDC9B1CE8CB86009739D2 /* CategoryCollectionViewCell.swift in Sources */,
 				3864FC0A1CE65552006C6484 /* Onyo_challengeUITests.swift in Sources */,
 				388555711CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 			);
