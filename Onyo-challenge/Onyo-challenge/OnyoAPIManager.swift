@@ -45,6 +45,8 @@ class OnyoAPIManager {
                     companiesList.append(company)
                 }
                 
+//                let categories = response["categories"] as! [[String: AnyObject]]
+
                 success(restaurants: companiesList)
             case .Failure(let error):
                 print("Request failed with error: \(error)")

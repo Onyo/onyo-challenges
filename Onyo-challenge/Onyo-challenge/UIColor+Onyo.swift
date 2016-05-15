@@ -14,4 +14,8 @@ extension UIColor {
         return UIColor(red: 242.0/255.0, green: 244.0/255.0, blue: 247.0/255.0, alpha: 1.0)
     }
     
+    class func onyoBlueColor() -> UIColor {
+        return UIColor(red: 25.0/255.0, green: 39.0/255.0, blue: 61.0/255.0, alpha: 1.0)
+    }
+    
 }

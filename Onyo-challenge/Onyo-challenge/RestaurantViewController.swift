@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantViewController: UIViewController {
 
@@ -31,7 +32,7 @@ class RestaurantViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 220.0
         
-        let imageView = UIImageView(image:UIImage(named: "logo"))
+        let imageView = UIImageView(image:UIImage(named: "icon-bakedPotato"))
         self.navigationItem.titleView = imageView
     }
     
@@ -42,7 +43,6 @@ class RestaurantViewController: UIViewController {
             self.companies = companies
             self.tableView.reloadData()
         }) { (error) in
-            
         }
     }
     
@@ -58,8 +58,19 @@ extension RestaurantViewController: UITableViewDataSource {
         let cellIdentifier = NibObjects.reuseIdentifierFor(.CompanyTableViewCell)
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CompanyTableViewCell
         
-        cell.configureCellWith(companies[indexPath.row], indexPath: indexPath)
+        let company = companies[indexPath.row]
         
+        let openMap: () -> Void = { () in
+            if let locationToShow = company.coordinates {
+                let placemark = MKPlacemark(coordinate: locationToShow.coordinate, addressDictionary: nil)
+                let item = MKMapItem(placemark: placemark)
+                item.name = company.displayName
+                item.openInMapsWithLaunchOptions(nil)
+            }
+        }
+        
+        cell.configureCellWith(company, indexPath: indexPath, openMap: openMap)
+
         return cell
     }
     

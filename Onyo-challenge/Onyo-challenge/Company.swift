@@ -17,7 +17,7 @@ class Company {
     var displayName: String?
     var address: String?
     var imageMainURL: String?
-    var coordinates: CLLocationCoordinate2D?
+    var coordinates: CLLocation?
     
     // MARK: Initialization
     
@@ -33,8 +33,8 @@ class Company {
             }
         }
         
-        if let geoLat = dict["geoLat"] as? Double, let geoLon = dict["geoLon"] as? Double {
-            coordinates = CLLocationCoordinate2D(latitude: geoLat, longitude: geoLon)
+        if let geoLat = dict["geoLat"] as? String, let geoLon = dict["geoLon"] as? String {
+            coordinates = CLLocation(latitude: Double(geoLat)!, longitude: Double(geoLon)!)
         }
        
     }

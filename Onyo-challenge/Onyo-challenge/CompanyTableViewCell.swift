@@ -8,12 +8,15 @@
 
 import UIKit
 import AlamofireImage
+import MapKit
 
 class CompanyTableViewCell: UITableViewCell {
 
     @IBOutlet var companyImage: UIImageView!
     @IBOutlet var companyNameDistance: UILabel!
     @IBOutlet var companyAddress: UILabel!
+    
+    var openMap: (() -> Void)!
     
     // MARK: - Life Cycle
     
@@ -23,17 +26,37 @@ class CompanyTableViewCell: UITableViewCell {
     
     // MARK: - Configure Cell
     
-    func configureCellWith(company: Company, indexPath: NSIndexPath) {
+    func configureCellWith(company: Company, indexPath: NSIndexPath, openMap: () -> Void) {
+        companyImage.layer.borderColor = UIColor.onyoBlueColor().CGColor
+        companyImage.layer.borderWidth = 5.0
+        
         if let imageURL = company.imageMainURL {
-            companyImage.af_setImageWithURL(NSURL(string: imageURL)!)
+            companyImage.af_setImageWithURL(NSURL(string: imageURL)!, placeholderImage: nil, filter: AspectScaledToFillSizeFilter(size: companyImage.bounds.size))
         }
-        companyNameDistance.text = company.displayName
-        companyAddress.text = company.address
+        
+        if let companyLocation = company.coordinates, let userLocation = LocationManager.sharedInstance.currentLocation {
+            let strDistance = Int(companyLocation.distanceFromLocation(userLocation)).description
+            companyNameDistance.text = (company.displayName?.uppercaseString)! + " ~" + strDistance + "m"
+        } else {
+            companyNameDistance.text = (company.displayName?.uppercaseString)!
+        }
+        
+        companyAddress.text = company.address?.uppercaseString
         
         if indexPath.row % 2 == 1 {
             backgroundColor = UIColor.onyoGrayColor()
         } else {
             backgroundColor = UIColor.whiteColor()
+        }
+        
+        self.openMap = openMap
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func goToMap(sender: AnyObject) {
+        if let openMapFunction = openMap {
+            openMapFunction()
         }
     }
     

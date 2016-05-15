@@ -16,6 +16,9 @@
 		3864FBF41CE65552006C6484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */; };
 		3864FBFF1CE65552006C6484 /* Onyo_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBFE1CE65552006C6484 /* Onyo_challengeTests.swift */; };
 		3864FC0A1CE65552006C6484 /* Onyo_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FC091CE65552006C6484 /* Onyo_challengeUITests.swift */; };
+		386EDC8C1CE7ECC9009739D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */; };
+		386EDC8D1CE7F02A009739D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */; };
+		386EDC8E1CE7F02B009739D2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */; };
 		388555681CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
 		388555691CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
 		3885556A1CE75E73006D8ED9 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388555671CE75E73006D8ED9 /* Company.swift */; };
@@ -74,6 +77,7 @@
 		3864FC051CE65552006C6484 /* Onyo-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Onyo-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3864FC091CE65552006C6484 /* Onyo_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onyo_challengeUITests.swift; sourceTree = "<group>"; };
 		3864FC0B1CE65552006C6484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		388555671CE75E73006D8ED9 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		3885556E1CE7667E006D8ED9 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		388555731CE7698B006D8ED9 /* NibObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibObjects.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		388555651CE75E55006D8ED9 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				386EDC8B1CE7ECC9009739D2 /* LocationManager.swift */,
 				38CC0F121CE69085004A0FC0 /* OnyoAPIManager.swift */,
 			);
 			name = Managers;
@@ -542,6 +547,7 @@
 				38ACFBEF1CE7733B00865EA1 /* UIColor+Onyo.swift in Sources */,
 				388555681CE75E73006D8ED9 /* Company.swift in Sources */,
 				3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */,
+				386EDC8C1CE7ECC9009739D2 /* LocationManager.swift in Sources */,
 				38CC0F131CE69085004A0FC0 /* OnyoAPIManager.swift in Sources */,
 				3885556F1CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 				3864FBEA1CE65552006C6484 /* AppDelegate.swift in Sources */,
@@ -556,6 +562,7 @@
 				38ACFBF01CE7763100865EA1 /* UIColor+Onyo.swift in Sources */,
 				3885557B1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
 				388555751CE7698B006D8ED9 /* NibObjects.swift in Sources */,
+				386EDC8D1CE7F02A009739D2 /* LocationManager.swift in Sources */,
 				3885556B1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
 				3864FBFF1CE65552006C6484 /* Onyo_challengeTests.swift in Sources */,
 				388555701CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
@@ -570,6 +577,7 @@
 				38ACFBF11CE7763100865EA1 /* UIColor+Onyo.swift in Sources */,
 				3885557C1CE76BAE006D8ED9 /* RestaurantViewController.swift in Sources */,
 				388555761CE7698B006D8ED9 /* NibObjects.swift in Sources */,
+				386EDC8E1CE7F02B009739D2 /* LocationManager.swift in Sources */,
 				3885556C1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
 				3864FC0A1CE65552006C6484 /* Onyo_challengeUITests.swift in Sources */,
 				388555711CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
