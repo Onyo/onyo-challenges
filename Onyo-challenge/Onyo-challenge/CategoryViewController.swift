@@ -30,9 +30,7 @@ class CategoryViewController: UIViewController {
     // MARK: - Configuration
     
     func configContent() {
-        let imageView = UIImageView(image:UIImage(named: "icon-bakedPotato"))
-        parentViewController!.navigationItem.titleView = imageView
-        parentViewController!.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-onyo"), style: .Done, target: self, action: nil)
+        parentViewController!.navigationItem.config()
     }
     
 }

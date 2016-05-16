@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0661BEEDE77824248477B59A /* Pods_Onyo_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844BE11F7B15A50EB575012B /* Pods_Onyo_challengeTests.framework */; };
 		0AD37308631061B0C7F9C908 /* Pods_Onyo_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E810245FE042DA8610482EF2 /* Pods_Onyo_challenge.framework */; };
+		3850FA571CE92B8B00B3AFC3 /* OnyoNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA561CE92B8B00B3AFC3 /* OnyoNavigationItem.swift */; };
+		3850FA581CE92CC600B3AFC3 /* OnyoNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA561CE92B8B00B3AFC3 /* OnyoNavigationItem.swift */; };
+		3850FA591CE92CC600B3AFC3 /* OnyoNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA561CE92B8B00B3AFC3 /* OnyoNavigationItem.swift */; };
+		3850FA5C1CE92D8500B3AFC3 /* OnyoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA5B1CE92D8500B3AFC3 /* OnyoTabBarController.swift */; };
+		3850FA5D1CE92D8700B3AFC3 /* OnyoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA5B1CE92D8500B3AFC3 /* OnyoTabBarController.swift */; };
+		3850FA5E1CE92D8700B3AFC3 /* OnyoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA5B1CE92D8500B3AFC3 /* OnyoTabBarController.swift */; };
 		3864FBEA1CE65552006C6484 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBE91CE65552006C6484 /* AppDelegate.swift */; };
 		3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */; };
 		3864FBEF1CE65552006C6484 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBED1CE65552006C6484 /* Main.storyboard */; };
@@ -73,6 +79,8 @@
 /* Begin PBXFileReference section */
 		0825644DDAB78E6716BF849D /* Pods-Onyo-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challenge/Pods-Onyo-challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		246E29800DBF2D735856EE95 /* Pods-Onyo-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onyo-challengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Onyo-challengeUITests/Pods-Onyo-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3850FA561CE92B8B00B3AFC3 /* OnyoNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnyoNavigationItem.swift; sourceTree = "<group>"; };
+		3850FA5B1CE92D8500B3AFC3 /* OnyoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnyoTabBarController.swift; sourceTree = "<group>"; };
 		3864FBE61CE65552006C6484 /* Onyo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Onyo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3864FBE91CE65552006C6484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +152,15 @@
 				5AC3D9CB870599AAF625DCF5 /* Pods-Onyo-challengeUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3850FA5A1CE92D1900B3AFC3 /* Navigation & Bars */ = {
+			isa = PBXGroup;
+			children = (
+				3850FA561CE92B8B00B3AFC3 /* OnyoNavigationItem.swift */,
+				3850FA5B1CE92D8500B3AFC3 /* OnyoTabBarController.swift */,
+			);
+			name = "Navigation & Bars";
 			sourceTree = "<group>";
 		};
 		3864FBDD1CE65552006C6484 = {
@@ -255,6 +272,7 @@
 		38CC0F101CE69054004A0FC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3850FA5A1CE92D1900B3AFC3 /* Navigation & Bars */,
 				386EDC931CE8CAAA009739D2 /* UICollectionViewCell */,
 				3885556D1CE7665E006D8ED9 /* UITableViewCell */,
 				3864FBED1CE65552006C6484 /* Main.storyboard */,
@@ -574,7 +592,9 @@
 				386EDC901CE8C04B009739D2 /* Category.swift in Sources */,
 				386EDC951CE8CAC7009739D2 /* CategoryCollectionViewCell.swift in Sources */,
 				38CC0F131CE69085004A0FC0 /* OnyoAPIManager.swift in Sources */,
+				3850FA571CE92B8B00B3AFC3 /* OnyoNavigationItem.swift in Sources */,
 				3885556F1CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
+				3850FA5C1CE92D8500B3AFC3 /* OnyoTabBarController.swift in Sources */,
 				386EDC971CE8CB1D009739D2 /* CategoryViewController.swift in Sources */,
 				3864FBEA1CE65552006C6484 /* AppDelegate.swift in Sources */,
 			);
@@ -591,8 +611,10 @@
 				388555751CE7698B006D8ED9 /* NibObjects.swift in Sources */,
 				386EDC8D1CE7F02A009739D2 /* LocationManager.swift in Sources */,
 				386EDC911CE8C107009739D2 /* Category.swift in Sources */,
+				3850FA581CE92CC600B3AFC3 /* OnyoNavigationItem.swift in Sources */,
 				3885556B1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
 				386EDC9A1CE8CB84009739D2 /* CategoryCollectionViewCell.swift in Sources */,
+				3850FA5D1CE92D8700B3AFC3 /* OnyoTabBarController.swift in Sources */,
 				3864FBFF1CE65552006C6484 /* Onyo_challengeTests.swift in Sources */,
 				388555701CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 			);
@@ -609,8 +631,10 @@
 				388555761CE7698B006D8ED9 /* NibObjects.swift in Sources */,
 				386EDC8E1CE7F02B009739D2 /* LocationManager.swift in Sources */,
 				386EDC921CE8C109009739D2 /* Category.swift in Sources */,
+				3850FA591CE92CC600B3AFC3 /* OnyoNavigationItem.swift in Sources */,
 				3885556C1CE75E76006D8ED9 /* OnyoAPIManager.swift in Sources */,
 				386EDC9B1CE8CB86009739D2 /* CategoryCollectionViewCell.swift in Sources */,
+				3850FA5E1CE92D8700B3AFC3 /* OnyoTabBarController.swift in Sources */,
 				3864FC0A1CE65552006C6484 /* Onyo_challengeUITests.swift in Sources */,
 				388555711CE7667E006D8ED9 /* CompanyTableViewCell.swift in Sources */,
 			);
@@ -740,6 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Onyo-challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cavalca.Onyo-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -752,6 +777,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Onyo-challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cavalca.Onyo-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";

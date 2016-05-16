@@ -33,8 +33,7 @@ class RestaurantViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 220.0
         
-        let imageView = UIImageView(image:UIImage(named: "icon-bakedPotato"))
-        self.navigationItem.titleView = imageView
+        navigationItem.config()
     }
     
     // MARK: - API handlers

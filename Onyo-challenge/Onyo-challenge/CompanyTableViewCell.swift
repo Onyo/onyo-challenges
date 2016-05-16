@@ -50,6 +50,8 @@ class CompanyTableViewCell: UITableViewCell {
         }
         
         self.openMap = openMap
+        
+        layoutIfNeeded()
     }
     
     // MARK: - Actions
