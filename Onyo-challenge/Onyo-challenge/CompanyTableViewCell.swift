@@ -18,6 +18,8 @@ class CompanyTableViewCell: UITableViewCell {
     
     var openMap: (() -> Void)!
     
+    let kmToM = 1000
+    
     // MARK: - Life Cycle
     
     override func prepareForReuse() {
@@ -34,11 +36,24 @@ class CompanyTableViewCell: UITableViewCell {
             companyImage.af_setImageWithURL(NSURL(string: imageURL)!, placeholderImage: nil, filter: AspectScaledToFillSizeFilter(size: companyImage.bounds.size))
         }
         
-        if let companyLocation = company.coordinates, let userLocation = LocationManager.sharedInstance.currentLocation {
-            let strDistance = Int(companyLocation.distanceFromLocation(userLocation)).description
-            companyNameDistance.text = (company.displayName?.uppercaseString)! + " ~" + strDistance + "m"
-        } else {
-            companyNameDistance.text = (company.displayName?.uppercaseString)!
+        companyNameDistance.text = (company.displayName?.uppercaseString)!
+        if let latitude = company.addressLatitude.value, let longitude = company.addressLongitude.value {
+            let companyLocation = CLLocation(latitude: latitude, longitude: longitude)
+            
+            if let userLocation = LocationManager.sharedInstance.currentLocation {
+                var distance = Int(companyLocation.distanceFromLocation(userLocation))
+                
+                if distance > kmToM {
+                    distance = distance / kmToM
+                    let strDistance = distance.description
+                    companyNameDistance.text = (company.displayName?.uppercaseString)! + " ~" + strDistance + "km"
+                } else {
+                    distance = distance / kmToM
+                    let strDistance = distance.description
+                    companyNameDistance.text = (company.displayName?.uppercaseString)! + " ~" + strDistance + "m"
+                }
+                
+            }
         }
         
         companyAddress.text = company.address?.uppercaseString

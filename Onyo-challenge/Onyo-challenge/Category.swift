@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Category {
+class Category: Object {
     
     // MARK: - Properties
     
     var numericalId: Double!
-    var displayName: String?
-    var imageMainURL: String?
+    dynamic var displayName: String?
+    dynamic var imageMainURL: String?
     
     // MARK: Initialization
     
-    init(dict: [String: AnyObject]) {
+    convenience init(dict: [String: AnyObject]) {
+        self.init()
+        
         numericalId = dict["numericalId"] as! Double
         
         displayName = dict["name"] as? String
@@ -26,7 +29,21 @@ class Category {
         if let imageArray = dict["image"] as? [[String: AnyObject]] {
             imageMainURL = imageArray[0]["url"] as? String
         }
-        
+    }
+    
+    // MARK: Realm Managers
+    
+    func save() {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(self)
+        }
+    }
+    
+    static func categoriesFromRealm() -> [Category] {
+        let realm = try! Realm()
+        let categories = realm.objects(Category)
+        return Array(categories)
     }
     
 }

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '30A20278E1A8434ABB60BFFA'
+               BlueprintIdentifier = '09A1A6F033257A872B142721'
                BlueprintName = 'Pods-Onyo-challengeTests'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Onyo_challengeTests.framework'>

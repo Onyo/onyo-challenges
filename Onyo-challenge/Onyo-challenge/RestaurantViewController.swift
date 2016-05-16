@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class RestaurantViewController: UIViewController {
 
@@ -27,6 +28,12 @@ class RestaurantViewController: UIViewController {
         fetchCompanyList()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        configWithRealmData()
+    }
+    
     // MARK: - Configuration
     
     func configContent() {
@@ -36,16 +43,38 @@ class RestaurantViewController: UIViewController {
         navigationItem.config()
     }
     
+    func configWithRealmData() {
+        companies = Company.companiesFromRealm()
+        categories = Category.categoriesFromRealm()
+        tableView.reloadData()
+    }
+    
     // MARK: - API handlers
     
     func fetchCompanyList() {
         OnyoAPIManager.sharedInstance.fetchCompanyList({ (companies, categories) in
+           self.deleteAllRealm()
+            
             self.companies = companies
+            for company in companies {
+                company.save()
+            }
+            
             self.categories = categories
+            for category in categories {
+                category.save()
+            }
             
             self.tableView.reloadData()
         }) { (error) in
         }
+    }
+    
+    func deleteAllRealm() {
+        let realm = try! Realm()
+        realm.beginWrite()
+        realm.deleteAll()
+        try! realm.commitWrite()
     }
     
     // MARK: - Navigation
@@ -72,8 +101,8 @@ extension RestaurantViewController: UITableViewDataSource {
         let company = companies[indexPath.row]
         
         let openMap: () -> Void = { () in
-            if let locationToShow = company.coordinates {
-                let placemark = MKPlacemark(coordinate: locationToShow.coordinate, addressDictionary: nil)
+            if let latitude = company.addressLatitude.value, let longitude = company.addressLongitude.value {
+                let placemark = MKPlacemark(coordinate: CLLocation(latitude: latitude, longitude: longitude).coordinate, addressDictionary: nil)
                 let item = MKMapItem(placemark: placemark)
                 item.name = company.displayName
                 item.openInMapsWithLaunchOptions(nil)

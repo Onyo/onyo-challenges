@@ -86,8 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Onyo-challengeTests/Alamofire.framework"
   install_framework "Pods-Onyo-challengeTests/AlamofireImage.framework"
+  install_framework "Pods-Onyo-challengeTests/Realm.framework"
+  install_framework "Pods-Onyo-challengeTests/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Onyo-challengeTests/Alamofire.framework"
   install_framework "Pods-Onyo-challengeTests/AlamofireImage.framework"
+  install_framework "Pods-Onyo-challengeTests/Realm.framework"
+  install_framework "Pods-Onyo-challengeTests/RealmSwift.framework"
 fi

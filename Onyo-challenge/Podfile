@@ -4,21 +4,24 @@ use_frameworks!
 target 'Onyo-challenge' do
 
 pod 'Alamofire', '~> 3.4'
-pod ‘AlamofireImage’, '~> 2.4.0’
+pod 'AlamofireImage', '~> 2.4.0'
+pod 'RealmSwift', '~> 0.102.1'
 
 end
 
 target 'Onyo-challengeTests' do
 
 pod 'Alamofire', '~> 3.4'
-pod ‘AlamofireImage’, '~> 2.4.0’
+pod 'AlamofireImage', '~> 2.4.0'
+pod 'RealmSwift', '~> 0.102.1'
 
 end
 
 target 'Onyo-challengeUITests' do
 
 pod 'Alamofire', '~> 3.4'
-pod ‘AlamofireImage’, '~> 2.4.0’
+pod 'AlamofireImage', '~> 2.4.0'
+pod 'RealmSwift', '~> 0.102.1'
 
 end
 

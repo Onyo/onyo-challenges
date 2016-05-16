@@ -8,20 +8,24 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
-class Company {
+class Company: Object {
     
     // MARK: - Properties
     
     var numericalId: Double!
-    var displayName: String?
-    var address: String?
-    var imageMainURL: String?
-    var coordinates: CLLocation?
+    dynamic var displayName: String?
+    dynamic var address: String?
+    dynamic var imageMainURL: String?
+    
+    var addressLatitude = RealmOptional<Double>()
+    var addressLongitude = RealmOptional<Double>()
     
     // MARK: Initialization
     
-    init(dict: [String: AnyObject]) {
+    convenience init(dict: [String: AnyObject]) {
+        self.init()
         numericalId = dict["numericalId"] as! Double
         
         displayName = dict["displayName"] as? String
@@ -34,9 +38,24 @@ class Company {
         }
         
         if let geoLat = dict["geoLat"] as? String, let geoLon = dict["geoLon"] as? String {
-            coordinates = CLLocation(latitude: Double(geoLat)!, longitude: Double(geoLon)!)
+            addressLatitude.value = Double(geoLat)
+            addressLongitude.value = Double(geoLon)
         }
-       
+    }
+    
+    // MARK: Realm Managers
+    
+    func save() {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(self)
+        }
+    }
+    
+    static func companiesFromRealm() -> [Company] {
+        let realm = try! Realm()
+        let companies = realm.objects(Company)
+        return Array(companies)
     }
     
 }
