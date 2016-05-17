@@ -25,12 +25,17 @@ class CategoryViewController: UIViewController {
         super.viewDidLoad()
         
         configContent()
+        loadCategories()
     }
     
     // MARK: - Configuration
     
     func configContent() {
         parentViewController!.navigationItem.config()
+    }
+    
+    func loadCategories() {
+        categories = Category.categoriesFromRealm()
     }
     
 }

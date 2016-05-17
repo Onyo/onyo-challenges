@@ -17,7 +17,14 @@ class RestaurantViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var companies = [Company]()
-    var categories = [Category]()
+    
+    var destinationCategoriesViewController: CategoryViewController?
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(RestaurantViewController.refreshTableViewData), forControlEvents: UIControlEvents.ValueChanged)
+        return refresh
+    }()
     
     // MARK: - Life Cycle
     
@@ -25,13 +32,14 @@ class RestaurantViewController: UIViewController {
         super.viewDidLoad()
         
         configContent()
-        fetchCompanyList()
+        fetchCompanyList(nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         configWithRealmData()
+        destinationCategoriesViewController = nil
     }
     
     // MARK: - Configuration
@@ -39,19 +47,19 @@ class RestaurantViewController: UIViewController {
     func configContent() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 220.0
+        tableView.addSubview(refreshControl)
         
         navigationItem.config()
     }
     
     func configWithRealmData() {
         companies = Company.companiesFromRealm()
-        categories = Category.categoriesFromRealm()
         tableView.reloadData()
     }
     
     // MARK: - API handlers
     
-    func fetchCompanyList() {
+    func fetchCompanyList(completion: (() -> Void)?) {
         OnyoAPIManager.sharedInstance.fetchCompanyList({ (companies, categories) in
            self.deleteAllRealm()
             
@@ -60,12 +68,16 @@ class RestaurantViewController: UIViewController {
                 company.save()
             }
             
-            self.categories = categories
             for category in categories {
                 category.save()
             }
             
+            if let destination = self.destinationCategoriesViewController {
+                destination.loadCategories()
+            }
+            
             self.tableView.reloadData()
+            completion?()
         }) { (error) in
         }
     }
@@ -77,13 +89,27 @@ class RestaurantViewController: UIViewController {
         try! realm.commitWrite()
     }
     
+    // MARK: - Action
+    
+    func refreshTableViewData() {
+        tableView.scrollEnabled = false
+        fetchCompanyList() { () -> Void in
+            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(RestaurantViewController.endRefreshing), userInfo: nil, repeats: false)
+        }
+    }
+    
+    func endRefreshing() {
+        self.refreshControl.endRefreshing()
+        self.tableView.scrollEnabled = true
+    }
+    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CategoriesSegue" {
             let destinationBar = segue.destinationViewController as! UITabBarController
             let destination = destinationBar.viewControllers![TabIndexes.CategoriesIndex.rawValue] as! CategoryViewController
-            destination.categories = categories
+            destinationCategoriesViewController = destination
         }
     }
 }
