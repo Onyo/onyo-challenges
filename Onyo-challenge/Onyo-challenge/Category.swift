@@ -27,7 +27,9 @@ class Category: Object {
         displayName = dict["name"] as? String
         
         if let imageArray = dict["image"] as? [[String: AnyObject]] {
-            imageMainURL = imageArray[0]["url"] as? String
+            if imageArray.count > 0 {
+                imageMainURL = imageArray[0]["url"] as? String
+            }
         }
     }
     

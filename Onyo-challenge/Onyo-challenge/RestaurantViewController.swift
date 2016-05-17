@@ -82,7 +82,7 @@ class RestaurantViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CategoriesSegue" {
             let destinationBar = segue.destinationViewController as! UITabBarController
-            let destination = destinationBar.viewControllers![0] as! CategoryViewController
+            let destination = destinationBar.viewControllers![TabIndexes.CategoriesIndex.rawValue] as! CategoryViewController
             destination.categories = categories
         }
     }

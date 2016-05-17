@@ -8,8 +8,17 @@
 
 import UIKit
 
-class OnyoTabBarController: UITabBarController {
+enum TabIndexes: Int {
+    case HomeIndex = 0,
+         CategoriesIndex = 1,
+         CartIndex = 2
+}
 
+class OnyoTabBarController: UITabBarController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        selectedIndex = TabIndexes.CategoriesIndex.rawValue
+    }
     
 }

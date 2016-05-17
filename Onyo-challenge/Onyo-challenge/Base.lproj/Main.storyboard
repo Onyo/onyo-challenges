@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qbQ-xS-CzL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qbQ-xS-CzL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -168,7 +168,39 @@
             </objects>
             <point key="canvasLocation" x="1271.5" y="384.5"/>
         </scene>
-        <!--Category View Controller-->
+        <!--Resgate-->
+        <scene sceneID="76f-rP-3bl">
+            <objects>
+                <viewController id="NSX-Yt-TN1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LQq-Y4-fpA"/>
+                        <viewControllerLayoutGuide type="bottom" id="qAr-hf-NXC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M2A-vn-lbX">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não implementado :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkB-xu-AE3">
+                                <rect key="frame" x="108" y="291" width="159.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tkB-xu-AE3" firstAttribute="centerX" secondItem="M2A-vn-lbX" secondAttribute="centerX" id="A2g-bH-B4b"/>
+                            <constraint firstItem="tkB-xu-AE3" firstAttribute="centerY" secondItem="M2A-vn-lbX" secondAttribute="centerY" id="P5L-OD-Hke"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Resgate" image="ic_cart" id="ppW-t9-7q7"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKf-b2-VXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2525.5" y="-404.5"/>
+        </scene>
+        <!--Cardápio-->
         <scene sceneID="JkX-Bq-bkE">
             <objects>
                 <viewController id="CUo-p1-IxO" customClass="CategoryViewController" customModule="Onyo_challenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,7 +316,7 @@
                             <constraint firstItem="wts-rf-Cef" firstAttribute="top" secondItem="ttq-Tk-xkR" secondAttribute="bottom" id="yH1-ll-Foa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="8Cj-m1-jJX"/>
+                    <tabBarItem key="tabBarItem" title="Cardápio" image="ic_cardapio" id="8Cj-m1-jJX"/>
                     <navigationItem key="navigationItem" id="GiJ-1Y-iHL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -294,6 +326,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xj0-UY-g3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2525.5" y="384.5"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Dk7-Aj-t9J">
+            <objects>
+                <viewController id="Hvb-Ul-Z7a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qJj-12-u1I"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ga-Xq-Ata"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="75J-5B-vp2">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não implementado :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfw-qM-eNQ">
+                                <rect key="frame" x="107.5" y="291" width="159.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yfw-qM-eNQ" firstAttribute="centerY" secondItem="75J-5B-vp2" secondAttribute="centerY" id="F9m-qg-z6P"/>
+                            <constraint firstItem="yfw-qM-eNQ" firstAttribute="centerX" secondItem="75J-5B-vp2" secondAttribute="centerX" id="HdK-qs-K2K"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="ic_home" id="Sdx-Ub-6g1"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fl-wN-z3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2525.5" y="1188.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCH-WU-x16">
@@ -324,17 +388,30 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="afV-Lj-JaN">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.098039215690000001" green="0.1529411765" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
+                        <segue destination="Hvb-Ul-Z7a" kind="relationship" relationship="viewControllers" id="TqD-ka-mYv"/>
                         <segue destination="CUo-p1-IxO" kind="relationship" relationship="viewControllers" id="9gg-Up-qT9"/>
+                        <segue destination="NSX-Yt-TN1" kind="relationship" relationship="viewControllers" id="uRA-oU-upW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnA-hD-KfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906.5" y="384.5"/>
+            <point key="canvasLocation" x="1926.5" y="384.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_cardapio" width="22" height="22"/>
+        <image name="ic_cart" width="22" height="22"/>
+        <image name="ic_home" width="22" height="22"/>
         <image name="icon-disclosure" width="16" height="26"/>
         <image name="icon-pin" width="55" height="55"/>
     </resources>

@@ -11,8 +11,8 @@ import UIKit
 extension UINavigationItem {
 
     func config() {
-        titleView = UIImageView(image:UIImage(named: "icon-bakedPotato"))
-        rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-onyo"), style: .Done, target: self, action: nil)
+        titleView = UIImageView(image:UIImage(named: "logo_navigation_bar"))
+        rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "onyo"), style: .Done, target: self, action: nil)
     }
     
 }
