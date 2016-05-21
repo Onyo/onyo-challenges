@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class Category: Object {
+internal class Category: Object {
     
     // MARK: - Properties
     
@@ -23,7 +23,7 @@ class Category: Object {
         self.init()
         
         numericalId = dict["numericalId"] as! Double
-        
+
         displayName = dict["name"] as? String
         
         if let imageArray = dict["image"] as? [[String: AnyObject]] {

@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import RealmSwift
 
-class Company: Object {
+internal class Company: Object {
     
     // MARK: - Properties
     
@@ -26,6 +26,7 @@ class Company: Object {
     
     convenience init(dict: [String: AnyObject]) {
         self.init()
+        
         numericalId = dict["numericalId"] as! Double
         
         displayName = dict["displayName"] as? String
