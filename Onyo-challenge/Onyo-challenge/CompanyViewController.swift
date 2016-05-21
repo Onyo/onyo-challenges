@@ -1,5 +1,5 @@
 //
-//  RestaurantViewController.swift
+//  CompanyViewController.swift
 //  Onyo-challenge
 //
 //  Created by Matheus Cavalca on 5/13/16.
@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import RealmSwift
 
-class RestaurantViewController: UIViewController {
+class CompanyViewController: UIViewController {
 
     // MARK: - Properties
     
@@ -22,7 +22,7 @@ class RestaurantViewController: UIViewController {
     
     lazy var refreshControl: UIRefreshControl = {
         let refresh = UIRefreshControl()
-        refresh.addTarget(self, action: #selector(RestaurantViewController.refreshTableViewData), forControlEvents: UIControlEvents.ValueChanged)
+        refresh.addTarget(self, action: #selector(CompanyViewController.refreshTableViewData), forControlEvents: UIControlEvents.ValueChanged)
         return refresh
     }()
     
@@ -54,6 +54,7 @@ class RestaurantViewController: UIViewController {
     
     func configWithRealmData() {
         companies = Company.companiesFromRealm()
+        sortCompaniesByLocation(companies)
         tableView.reloadData()
     }
     
@@ -75,7 +76,8 @@ class RestaurantViewController: UIViewController {
             if let destination = self.destinationCategoriesViewController {
                 destination.loadCategories()
             }
-            
+        
+            self.sortCompaniesByLocation(companies)
             self.tableView.reloadData()
             completion?()
         }) { (error) in
@@ -94,13 +96,19 @@ class RestaurantViewController: UIViewController {
     func refreshTableViewData() {
         tableView.scrollEnabled = false
         fetchCompanyList() { () -> Void in
-            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(RestaurantViewController.endRefreshing), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(CompanyViewController.endRefreshing), userInfo: nil, repeats: false)
         }
     }
     
     func endRefreshing() {
         self.refreshControl.endRefreshing()
         self.tableView.scrollEnabled = true
+    }
+    
+    func sortCompaniesByLocation(companies: [Company]) {
+        if let userLocation = LocationManager.sharedInstance.currentLocation {
+            self.companies = companies.sort({ ($0.location?.distanceFromLocation(userLocation)) < ($1.location?.distanceFromLocation(userLocation)) })
+        }
     }
     
     // MARK: - Navigation
@@ -114,7 +122,7 @@ class RestaurantViewController: UIViewController {
     }
 }
 
-extension RestaurantViewController: UITableViewDataSource {
+extension CompanyViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return companies.count
@@ -146,7 +154,7 @@ extension RestaurantViewController: UITableViewDataSource {
     
 }
 
-extension RestaurantViewController: UITableViewDelegate {
+extension CompanyViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("CategoriesSegue", sender: self)

@@ -12,7 +12,7 @@
 		3850FA571CE92B8B00B3AFC3 /* OnyoNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA561CE92B8B00B3AFC3 /* OnyoNavigationItem.swift */; };
 		3850FA5C1CE92D8500B3AFC3 /* OnyoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3850FA5B1CE92D8500B3AFC3 /* OnyoTabBarController.swift */; };
 		3864FBEA1CE65552006C6484 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBE91CE65552006C6484 /* AppDelegate.swift */; };
-		3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */; };
+		3864FBEC1CE65552006C6484 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3864FBEB1CE65552006C6484 /* CompanyViewController.swift */; };
 		3864FBEF1CE65552006C6484 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBED1CE65552006C6484 /* Main.storyboard */; };
 		3864FBF11CE65552006C6484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF01CE65552006C6484 /* Assets.xcassets */; };
 		3864FBF41CE65552006C6484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3864FBF21CE65552006C6484 /* LaunchScreen.storyboard */; };
@@ -55,7 +55,7 @@
 		3850FA5B1CE92D8500B3AFC3 /* OnyoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnyoTabBarController.swift; sourceTree = "<group>"; };
 		3864FBE61CE65552006C6484 /* Onyo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Onyo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3864FBE91CE65552006C6484 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		3864FBEB1CE65552006C6484 /* CompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
 		3864FBEE1CE65552006C6484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3864FBF01CE65552006C6484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3864FBF31CE65552006C6484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		38CC0F111CE69059004A0FC0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3864FBEB1CE65552006C6484 /* RestaurantViewController.swift */,
+				3864FBEB1CE65552006C6484 /* CompanyViewController.swift */,
 				386EDC961CE8CB1D009739D2 /* CategoryViewController.swift */,
 			);
 			name = ViewModel;
@@ -555,7 +555,7 @@
 				388555741CE7698B006D8ED9 /* NibObjects.swift in Sources */,
 				38ACFBEF1CE7733B00865EA1 /* UIColor+Onyo.swift in Sources */,
 				388555681CE75E73006D8ED9 /* Company.swift in Sources */,
-				3864FBEC1CE65552006C6484 /* RestaurantViewController.swift in Sources */,
+				3864FBEC1CE65552006C6484 /* CompanyViewController.swift in Sources */,
 				386EDC8C1CE7ECC9009739D2 /* LocationManager.swift in Sources */,
 				386EDC901CE8C04B009739D2 /* Category.swift in Sources */,
 				386EDC951CE8CAC7009739D2 /* CategoryCollectionViewCell.swift in Sources */,

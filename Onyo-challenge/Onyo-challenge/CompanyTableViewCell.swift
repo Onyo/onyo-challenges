@@ -37,9 +37,7 @@ class CompanyTableViewCell: UITableViewCell {
         }
         
         companyNameDistance.text = (company.displayName?.uppercaseString)!
-        if let latitude = company.addressLatitude.value, let longitude = company.addressLongitude.value {
-            let companyLocation = CLLocation(latitude: latitude, longitude: longitude)
-            
+        if let companyLocation = company.location {
             if let userLocation = LocationManager.sharedInstance.currentLocation {
                 var distance = Int(companyLocation.distanceFromLocation(userLocation))
                 

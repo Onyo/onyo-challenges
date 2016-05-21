@@ -22,6 +22,16 @@ internal class Company: Object {
     var addressLatitude = RealmOptional<Double>()
     var addressLongitude = RealmOptional<Double>()
     
+    var location: CLLocation? {
+        get {
+            if let latitude = addressLatitude.value, let longitude = addressLongitude.value {
+                return CLLocation(latitude: latitude, longitude: longitude)
+            } else {
+                return nil
+            }
+        }
+    }
+    
     // MARK: Initialization
     
     convenience init(dict: [String: AnyObject]) {

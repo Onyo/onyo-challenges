@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>COMPANY_URI</key>
+	<key>GULA_GULA_COMPANY_URI</key>
+	<string>http://api.staging.onyo.com/v1/mobile/brand/1/company</string>
+	<key>BAKED_POTATO_COMPANY_URI</key>
 	<string>http://api.staging.onyo.com/v1/mobile/brand/3/company</string>
 </dict>
 </plist>

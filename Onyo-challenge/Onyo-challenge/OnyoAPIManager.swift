@@ -14,7 +14,11 @@ typealias ErrorHandler = (error: NSError!) -> Void
 
 class OnyoAPIManager {
     
-    // MARK: -- Singleton
+    // MARK: - Properties
+    
+    var useBakedPotatoURL = true
+    
+    // MARK: - Singleton
     
     class var sharedInstance: OnyoAPIManager {
         struct Static {
@@ -66,7 +70,12 @@ class OnyoAPIManager {
         let path = NSBundle.mainBundle().pathForResource("URIs", ofType: "plist")
         let urls = NSDictionary(contentsOfFile: path!)
         
-        let baseURL = urls?.objectForKey("COMPANY_URI") as! String!
+        var baseURL: String!
+        if useBakedPotatoURL {
+            baseURL = urls?.objectForKey("BAKED_POTATO_COMPANY_URI") as! String!
+        } else {
+            baseURL = urls?.objectForKey("GULA_GULA_COMPANY_URI") as! String!
+        }
         
         return baseURL
     }
