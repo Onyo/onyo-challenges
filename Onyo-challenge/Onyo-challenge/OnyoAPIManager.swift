@@ -16,7 +16,7 @@ class OnyoAPIManager {
     
     // MARK: - Properties
     
-    var useBakedPotatoURL = true
+    var useBakedPotatoURL = false
     
     // MARK: - Singleton
     
