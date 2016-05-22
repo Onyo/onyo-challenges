@@ -60,7 +60,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sX-3e-tpe">
                                                     <rect key="frame" x="15" y="15" width="345" height="184"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="5sX-3e-tpe" secondAttribute="height" multiplier="675:360" id="6yk-6E-ylY"/>
+                                                        <constraint firstAttribute="width" secondItem="5sX-3e-tpe" secondAttribute="height" multiplier="675:360" priority="999" id="6yk-6E-ylY"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n89-33-NTy">
@@ -111,6 +111,10 @@
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk8-q9-ryD">
                                                     <rect key="frame" x="15" y="144" width="55" height="55"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="9B6-e6-6es"/>
+                                                        <constraint firstAttribute="height" constant="55" id="BNW-1e-vPr"/>
+                                                    </constraints>
                                                     <state key="normal" image="icon-pin"/>
                                                     <connections>
                                                         <action selector="goToMap:" destination="eua-Mc-Bqa" eventType="touchUpInside" id="PQJ-N6-e3r"/>
