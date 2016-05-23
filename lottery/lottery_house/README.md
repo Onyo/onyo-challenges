@@ -10,7 +10,7 @@ TODO: \<INSERT URL HERE\>
 
 ## Roadmap
 
-- [ ] Make lottery game
+- [x] Make lottery game
 - [ ] Unit tests for lottery Game
 - [ ] Offer a entrypoint to check if a game is winner
 - [ ] Patch request to Bob(Integration tests)
