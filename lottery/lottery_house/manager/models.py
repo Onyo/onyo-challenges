@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Ticket(models.Model):
+class Tickets(models.Model):
     extraction = models.PositiveIntegerField()
     number = models.PositiveIntegerField()
     ruffle_date = models.DateField()

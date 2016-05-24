@@ -2,13 +2,13 @@ from datetime import date
 
 from rest_framework import serializers
 
-from .models import Ticket
+from .models import Tickets
 
 
-class TicketSerializer(serializers.ModelSerializer):
+class TicketsSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Ticket
+        model = Tickets
 
     def validate_extraction(self, value):
         """Validate if extraction is higher than 1."""
@@ -19,10 +19,10 @@ class TicketSerializer(serializers.ModelSerializer):
         return value
 
     def validate_number(self, value):
-        """Validate if nuber is higher than 1 and until 6 digits."""
-        if 0 > value >= 999999:
+        """Validate if nuber is zero or until 6 digits."""
+        if 0 > value or value > 999999:
             raise serializers.ValidationError(
-                "Number must be higher then 1"
+                "Number must be between 0 and 999999"
             )
         return value
 

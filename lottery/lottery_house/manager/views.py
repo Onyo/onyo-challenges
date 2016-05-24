@@ -1,14 +1,14 @@
 from rest_framework import generics
 
-from .models import Ticket
-from .serializers import TicketSerializer
+from .models import Tickets
+from .serializers import TicketsSerializer
 
 
-class TicketView(generics.ListCreateAPIView):
-    queryset = Ticket.objects.all()
-    serializer_class = TicketSerializer
+class TicketsView(generics.ListCreateAPIView):
+    queryset = Tickets.objects.all()
+    serializer_class = TicketsSerializer
 
 
-class TicketDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Ticket.objects.all()
-    serializer_class = TicketSerializer
+class TicketsDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Tickets.objects.all()
+    serializer_class = TicketsSerializer
