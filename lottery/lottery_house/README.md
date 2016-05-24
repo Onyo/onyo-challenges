@@ -4,6 +4,10 @@
 
 Api to create lottery games. When having a POST to Ana, Ana should perform a request to Bob and will save the answer of Bob on its own database.
 
+## Api root
+
+TODO: \<INSERT URL HERE\>
+
 ## Docs
 
 TODO: \<INSERT URL HERE\>
