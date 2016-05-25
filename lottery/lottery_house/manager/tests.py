@@ -1,5 +1,6 @@
-from datetime import date
+from datetime import date, timedelta
 
+from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.test import APITestCase
 
@@ -78,8 +79,76 @@ class TestTicketsView(APITestCase):
         self.assertEquals(Tickets.objects.count(), 1)
 
 
-class TicketsDetailView(APITestCase):
-    pass  # Only authenticated
+class TestTicketsDetailView(APITestCase):
+
+    def setUp(self):
+        ticket = Tickets(**{'extraction': 1, 'number': 1,
+                            'ruffle_date': date.today().strftime('%Y-%m-%d')})
+        ticket.save()
+        self.user = User.objects.create_user('John Cleese',
+                                             'eric@cheeseshop.com',
+                                             'johnpassword')
+        self.user.save()
+
+    def test_unauthenticated_partial_update(self):
+        """Partial update is only allow when user is athenticated"""
+        response = self.client.patch('/tickets/1')
+        self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEquals(response.data['detail'], 'Authentication credentials'
+                          ' were not provided.')
+
+    def test_unauthenticated_complete_update(self):
+        """Complete update is only allow when user is athenticated"""
+        response = self.client.put('/tickets/1')
+        self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEquals(response.data['detail'], 'Authentication credentials'
+                          ' were not provided.')
+
+    def test_unauthenticated_delete(self):
+        """Delete is only allow when user is athenticated"""
+        response = self.client.put('/tickets/1')
+        self.assertEquals(response.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEquals(response.data['detail'], 'Authentication credentials'
+                          ' were not provided.')
+
+    def test_retrieve_ticket(self):
+        """Allow retrieve a ticket even if unauthenticated."""
+        response = self.client.get('/tickets/1')
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+        self.assertEquals(response.data['id'], 1)
+        self.assertEquals(response.data['extraction'], 1)
+        self.assertEquals(response.data['number'], 1)
+        self.assertEquals(response.data['ruffle_date'],
+                          date.today().strftime('%Y-%m-%d'))
+
+    def test_partial_update_ticket(self):
+        self.client.force_authenticate(user=self.user)
+        response = self.client.patch('/tickets/1', {'number': 2})
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+        self.assertEquals(response.data['id'], 1)
+        self.assertEquals(response.data['extraction'], 1)
+        self.assertEquals(response.data['number'], 2)
+        self.assertEquals(response.data['ruffle_date'],
+                          date.today().strftime('%Y-%m-%d'))
+
+    def test_complete_update_ticket(self):
+        tomorrow = (date.today() + timedelta(days=1)).strftime('%Y-%m-%d')
+        self.client.force_authenticate(user=self.user)
+        response = self.client.put('/tickets/1', {
+            'number': 2,
+            'extraction': 2,
+            'ruffle_date': tomorrow})
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+        self.assertEquals(response.data['number'], 2)
+        self.assertEquals(response.data['extraction'], 2)
+        self.assertEquals(response.data['number'], 2)
+        self.assertEquals(response.data['ruffle_date'], tomorrow)
+
+    def test_delete_ticket(self):
+        self.client.force_authenticate(user=self.user)
+        response = self.client.delete('/tickets/1')
+        self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEquals(Tickets.objects.count(), 0)
 
 
 class VerifyTicketView(APITestCase):
