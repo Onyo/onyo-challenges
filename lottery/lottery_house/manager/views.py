@@ -23,6 +23,21 @@ class TicketsDetail(generics.RetrieveUpdateDestroyAPIView):
 class VerifyTicketsView(APIView):
 
     def post(self, request, extraction, format=None):
+        """ Verify if a ticket is winner.
+
+        Retrieve an extraction and a ticket and verify if is a winner ticket.
+        ---
+        serializer: TicketsSerializer
+        omit_serializer: true
+
+        responseMessages:
+            - code: 404
+              message: Extraction Not Found
+            - code: 503
+              message: Service Unavailble
+            - code: 400
+              message: Invalid parameters
+        """
         serializer = TicketsSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors,

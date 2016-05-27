@@ -18,6 +18,6 @@ TODO: \<INSERT URL HERE\>
 - [x] Unit tests for lottery Game
 - [x] Offer a entrypoint to check if a game is winner
 - [x] Patch request to Bob(Integration tests)
+- [x] Release documentation
 - [ ] Store the result in your own database(cache)
-- [ ] Release documentation
 - [ ] Deploy

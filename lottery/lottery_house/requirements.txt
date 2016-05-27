@@ -1,2 +1,4 @@
 Django==1.9.6
 djangorestframework==3.3.3
+requests==2.10.0
+django-rest-swagger==0.3.7
