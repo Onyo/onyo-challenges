@@ -1,9 +1,8 @@
 from datetime import date, timedelta
 from unittest.mock import call, patch
 
-from requests.exceptions import Timeout
-
 from django.contrib.auth.models import User
+from requests.exceptions import Timeout
 from rest_framework import status
 from rest_framework.test import APIRequestFactory, APITestCase
 
