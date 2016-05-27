@@ -1,10 +1,14 @@
 from datetime import date, timedelta
+from unittest.mock import call, patch
+
+from requests.exceptions import Timeout
 
 from django.contrib.auth.models import User
 from rest_framework import status
-from rest_framework.test import APITestCase
+from rest_framework.test import APIRequestFactory, APITestCase
 
 from .models import Tickets
+from .views import VerifyTicketsView
 
 
 class TestTicketsView(APITestCase):
@@ -82,9 +86,12 @@ class TestTicketsView(APITestCase):
 class TestTicketsDetailView(APITestCase):
 
     def setUp(self):
-        ticket = Tickets(**{'extraction': 1, 'number': 1,
-                            'ruffle_date': date.today().strftime('%Y-%m-%d')})
-        ticket.save()
+        self.ticket = Tickets(**{
+            'extraction': 1,
+            'number': 1,
+            'ruffle_date': date.today().strftime('%Y-%m-%d')
+        })
+        self.ticket.save()
         self.user = User.objects.create_user('John Cleese',
                                              'eric@cheeseshop.com',
                                              'johnpassword')
@@ -151,5 +158,65 @@ class TestTicketsDetailView(APITestCase):
         self.assertEquals(Tickets.objects.count(), 0)
 
 
-class VerifyTicketView(APITestCase):
-    pass
+class TestVerifyTicketsView(APITestCase):
+
+    def setUp(self):
+        self.factory = APIRequestFactory()
+        self.valid_ticket = {
+            'extraction': 1,
+            'number': 1,
+            'ruffle_date': date.today().strftime('%Y-%m-%d')
+        }
+
+    @patch('manager.views.requests')
+    def test_third_party_api_respond_500(self, mock_requests):
+        mock_requests.post.return_value.status_code = 500
+        mock_requests.post.return_value.ok = False
+        request = self.factory.post('/tickets/1/verify',
+                                    data=self.valid_ticket)
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, 503)
+        self.assertTrue(mock_requests.post.called)
+
+    @patch('manager.views.requests')
+    def test_third_party_api_timeout(self, mock_requests):
+        mock_requests.post.side_effect = Timeout()
+        request = self.factory.post('/tickets/1/verify/',
+                                    data=self.valid_ticket)
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, 503)
+        self.assertTrue(mock_requests.post.called)
+
+    def test_invalid_ticket(self):
+        request = self.factory.post('/tickets/1/verify/',
+                                    data={})
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(response.data['extraction'],
+                         ['This field is required.'])
+        self.assertEqual(response.data['number'],
+                         ['This field is required.'])
+        self.assertEqual(response.data['ruffle_date'],
+                         ['This field is required.'])
+
+    @patch('manager.views.requests')
+    def test_third_party_returns_200_OK(self, mock_requests):
+        mock_requests.post.return_value.status_code = 200
+        mock_requests.post.return_value.ok = True
+        request = self.factory.post('/tickets/1/verify/',
+                                    data=self.valid_ticket)
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(mock_requests.post.called)
+        self.assertEqual(mock_requests.post.call_args_list,
+                         [call('http://127.0.0.1:8001/tickets/1/verify/',
+                               data=self.valid_ticket, timeout=1)])
+
+    @patch('manager.views.requests')
+    def test_third_party_returns_404_NOT_FOUND(self, mock_requests):
+        mock_requests.post.return_value.status_code = 404
+        mock_requests.post.return_value.ok = False
+        request = self.factory.post('/tickets/1/verify/',
+                                    data=self.valid_ticket)
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, 404)

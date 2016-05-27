@@ -16,8 +16,8 @@ TODO: \<INSERT URL HERE\>
 
 - [x] Make lottery game
 - [x] Unit tests for lottery Game
-- [ ] Offer a entrypoint to check if a game is winner
-- [ ] Patch request to Bob(Integration tests)
+- [x] Offer a entrypoint to check if a game is winner
+- [x] Patch request to Bob(Integration tests)
 - [ ] Store the result in your own database(cache)
 - [ ] Release documentation
 - [ ] Deploy
