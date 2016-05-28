@@ -202,10 +202,37 @@ class TestVerifyTicketsView(APITestCase):
     def test_third_party_returns_200_OK(self, mock_requests):
         mock_requests.post.return_value.status_code = 200
         mock_requests.post.return_value.ok = True
+        mock_requests.post.return_value.json.return_value = {
+            'id': 1,
+            'extraction': 1,
+            'is_winner': True,
+            'number': 1,
+            'ruffle_date': date.today().strftime('%Y-%m-%d')
+        }
         request = self.factory.post('/tickets/1/verify/',
                                     data=self.valid_ticket)
         response = VerifyTicketsView.as_view()(request, 1)
         self.assertEqual(response.status_code, 200)
+        self.assertTrue(mock_requests.post.called)
+        self.assertEqual(mock_requests.post.call_args_list,
+                         [call('http://127.0.0.1:8001/tickets/1/verify/',
+                               data=self.valid_ticket, timeout=1)])
+
+    @patch('manager.views.requests')
+    def test_third_party_returns_200_OK_but_wrong_data(self, mock_requests):
+        mock_requests.post.return_value.status_code = 200
+        mock_requests.post.return_value.ok = True
+        # response don't contains number
+        mock_requests.post.return_value.json.return_value = {
+            'id': 1,
+            'extraction': 1,
+            'is_winner': True,
+            'ruffle_date': date.today().strftime('%Y-%m-%d')
+        }
+        request = self.factory.post('/tickets/1/verify/',
+                                    data=self.valid_ticket)
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, 503)
         self.assertTrue(mock_requests.post.called)
         self.assertEqual(mock_requests.post.call_args_list,
                          [call('http://127.0.0.1:8001/tickets/1/verify/',

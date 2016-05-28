@@ -33,3 +33,10 @@ class TicketsSerializer(serializers.ModelSerializer):
                 "Ruffle already happened."
             )
         return value
+
+
+class WinnerTicketSerializer(TicketsSerializer):
+    is_winner = serializers.BooleanField()
+
+    def validate_ruffle_date(self, value):
+        return value
