@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Tickets
-from .serializers import TicketsSerializer, WinnerTicketSerializer
+from .serializers import TicketsSerializer, WinnerTicketsSerializer
 
 
 class TicketsView(generics.ListCreateAPIView):
@@ -28,7 +28,7 @@ class VerifyTicketsView(APIView):
         Retrieve an extraction and a ticket and verify if is a winner ticket.
         ---
         serializer: TicketsSerializer
-        response_serializer: WinnerTicketSerializer
+        response_serializer: WinnerTicketsSerializer
         omit_serializer: false
 
         responseMessages:
@@ -55,7 +55,7 @@ class VerifyTicketsView(APIView):
         except Timeout:
             return Response(status=status.HTTP_503_SERVICE_UNAVAILABLE)
         if response.ok:
-            response_ticket = WinnerTicketSerializer(data=response.json())
+            response_ticket = WinnerTicketsSerializer(data=response.json())
             if response_ticket.is_valid():
                 return Response(data=response_ticket.data,
                                 status=status.HTTP_200_OK)

@@ -35,7 +35,7 @@ class TicketsSerializer(serializers.ModelSerializer):
         return value
 
 
-class WinnerTicketSerializer(TicketsSerializer):
+class WinnerTicketsSerializer(TicketsSerializer):
     is_winner = serializers.BooleanField()
 
     def validate_ruffle_date(self, value):
