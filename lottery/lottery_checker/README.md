@@ -14,8 +14,8 @@ TODO: \<INSERT URL HERE\>
 
 ## Roadmap
 
-- [ ] Make winner ticker CRUD(authenticate or read only)
-- [ ] Unit tests for lottery Game
+- [x] Make winner ticker CRUD(authenticate or read only)
+- [x] Unit tests for lottery Game
 - [ ] Offer a entrypoint to check if a game is winner
 - [ ] Release documentation
 - [ ] Deploy

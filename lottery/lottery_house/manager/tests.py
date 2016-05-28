@@ -80,6 +80,9 @@ class TestTicketsView(APITestCase):
                             'ruffle_date': date.today().strftime('%Y-%m-%d')})
         ticket.save()
         self.assertEquals(Tickets.objects.count(), 1)
+        response = self.client.get('/tickets/')
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+        self.assertNotEquals(response.data, [])
 
 
 class TestTicketsDetailView(APITestCase):
