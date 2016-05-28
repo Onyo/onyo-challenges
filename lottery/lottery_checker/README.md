@@ -1,0 +1,21 @@
+# Lottery Checker (aka Bob)
+
+## Description
+
+API to store results of lottery games. Provide a method to consult if a ticket is a winner ticket.
+
+## Api root
+
+TODO: \<INSERT URL HERE\>
+
+## Docs
+
+TODO: \<INSERT URL HERE\>
+
+## Roadmap
+
+- [ ] Make winner ticker CRUD(authenticate or read only)
+- [ ] Unit tests for lottery Game
+- [ ] Offer a entrypoint to check if a game is winner
+- [ ] Release documentation
+- [ ] Deploy
