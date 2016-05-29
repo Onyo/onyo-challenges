@@ -23,3 +23,9 @@ class TicketsSerializer(serializers.ModelSerializer):
                 "Number must be between 0 and 999999"
             )
         return value
+
+
+class UserTicketsSerializer(serializers.Serializer):
+    extraction = serializers.IntegerField(min_value=1)
+    number = serializers.IntegerField(min_value=0, max_value=999999)
+    ruffle_date = serializers.DateField()

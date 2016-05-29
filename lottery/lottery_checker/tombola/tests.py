@@ -143,3 +143,37 @@ class TestTicketsDetailView(APITestCase):
         response = self.client.delete('/tickets/1')
         self.assertEquals(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEquals(Tickets.objects.count(), 0)
+
+
+class TestVerifyTicketsView(APITestCase):
+
+    def setUp(self):
+        self.data = {
+            'extraction': 1,
+            'number': 1,
+            'ruffle_date': date.today().strftime('%Y-%m-%d')
+        }
+        self.ticket = Tickets(**self.data)
+        self.ticket.save()
+
+    def test_invalid_ticket_returns_HTTP_400(self):
+        response = self.client.post('/tickets/1/verify', data={})
+        self.assertEquals(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('extraction', response.data)
+        self.assertIn('number', response.data)
+        self.assertIn('ruffle_date', response.data)
+
+    def test_extraction_not_found(self):
+        response = self.client.post('/tickets/2/verify', data={})
+        self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_not_winner_ticket(self):
+        self.data['number'] = 2
+        response = self.client.post('/tickets/1/verify', data=self.data)
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+        self.assertEquals(response.data['is_winner'], False)
+
+    def test_winner_ticket(self):
+        response = self.client.post('/tickets/1/verify', data=self.data)
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+        self.assertEquals(response.data['is_winner'], True)

@@ -16,6 +16,6 @@ TODO: \<INSERT URL HERE\>
 
 - [x] Make winner ticker CRUD(authenticate or read only)
 - [x] Unit tests for lottery Game
-- [ ] Offer a entrypoint to check if a game is winner
-- [ ] Release documentation
+- [x] Offer a entrypoint to check if a game is winner
+- [x] Release documentation
 - [ ] Deploy
