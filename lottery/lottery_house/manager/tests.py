@@ -206,7 +206,6 @@ class TestVerifyTicketsView(APITestCase):
         mock_requests.post.return_value.status_code = 200
         mock_requests.post.return_value.ok = True
         mock_requests.post.return_value.json.return_value = {
-            'id': 1,
             'extraction': 1,
             'is_winner': True,
             'number': 1,
@@ -227,7 +226,6 @@ class TestVerifyTicketsView(APITestCase):
         mock_requests.post.return_value.ok = True
         # response don't contains number
         mock_requests.post.return_value.json.return_value = {
-            'id': 1,
             'extraction': 1,
             'is_winner': True,
             'ruffle_date': date.today().strftime('%Y-%m-%d')
