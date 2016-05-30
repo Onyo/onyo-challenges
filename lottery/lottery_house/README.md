@@ -19,5 +19,5 @@ TODO: \<INSERT URL HERE\>
 - [x] Offer an entrypoint to check if a game is winner
 - [x] Patch request to Bob(Integration tests)
 - [x] Release documentation
-- [ ] Store the result in your own database(cache)
+- [x] Store the result in your own database(cache)
 - [ ] Deploy

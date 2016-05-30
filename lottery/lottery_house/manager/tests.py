@@ -2,6 +2,7 @@ from datetime import date, timedelta
 from unittest.mock import call, patch
 
 from django.contrib.auth.models import User
+from django.core.cache import cache
 from requests.exceptions import Timeout
 from rest_framework import status
 from rest_framework.test import APIRequestFactory, APITestCase
@@ -169,6 +170,7 @@ class TestVerifyTicketsView(APITestCase):
             'number': 1,
             'ruffle_date': date.today().strftime('%Y-%m-%d')
         }
+        cache.clear()
 
     @patch('manager.views.requests')
     def test_third_party_api_respond_500(self, mock_requests):
@@ -211,13 +213,13 @@ class TestVerifyTicketsView(APITestCase):
             'number': 1,
             'ruffle_date': date.today().strftime('%Y-%m-%d')
         }
-        request = self.factory.post('/tickets/1/verify/',
+        request = self.factory.post('/tickets/1/verify',
                                     data=self.valid_ticket)
         response = VerifyTicketsView.as_view()(request, 1)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(mock_requests.post.called)
         self.assertEqual(mock_requests.post.call_args_list,
-                         [call('http://127.0.0.1:8001/tickets/1/verify/',
+                         [call('http://127.0.0.1:8001/tickets/1/verify',
                                data=self.valid_ticket, timeout=1)])
 
     @patch('manager.views.requests')
@@ -230,20 +232,41 @@ class TestVerifyTicketsView(APITestCase):
             'is_winner': True,
             'ruffle_date': date.today().strftime('%Y-%m-%d')
         }
-        request = self.factory.post('/tickets/1/verify/',
+        request = self.factory.post('/tickets/1/verify',
                                     data=self.valid_ticket)
         response = VerifyTicketsView.as_view()(request, 1)
         self.assertEqual(response.status_code, 503)
         self.assertTrue(mock_requests.post.called)
         self.assertEqual(mock_requests.post.call_args_list,
-                         [call('http://127.0.0.1:8001/tickets/1/verify/',
+                         [call('http://127.0.0.1:8001/tickets/1/verify',
                                data=self.valid_ticket, timeout=1)])
 
     @patch('manager.views.requests')
     def test_third_party_returns_404_NOT_FOUND(self, mock_requests):
         mock_requests.post.return_value.status_code = 404
         mock_requests.post.return_value.ok = False
-        request = self.factory.post('/tickets/1/verify/',
+        request = self.factory.post('/tickets/1/verify',
                                     data=self.valid_ticket)
         response = VerifyTicketsView.as_view()(request, 1)
         self.assertEqual(response.status_code, 404)
+
+    @patch('manager.views.requests')
+    def test_third_party_returns_cached_value(self, mock_requests):
+        mock_requests.post.return_value.status_code = 200
+        mock_requests.post.return_value.ok = True
+        mock_requests.post.return_value.json.return_value = {
+            'extraction': 1,
+            'is_winner': True,
+            'number': 1,
+            'ruffle_date': date.today().strftime('%Y-%m-%d')
+        }
+        request = self.factory.post('/tickets/1/verify',
+                                    data=self.valid_ticket)
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(mock_requests.post.called)
+        request = self.factory.post('/tickets/1/verify',
+                                    data=self.valid_ticket)
+        response = VerifyTicketsView.as_view()(request, 1)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(mock_requests.post.call_count == 1)

@@ -1,5 +1,6 @@
 import requests
 from django.conf import settings
+from django.core.cache import cache
 from requests.exceptions import Timeout
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
@@ -43,9 +44,12 @@ class VerifyTicketsView(APIView):
         if not serializer.is_valid():
             return Response(serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
+        cached = cache.get('E{extraction}N{number}'.format(**serializer.data))
+        if cached:
+            return Response(status=status.HTTP_200_OK, data=cached)
         try:
             response = requests.post(
-                'http://{host}/tickets/{extraction}/verify/'.format(
+                'http://{host}/tickets/{extraction}/verify'.format(
                     extraction=extraction,
                     host=settings.BOB_HOST,
                 ),
@@ -57,6 +61,8 @@ class VerifyTicketsView(APIView):
         if response.ok:
             response_ticket = WinnerTicketsSerializer(data=response.json())
             if response_ticket.is_valid():
+                cache.set(('E{extraction}N{number}'.format(**serializer.data)),
+                          response_ticket.data)
                 return Response(data=response_ticket.data,
                                 status=status.HTTP_200_OK)
         elif response.status_code == status.HTTP_404_NOT_FOUND:
