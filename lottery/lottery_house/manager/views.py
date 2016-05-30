@@ -1,13 +1,15 @@
 import requests
+from requests.exceptions import Timeout
+
 from django.conf import settings
 from django.core.cache import cache
-from requests.exceptions import Timeout
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Tickets
-from .serializers import TicketsSerializer, WinnerTicketsSerializer
+from .serializers import (TicketsSerializer, UserTicketsSerializer,
+                          WinnerTicketsSerializer)
 
 
 class TicketsView(generics.ListCreateAPIView):
@@ -40,7 +42,7 @@ class VerifyTicketsView(APIView):
             - code: 400
               message: Invalid parameters
         """
-        serializer = TicketsSerializer(data=request.data)
+        serializer = UserTicketsSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
