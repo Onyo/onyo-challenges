@@ -11,7 +11,7 @@ The main goal of the challenge is to analyse an Application Scenario, and define
 The Use Case to be tested is a Login screen.
 It has the following structure:
 * Email Field
-* Passowrd Field
+* Password Field
 * Button to reveal or hide the password (mobile only)
 * Button to go to Reset Password screen
 * Button to login
