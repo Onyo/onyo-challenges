@@ -6,6 +6,11 @@ The main goal of the challenge is to analyse an Application Scenario, and define
 * Take into account the key principles of the choosen platform (Mobile, Front-end or Backend)
 * Take into account Accessibility concerns, when applicable
 
+IMPORTANT: For this challenge, you should choose ONLY ONE platform from the options:
+* Backend
+* Front-end
+* Mobile
+
 ## Problem Description ##
 
 The Use Case to be tested is a Login screen.
@@ -15,6 +20,7 @@ It has the following structure:
 * Button to reveal or hide the password (mobile only)
 * Button to go to Reset Password screen
 * Button to login
+* Option to login with Google+ or Facebook (Not Implemented)
 
 The fields should respect the following business rules:
 * E-mail should not be empty
@@ -35,14 +41,23 @@ The Login Screen in each platform:
 * FrontEnd
  * [Front-End login screen](http://power.testing.onyo.com/#/login)
 * Backend
- * API URL: https://api.testing.onyo.com/v1/mobile/user/login
- * Method: POST
- * Headers: Content-Type: application/json
- * Body example: { "email": "user@onyo.com", "password": "pass" }
+ * Login using credentials
+   * API URL: https://api.testing.onyo.com/v1/mobile/user/login
+    * Method: POST
+     * Headers: Content-Type: application/json
+      * Body example: { "email": "user@onyo.com", "password": "pass" }
+ * Social Login (Not Implemented)
+   * API URL: https://api.testing.onyo.com/v1/mobile/user/login
+    * Method: POST
+     * Headers: Content-Type: application/json
+      * Body example: { "email": "user@onyo.com", "oauth_token": "asd23wdf23kfdasdfjhq3y" }
 
 ## What you should deliver ##
 
 * From 10 to 20 test cases, formatted in text and sent by e-mail.
+ * There must be at least:
+   * 2 test cases for social login
+    * 2 test cases based on integration with Backend (for Front-End and Mobile platforms)
 * At least 3 test cases automated, using the tool of your choice
  * If possible, the resulting code should be sent by e-mail along with the Test Cases
  * Otherwise, it should be presented on the Technical Challenge review talk
