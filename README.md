@@ -42,10 +42,6 @@ The Pull request process works this way:
 3. Commits and push changes to the forked repository.
 4. Using the GitHub interface, send the pull request.
 
-# iOS Challenge #
-
-The iOS Challenge is available at: [ios-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/ios-challenge.md)
-
 # Android Challenge #
 
 The Android Challenge is available at: [android-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/android-challenge.md)
@@ -53,3 +49,12 @@ The Android Challenge is available at: [android-challenge.md](https://github.com
 # Design Challenge #
 
 The Design Challenge is available at: [design-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/design-challenge.md)
+
+# iOS Challenge #
+
+The iOS Challenge is available at: [ios-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/ios-challenge.md)
+
+# QA Challenge #
+
+The Quality Assurance Challenge is available at: [qa-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/qa-challenge.md)
+
