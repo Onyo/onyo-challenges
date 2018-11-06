@@ -1,40 +1,34 @@
-# Backend Challenge #
+# Desafio de Backend 
 
-The main goal of this challenge is to exercise some concepts of API Rest, microservices and integrations. The basic goal is to create two APIs (microservices) using Django Rest Framework or similar web frameworks. These microservices should communicate with each other by JSONs, but should keep their databases separated. Both of them should answer to simple CRUD requests -- Get, Post, Put, Delete. We'll have two APIs, let's consider the first API "Ana" and the second one "Bob". When having a POST to Ana, Ana should perform a request to Bob and will save the answer of Bob on its own database. Bob should have API calls to return random values when its created, so when we have the same input coming from Ana we should have the same answer from Bob. In order to do it, Bob will have to store some data on its own database. The main reason is the needed decoupling between them.
+O objetivo desse desafio é exercitar alguns conceitos de APIs REST, microsserviços e integrações.
 
-The models, views and business rules may be created at your own criteria. We're interested on the dynamics that these parts will connect to each other.
+Nele, você deve criar duas APIs usando Django Rest Framework ou algum outro framework similar.
+Uma das APIs deve ser uma aplicação que usa a outra como um microsserviço para abstrair parte de sua lógica.
+Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois estamos mais interessados em observar os conceitos REST, a arquitetura e a organização do código do que as naplicações em si. Você pode implementar as ideias abaixo ou inventar sua própria ideia de aplicação:
+    - Um microsserviço de consulta de CEPs, e um serviço de cadastro de funcionários que usa o microsserviço de CEP para consultar endereços no cadastro de novos funcionários.
+    - Um microsserviço de sorteios e um serviço de rifas que permite cadastrar e sortear rifas.
 
-As a topic we have a few suggestion:
-- Bob could serve Postal Code Information (Street, City, State, etc) given a Postal Code it will return information. Ana should consume Bob and propagate its answer.
-- Bob could be serving Lotto Check Service. Given 6 number, Bob will tell Ana if its a winner combination or not. Ana should cache its answer in order to avoid calling Bob many times.
 
-Fell free to follow any topic, but please make sure you have understood the purpose of its challenge.
+## Requisitos **obrigatórios**:
+    - Cada microsserviço deve possuir o próprio banco de dados e se comunicar com o outro apenas através de APIs REST.
+    - A comunicação deve ser feita através de HTTP com `Content-type: application/json`.
+    - Ambos devem suportar chamadas CRUD simples: `GET`, `POST`, `PATCH`, `DELETE`.
+    - O microsserviço deve ter sempre a mesma resposta para uma mesma consulta.
+    - O serviço de aplicação deve cachear as chamadas para o microsserviço para evitar refazer a mesma consulta diversas vezes.
+    - O código deve ser bem coberto com testes unitários.
+    - Os serviços devem ser bem desacoplados e cada um deve ter sua própria pasta ou estrutura de módulos.
+    - O código deve estar deployado.
+    - O código deve possuir documentação explicando como instalar e rodar as duas APIs.
 
-### **Must have** ###
+## Bônus:
+    - Documentação dos endpoints das APIs
+    - Deploy com docker
+    - Interface para exploração da API
+    - Django Rest Framework
 
-* Unit tests
-* Integrations tests
-* Documentation
-* Deployment (Heroku, Openshift, DigitalOcean)
-* Clean, readable, maintainable, and extensible code 
-* Decoupling on two different folders
 
-### **Optional, but recommended** ###
-
-* Django Rest Framework 
-* Interface
-
-### **ATENTION** ###
-1. Don't worry about the topic you'll chose to work on. Fell free to work on a confortable topic.
-2. You should not try to push changes directly to this repository.
-
-### **Submission Process** ###
-The candidate must implement the APIs and send a Pull Request to this repository with the solution.
-
-The Pull request process works this way:
-
-1. The candidate forks the repository (should not clone it directly)
-2. Works on the code using the forked repository.
-3. Commits and push changes to the forked repository.
-4. Using the GitHub interface, send the pull request.
+## Processo de submissão:
+1. Crie um fork desse repositório.
+2. Implemente seu código e faça seus commits nesse fork.
+4. Abra um pull-request pelo Github para esse repositório.
 
