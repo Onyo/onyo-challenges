@@ -32,7 +32,6 @@ Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois
 
 
 ## Processo de submissão:
-  1. Crie um fork desse repositório.
-  2. Implemente seu código e faça seus commits nesse fork.
-  4. Abra um pull-request pelo Github para esse repositório.
+  1. Crie o(s) repositório(s)
+  2. Abra um PR para esse repositório com os links dele(s) e das apis deployadas.
 
