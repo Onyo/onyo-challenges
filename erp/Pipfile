@@ -12,6 +12,8 @@ djangorestframework = "*"
 [dev-packages]
 "psycopg2-binary" = "*"
 yapf = "*"
+ipython = "*"
+ipdb = "*"
 
 [requires]
 python_version = "3.7"
