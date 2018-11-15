@@ -6,7 +6,6 @@
 	},
 	"item": [
 		{
-			"_postman_id": "a5e25531-ce56-4473-893b-c30b8fdcec85",
 			"name": "/sorteios/",
 			"event": [
 				{
@@ -36,7 +35,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
 					"host": [
@@ -54,7 +56,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d2bc649b-3902-48a6-9f7f-4453a446c52f",
 			"name": "/sorteios/",
 			"event": [
 				{
@@ -104,7 +105,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c0249ae8-d480-4c2f-bdee-37d3cad7542b",
 			"name": "/sorteios/",
 			"event": [
 				{
@@ -136,7 +136,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
 					"host": [
@@ -154,7 +157,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7828d21e-21b0-4cc4-8e74-bc354b28d9ff",
 			"name": "/user/:id/sorteios/",
 			"event": [
 				{
@@ -182,7 +184,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/user/{{OWNER_SORTEIO}}/sorteios/",
 					"host": [
@@ -202,7 +207,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f8c3ee12-0b90-4fe0-bf15-6a5f1805626e",
 			"name": "/user/:id/sorteios/:id/",
 			"event": [
 				{
@@ -230,7 +234,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/user/{{OWNER_SORTEIO}}/sorteios/{{ID_SORTEIO}}/",
 					"host": [
@@ -251,7 +258,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d2ad071b-8274-4440-9198-ebbdaaac8554",
 			"name": "/user/:id/sorteios/:id/",
 			"event": [
 				{
@@ -315,7 +321,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8f6601ba-ce4b-4dc0-9337-14c42438d134",
 			"name": "/sorteios/:id/resultado/",
 			"event": [
 				{
@@ -343,7 +348,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/resultado/",
 					"host": [
@@ -363,7 +371,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "47842208-2d85-4c86-88d0-b0fe38617d4d",
 			"name": "/sorteios/:id/resultado/",
 			"event": [
 				{
@@ -414,7 +421,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8065eb5d-cf48-418d-a179-76fc39f72541",
 			"name": "/sorteios/:id/resultado/",
 			"event": [
 				{
@@ -442,7 +448,10 @@
 						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/resultado/",
 					"host": [
@@ -462,7 +471,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ea6ae30e-fadc-41d8-9a12-0e10c89daaa7",
 			"name": "/user/:id/sorteios/:id/",
 			"event": [
 				{
@@ -526,7 +534,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "cafd2c3b-5f66-4958-bdd0-a1bb07a14464",
 			"name": "/sorteios/:id",
 			"event": [
 				{
@@ -603,55 +610,55 @@
 	],
 	"variable": [
 		{
-			"id": "5071f898-d54b-4869-8216-d28b87e30955",
+			"id": "d4d410c5-3799-408b-88f0-20702b0312cc",
 			"key": "PORT",
 			"value": "7000",
 			"type": "string"
 		},
 		{
-			"id": "f14945c9-b3ad-49b1-aa55-5975be31bbe7",
+			"id": "3b69b95e-3f0a-4b54-9dee-14c0500af932",
 			"key": "BASE_URL",
-			"value": "http://127.0.0.1",
+			"value": "http://68.183.172.30",
 			"type": "string"
 		},
 		{
-			"id": "a0b12f2b-45b2-4137-a349-7a35e0511d47",
+			"id": "9a2cdb9b-541c-4179-b74b-46f93dfb7e77",
 			"key": "API_TARGET",
 			"value": "api/v1",
 			"type": "string"
 		},
 		{
-			"id": "8362b297-7eab-4c80-bd2f-dbb1fdc9cb4f",
+			"id": "f1f0df4e-d46c-4420-a5cf-cfdc026faf93",
 			"key": "NOME_SORTEIO",
 			"value": "Mega Sena",
 			"type": "string"
 		},
 		{
-			"id": "b6611757-e2f2-4230-a9c2-2af12f111c67",
+			"id": "12c3916a-dc67-4f87-a341-5d1c9261c513",
 			"key": "QUANTIDADE_SORTEIO",
 			"value": "6",
 			"type": "string"
 		},
 		{
-			"id": "bbe67a7a-d108-48b0-91f4-ef0706059b87",
+			"id": "6fd664f7-caef-435f-8338-e36c6a3923b6",
 			"key": "MINIMO_SORTEIO",
 			"value": "1",
 			"type": "string"
 		},
 		{
-			"id": "17158c26-1834-4af5-ab48-83771560b95e",
+			"id": "d1919e02-a10c-4a41-a637-218e42df3763",
 			"key": "MAXIMO_SORTEIO",
 			"value": "60",
 			"type": "string"
 		},
 		{
-			"id": "23447af5-a6a9-4515-a4ef-b8feed528a50",
+			"id": "ddbc7a63-6f07-4073-a706-08fdc8fb2a1d",
 			"key": "OWNER_SORTEIO",
 			"value": "1",
 			"type": "string"
 		},
 		{
-			"id": "34951560-3649-4f99-aada-3a4ecde10562",
+			"id": "8d749814-8b86-418a-be0c-1d40d8bdb763",
 			"key": "ID_SORTEIO",
 			"value": "",
 			"type": "string"

@@ -1,12 +1,11 @@
 {
 	"info": {
-		"_postman_id": "4da9ca08-5935-4809-8fd2-470b529b006d",
+		"_postman_id": "2ad55e92-a236-45e2-85b9-4a6e8cb6cc13",
 		"name": "Main API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"_postman_id": "35859670-2bf8-41ba-9f02-f42e4b4f0010",
 			"name": "Token Resetting",
 			"event": [
 				{
@@ -62,20 +61,19 @@
 			"response": []
 		},
 		{
-			"_postman_id": "da0bc65e-5d2d-4d8f-85cb-25e9928f3263",
 			"name": "rest-auth/logout/",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "3dfb1a7b-c471-4b15-9be4-42d83526e307",
-						"type": "text/javascript",
 						"exec": [
 							"pm.environment.unset(\"X-CSRFToken-Header\");",
 							"pm.test(\"Status Code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -117,20 +115,19 @@
 			"response": []
 		},
 		{
-			"_postman_id": "bc9b64a1-7583-40e7-83ec-a668a34c6e2e",
 			"name": "rest-auth/registration/",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "89faa876-8010-4712-b1ba-6dae6cc33da2",
-						"type": "text/javascript",
 						"exec": [
-							"pm.environment.unset(\"X-CSRFToken-Header\");",
+							"pm.environment.set(\"X-CSRFToken-Header\", decodeURIComponent(pm.cookies.get(\"csrftoken\")))",
 							"pm.test(\"Status Code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -173,7 +170,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b208dfbf-4512-4d5f-97b8-bfb9198dcf36",
 			"name": "rest-auth/user/",
 			"event": [
 				{
@@ -206,7 +202,10 @@
 						"value": "{{X-CSRFToken-Header}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/rest-auth/user/",
 					"host": [
@@ -225,7 +224,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3887f1b6-e52c-45f7-bf1b-50840c1e9020",
 			"name": "sorteios/",
 			"event": [
 				{
@@ -257,7 +255,10 @@
 						"value": "{{X-CSRFToken-Header}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
 					"host": [
@@ -275,7 +276,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "63698969-7e6c-4c13-89b0-e074f112a2df",
 			"name": "sorteios/",
 			"event": [
 				{
@@ -329,7 +329,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8e239722-61b4-4a4c-a53c-0561dd0a10a5",
 			"name": "sorteios/:id/",
 			"event": [
 				{
@@ -361,7 +360,10 @@
 						"value": "{{X-CSRFToken-Header}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/",
 					"host": [
@@ -380,7 +382,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a93a8ed2-fe1b-4508-89f4-7c8592b18be5",
 			"name": "sorteios/:id/",
 			"event": [
 				{
@@ -446,7 +447,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "eeb7d9b5-b32a-4033-a98f-a0f7a99dedac",
 			"name": "sorteios/:id/resultado/",
 			"event": [
 				{
@@ -501,7 +501,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3ba02ea2-8ef6-4a3c-9962-545559d2a4ef",
 			"name": "sorteios/:id/",
 			"event": [
 				{
@@ -580,79 +579,79 @@
 	],
 	"variable": [
 		{
-			"id": "bf89578c-69f8-4bc9-a665-7d70284cf6cf",
+			"id": "24e6f254-9bd6-4eb2-9b7e-869e8981dc85",
 			"key": "X-CSRFToken-Header",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "6dddb742-fc1c-4634-873b-b9fc4c9a71eb",
+			"id": "acd3ef81-eaf7-483b-8d3e-622925b40b52",
 			"key": "BASE_URL",
-			"value": "http://127.0.0.1",
+			"value": "http://68.183.172.30",
 			"type": "string"
 		},
 		{
-			"id": "11909110-53c9-4858-9a1b-0924fcabb902",
+			"id": "7d90a049-3f8f-4bec-a0ca-f5b1fddbb2a4",
 			"key": "PORT",
 			"value": "8000",
 			"type": "string"
 		},
 		{
-			"id": "2c02310d-c6ba-4342-96ed-c4084fb6aac8",
+			"id": "b70a71ed-66ba-4033-a9f3-b63f30d1adb1",
 			"key": "API_TARGET",
 			"value": "api/v1",
 			"type": "string"
 		},
 		{
-			"id": "e0359190-9be6-4136-963c-5f7780c92725",
+			"id": "e5508dbc-9536-4d33-9a11-733b6785cfaf",
 			"key": "NOME_SORTEIO",
 			"value": "Mega Sena da Virada",
 			"type": "string"
 		},
 		{
-			"id": "e85ce2ac-ec9f-4016-a5bf-dd7288dcff16",
+			"id": "a98884b6-c5ba-44f4-82fc-9a3a5d731696",
 			"key": "QUANTIDADE_SORTEIO",
 			"value": "6",
 			"type": "string"
 		},
 		{
-			"id": "39a3b9a1-f488-423e-9bd8-37cc81bad8d4",
+			"id": "dd5149ae-8726-464a-adbb-ed3f0d57855c",
 			"key": "MINIMO_SORTEIO",
 			"value": "1",
 			"type": "string"
 		},
 		{
-			"id": "b85987ab-3f49-4e87-913f-9e4503e94109",
+			"id": "a00a045b-af9e-41e7-a068-5b77281cbd0c",
 			"key": "MAXIMO_SORTEIO",
 			"value": "60",
 			"type": "string"
 		},
 		{
-			"id": "b43d04f2-6d6e-4cb1-ab77-edb90ce4d6f3",
+			"id": "a161b1bb-9c68-4d39-a535-b85fd1cebbe9",
 			"key": "USER_ID",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "37a8fdd3-e93b-4027-b5a0-377d0dc740b3",
+			"id": "c90441ed-73d5-4f29-9ee9-fd016b0085ec",
 			"key": "ID_SORTEIO",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "94faa544-2d6f-4cc8-953b-1b58e0f700ab",
+			"id": "9a17916b-caf5-4f9f-945a-f7ea5d5fb254",
 			"key": "USER_NAME",
 			"value": "teste",
 			"type": "string"
 		},
 		{
-			"id": "7de184b1-8c2d-480d-b086-786e5ce74dc8",
+			"id": "1de96bd4-2325-4d29-9e2b-0cedbcd20cdc",
 			"key": "USER_EMAIL",
 			"value": "teste@teste.com",
 			"type": "string"
 		},
 		{
-			"id": "2ca03c08-0ce6-46e9-ab28-a1ca3eff14d8",
+			"id": "132e8e42-6028-4f2c-843f-f835eeb7987b",
 			"key": "USER_PASSWORD",
 			"value": "V123456@%ac",
 			"type": "string"
