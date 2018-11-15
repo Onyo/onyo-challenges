@@ -1,0 +1,72 @@
+version: '3.4'
+services:
+  erp:
+    build:
+      context: .
+      args:
+        requirement: requirements-dev.txt
+    image: robsonpeixoto/onyo-erp
+    volumes:
+      - .:/app
+    environment:
+      DEFAULT_DATABASE_NAME: dev-erp
+      DEFAULT_DATABASE_USER: dev-erp-user
+      DEFAULT_DATABASE_PASSWORD: dev-erp-password
+      DEFAULT_DATABASE_HOST: erp-db
+      DEFAULT_DATABASE_PORT: 5432
+      DEBUG: '${DEBUG:-True}'
+      TIME_ZONE: '${TIME_ZONE:-UTC}'
+      ALLOWED_HOSTS: '*'
+    depends_on:
+      - erp-db
+      - cep
+    ports:
+      - 9000:8000
+    command:
+      - ./migrate-and-run.sh
+
+  erp-db:
+    image: postgres:10.6-alpine
+    environment:
+      POSTGRES_USER: dev-erp-user
+      POSTGRES_PASSWORD: dev-erp-password
+      POSTGRES_DB: dev-erp
+    volumes:
+      - erp-db-volume:/var/lib/postgresql/data
+
+  cep:
+    image: robsonpeixoto/onyo-cep
+    environment:
+      DEFAULT_DATABASE_NAME: dev-cep
+      DEFAULT_DATABASE_USER: dev-cep-user
+      DEFAULT_DATABASE_PASSWORD: dev-cep-password
+      DEFAULT_DATABASE_HOST: cep-db
+      DEFAULT_DATABASE_PORT: 5432
+      DEBUG: '${DEBUG:-True}'
+      TIME_ZONE: '${TIME_ZONE:-UTC}'
+      ALLOWED_HOSTS: '*'
+    ports:
+      - 9001:8000
+    depends_on:
+      - cep-db
+    command:
+      - ./migrate-and-run.sh
+
+  cep-db:
+    image: postgres:10.6-alpine
+    environment:
+      POSTGRES_USER: dev-cep-user
+      POSTGRES_PASSWORD: dev-cep-password
+      POSTGRES_DB: dev-cep
+    volumes:
+      - erp-cep-db-volume:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  erp-db-volume: {}
+  erp-cep-db-volume: {}
