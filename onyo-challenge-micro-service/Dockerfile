@@ -10,5 +10,6 @@ RUN pipenv install
 RUN pipenv install --system --deploy --ignore-pipfile
 RUN pipenv run python manage.py makemigrations sorteios
 RUN pipenv run python manage.py makemigrations
+RUN pipenv run python manage.py migrate --run-syncdb
 RUN chmod +X start.sh
 RUN ls -la
