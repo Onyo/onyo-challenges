@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from cep.models import City, State
+from cep.models import Cep, City, State
 
 
 class StateSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,3 +16,11 @@ class CitySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = City
         fields = ('name', 'state', 'url')
+
+
+class CepSerializer(serializers.HyperlinkedModelSerializer):
+    city = serializers.HyperlinkedRelatedField(queryset=City.objects.all(), view_name='city-detail')
+
+    class Meta:
+        model = Cep
+        fields = ('cep', 'public_place', 'neighborhood', 'city', 'url')
