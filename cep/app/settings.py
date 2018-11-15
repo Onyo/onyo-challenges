@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from decouple import config, Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b3nlz1y++yelk@2x9mf0!x2f+*w4je=uh&nk0=_mgiil+x^7me'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', [], cast=(Csv(str)))
 
 
 # Application definition
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DEFAULT_DATABASE_NAME', 'dev-cep'),
+        'USER': config('DEFAULT_DATABASE_USER', 'dev-cep-user'),
+        'PASSWORD': config('DEFAULT_DATABASE_PASSWORD', 'dev-cep-password'),
+        'HOST': config('DEFAULT_DATABASE_HOST', 'localhost'),
+        'PORT': config('DEFAULT_DATABASE_PORT', '5432'),
     }
 }
 
@@ -106,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = config('TIME_ZONE', 'UTC')
 
 USE_I18N = True
 

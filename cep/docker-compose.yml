@@ -1,0 +1,44 @@
+version: '3.4'
+services:
+  cep:
+    build:
+      context: .
+      args:
+        requirement: requirements-dev.txt
+    image: robsonpeixoto/onyo-cep
+    volumes:
+      - .:/app
+    environment:
+      DEFAULT_DATABASE_ENGINE: django.db.backends.postgresql
+      DEFAULT_DATABASE_NAME: dev-cep
+      DEFAULT_DATABASE_USER: dev-cep-user
+      DEFAULT_DATABASE_PASSWORD: dev-cep-password
+      DEFAULT_DATABASE_HOST: cep-db
+      DEFAULT_DATABASE_PORT: 5432
+      DEBUG: '${DEBUG:-True}'
+      TIME_ZONE: '${TIME_ZONE:-UTC}'
+      ALLOWED_HOSTS: '*'
+    depends_on:
+      - cep-db
+    ports:
+      - 8000:8000
+    command:
+      - ./migrate-and-run.sh
+
+  cep-db:
+    image: postgres:10.6-alpine
+    environment:
+      POSTGRES_USER: dev-cep-user
+      POSTGRES_PASSWORD: dev-cep-password
+      POSTGRES_DB: dev-cep
+    volumes:
+      - cep-db-volume:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  cep-db-volume: {}

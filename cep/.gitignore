@@ -1,3 +1,5 @@
+# Read more: https://docs.docker.com/compose/environment-variables/#the-env-file
+/.env
 
 # Created by https://www.gitignore.io/api/django
 # Edit at https://www.gitignore.io/?templates=django
