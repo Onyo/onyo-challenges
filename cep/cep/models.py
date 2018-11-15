@@ -15,3 +15,14 @@ class State(models.Model):
 
     def __str__(self):
         return '%s(%s)' % (self.name, self.acronym)
+
+
+class City(models.Model):
+    name = models.CharField(max_length=200)
+    state = models.ForeignKey(State, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = (('name', 'state'))
+
+    def __str__(self):
+        return '%s(%s)' % (self.name, self.state.acronym)
