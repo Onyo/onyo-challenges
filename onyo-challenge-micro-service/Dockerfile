@@ -8,7 +8,7 @@ RUN python -m pip install --upgrade pip
 RUN pip install pipenv
 RUN pipenv install
 RUN pipenv install --system --deploy --ignore-pipfile
-RUN pipenv run "python manage.py makemigrations sorteios"
-RUN pipenv run "python manage.py makemigrations"
+RUN pipenv run python manage.py makemigrations sorteios
+RUN pipenv run python manage.py makemigrations
 RUN chmod +X start.sh
 RUN ls -la
