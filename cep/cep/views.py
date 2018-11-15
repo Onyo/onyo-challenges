@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
-from .models import State
-from .serializers import StateSerializer
+from cep.models import State
+from cep.serializers import StateSerializer
 
 
 class StateViewSet(viewsets.ModelViewSet):
