@@ -1,0 +1,661 @@
+{
+	"info": {
+		"_postman_id": "4da9ca08-5935-4809-8fd2-470b529b006d",
+		"name": "Main API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "35859670-2bf8-41ba-9f02-f42e4b4f0010",
+			"name": "Token Resetting",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "132755e6-6669-4b36-8057-51ef641c99df",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"X-CSRFToken-Header\", decodeURIComponent(pm.cookies.get(\"csrftoken\")))",
+							"pm.test(\"Status Code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"{{USER_NAME}}\",\n\t\"email\": \"{{USER_EMAIL}}\",\n\t\"password\": \"{{USER_PASSWORD}}\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/rest-auth/login/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"rest-auth",
+						"login",
+						""
+					]
+				},
+				"description": "Loga na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "da0bc65e-5d2d-4d8f-85cb-25e9928f3263",
+			"name": "rest-auth/logout/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3dfb1a7b-c471-4b15-9be4-42d83526e307",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.unset(\"X-CSRFToken-Header\");",
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"{{USER_NAME}}\",\n\t\"email\": \"{{USER_EMAIL}}\",\n\t\"password\": \"{{USER_PASSWORD}}\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/rest-auth/logout/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"rest-auth",
+						"logout",
+						""
+					]
+				},
+				"description": "Loga na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "bc9b64a1-7583-40e7-83ec-a668a34c6e2e",
+			"name": "rest-auth/registration/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "89faa876-8010-4712-b1ba-6dae6cc33da2",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.unset(\"X-CSRFToken-Header\");",
+							"pm.test(\"Status Code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"{{USER_NAME}}\",\n\t\"email\": \"{{USER_EMAIL}}\",\n\t\"password1\": \"{{USER_PASSWORD}}\",\n\t\"password2\": \"{{USER_PASSWORD}}\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/rest-auth/registration/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"rest-auth",
+						"registration",
+						""
+					]
+				},
+				"description": "Loga na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "b208dfbf-4512-4d5f-97b8-bfb9198dcf36",
+			"name": "rest-auth/user/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7de982f6-704e-4043-9639-0d584933a672",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"USER_ID\", pm.response.json().pk)",
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/rest-auth/user/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"rest-auth",
+						"user",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3887f1b6-e52c-45f7-bf1b-50840c1e9020",
+			"name": "sorteios/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb9ffaa2-f560-4f21-add1-60d1228a5113",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "63698969-7e6c-4c13-89b0-e074f112a2df",
+			"name": "sorteios/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d58f411-76dc-4c80-8cbd-c8df6e80752b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"ID_SORTEIO\", pm.response.json().id)",
+							"pm.test(\"Status Code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"{{NOME_SORTEIO}}\",\n\t\"minimo\": {{MINIMO_SORTEIO}},\n\t\"maximo\": {{MAXIMO_SORTEIO}},\n\t\"quantidadeValores\": {{QUANTIDADE_SORTEIO}}\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8e239722-61b4-4a4c-a53c-0561dd0a10a5",
+			"name": "sorteios/:id/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3910a079-4e31-4590-a239-6fdff56ede49",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a93a8ed2-fe1b-4508-89f4-7c8592b18be5",
+			"name": "sorteios/:id/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "88d71a03-a4b4-481e-b44c-3a856c9ce0fa",
+						"type": "text/javascript",
+						"exec": [
+							"let qntd = pm.variables.get('QUANTIDADE_SORTEIO');",
+							"pm.environment.set('QUANTIDADE_SORTEIO',  qntd - 1);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "25180f49-db01-4034-bc43-f23092084e86",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.unset('QUANTIDADE_SORTEIO');",
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"{{NOME_SORTEIO}}\",\n\t\"minimo\": {{MINIMO_SORTEIO}},\n\t\"maximo\": {{MAXIMO_SORTEIO}},\n\t\"quantidadeValores\": {{QUANTIDADE_SORTEIO}}\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "eeb7d9b5-b32a-4033-a98f-a0f7a99dedac",
+			"name": "sorteios/:id/resultado/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d9dea4c-8469-4d88-b4d9-c54e87ea003e",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/resultado/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						"resultado",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3ba02ea2-8ef6-4a3c-9962-545559d2a4ef",
+			"name": "sorteios/:id/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a6ff4b6-6192-4b70-b0d9-1cd9edd26870",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.unset('ID_SORTEIO');",
+							"pm.test(\"Status Code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "{{X-CSRFToken-Header}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5108a9e2-c2fc-4b5c-b323-e83fc2ff8d74",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9ac5797a-c46b-40c2-ac3c-c87a077873c9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "bf89578c-69f8-4bc9-a665-7d70284cf6cf",
+			"key": "X-CSRFToken-Header",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "6dddb742-fc1c-4634-873b-b9fc4c9a71eb",
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1",
+			"type": "string"
+		},
+		{
+			"id": "11909110-53c9-4858-9a1b-0924fcabb902",
+			"key": "PORT",
+			"value": "8000",
+			"type": "string"
+		},
+		{
+			"id": "2c02310d-c6ba-4342-96ed-c4084fb6aac8",
+			"key": "API_TARGET",
+			"value": "api/v1",
+			"type": "string"
+		},
+		{
+			"id": "e0359190-9be6-4136-963c-5f7780c92725",
+			"key": "NOME_SORTEIO",
+			"value": "Mega Sena da Virada",
+			"type": "string"
+		},
+		{
+			"id": "e85ce2ac-ec9f-4016-a5bf-dd7288dcff16",
+			"key": "QUANTIDADE_SORTEIO",
+			"value": "6",
+			"type": "string"
+		},
+		{
+			"id": "39a3b9a1-f488-423e-9bd8-37cc81bad8d4",
+			"key": "MINIMO_SORTEIO",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"id": "b85987ab-3f49-4e87-913f-9e4503e94109",
+			"key": "MAXIMO_SORTEIO",
+			"value": "60",
+			"type": "string"
+		},
+		{
+			"id": "b43d04f2-6d6e-4cb1-ab77-edb90ce4d6f3",
+			"key": "USER_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "37a8fdd3-e93b-4027-b5a0-377d0dc740b3",
+			"key": "ID_SORTEIO",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "94faa544-2d6f-4cc8-953b-1b58e0f700ab",
+			"key": "USER_NAME",
+			"value": "teste",
+			"type": "string"
+		},
+		{
+			"id": "7de184b1-8c2d-480d-b086-786e5ce74dc8",
+			"key": "USER_EMAIL",
+			"value": "teste@teste.com",
+			"type": "string"
+		},
+		{
+			"id": "2ca03c08-0ce6-46e9-ab28-a1ca3eff14d8",
+			"key": "USER_PASSWORD",
+			"value": "V123456@%ac",
+			"type": "string"
+		}
+	]
+}

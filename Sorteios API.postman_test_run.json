@@ -1,0 +1,1577 @@
+{
+	"id": "796c7978-6dfb-40bd-a888-e48cc1eae2b1",
+	"name": "Sorteios API",
+	"allTests": [],
+	"timestamp": "2018-11-15T22:11:26.092Z",
+	"collection_id": "f4a4aa6d-6066-4c31-a6bc-2b6337adb405",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "2b99614f-7549-486e-8a3b-06bbfede5d47",
+	"data": [],
+	"delay": 0,
+	"count": 20,
+	"collection": {
+		"id": "f4a4aa6d-6066-4c31-a6bc-2b6337adb405",
+		"name": "Sorteios API",
+		"description": "",
+		"auth": null,
+		"events": [
+			{
+				"listen": "prerequest",
+				"script": {
+					"id": "5108a9e2-c2fc-4b5c-b323-e83fc2ff8d74",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			},
+			{
+				"listen": "test",
+				"script": {
+					"id": "9ac5797a-c46b-40c2-ac3c-c87a077873c9",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			}
+		],
+		"variables": [
+			{
+				"key": "PORT",
+				"value": "7000",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "BASE_URL",
+				"value": "http://127.0.0.1",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "API_TARGET",
+				"value": "api/v1",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "NOME_SORTEIO",
+				"value": "Mega Sena",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "QUANTIDADE_SORTEIO",
+				"value": "6",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "MINIMO_SORTEIO",
+				"value": "1",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "MAXIMO_SORTEIO",
+				"value": "60",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "OWNER_SORTEIO",
+				"value": "1",
+				"description": "",
+				"enabled": true
+			},
+			{
+				"key": "ID_SORTEIO",
+				"value": "",
+				"description": "",
+				"enabled": true
+			}
+		],
+		"order": [
+			"efd8bc20-e521-49eb-a1ae-f1010531e814",
+			"c8991f06-7b35-4f17-85f3-86b795dd458c",
+			"e026302b-b6e1-4305-8b85-17dd828ad6e3",
+			"18e60009-0381-4923-8f30-49e490492691",
+			"330fa854-5bb9-491d-a343-32074d123b70",
+			"76f17339-15b0-41ac-8d36-97a671f1dbac",
+			"98660346-17de-47a4-b359-ffc2baac95a8",
+			"510995cc-5a9d-42b8-afb1-97872acf755e",
+			"0fbeeeed-6129-4ba9-b403-e3882ad642fe",
+			"a3ea1058-270d-4671-954a-c406914ea33d",
+			"e417447b-0677-43bb-8e7c-3f00d365ff93"
+		],
+		"folders_order": [],
+		"owner": "4455605",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "/sorteios/",
+			"id": "efd8bc20-e521-49eb-a1ae-f1010531e814",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status Code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"825",
+				"450",
+				"446",
+				"437",
+				"674",
+				"466",
+				"459",
+				"423",
+				"439",
+				"432",
+				"416",
+				"440",
+				"448",
+				"426",
+				"419",
+				"1416",
+				"441",
+				"441",
+				"447",
+				"425"
+			],
+			"allTests": [
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				}
+			],
+			"time": "425",
+			"totalRequestTime": 10370,
+			"iterationResults": {}
+		},
+		{
+			"name": "/sorteios/",
+			"id": "c8991f06-7b35-4f17-85f3-86b795dd458c",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"tests": {
+				"Status Code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 201": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"435",
+				"482",
+				"492",
+				"425",
+				"555",
+				"499",
+				"448",
+				"1247",
+				"508",
+				"454",
+				"442",
+				"3430",
+				"437",
+				"444",
+				"461",
+				"2937",
+				"432",
+				"428",
+				"420",
+				"437"
+			],
+			"allTests": [
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				}
+			],
+			"time": "437",
+			"totalRequestTime": 15413,
+			"iterationResults": {}
+		},
+		{
+			"name": "/sorteios/",
+			"id": "e026302b-b6e1-4305-8b85-17dd828ad6e3",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status Code is 200": true,
+				"List has grown": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				},
+				"List has grown": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"431",
+				"1463",
+				"433",
+				"478",
+				"585",
+				"459",
+				"471",
+				"2261",
+				"496",
+				"453",
+				"1417",
+				"421",
+				"443",
+				"428",
+				"422",
+				"811",
+				"414",
+				"736",
+				"420",
+				"419"
+			],
+			"allTests": [
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				},
+				{
+					"Status Code is 200": true,
+					"List has grown": true
+				}
+			],
+			"time": "419",
+			"totalRequestTime": 13461,
+			"iterationResults": {}
+		},
+		{
+			"name": "/user/:id/sorteios/",
+			"id": "18e60009-0381-4923-8f30-49e490492691",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status Code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"431",
+				"432",
+				"432",
+				"463",
+				"852",
+				"1834",
+				"418",
+				"449",
+				"500",
+				"419",
+				"452",
+				"415",
+				"410",
+				"414",
+				"429",
+				"434",
+				"420",
+				"425",
+				"420",
+				"446"
+			],
+			"allTests": [
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				}
+			],
+			"time": "446",
+			"totalRequestTime": 10495,
+			"iterationResults": {}
+		},
+		{
+			"name": "/user/:id/sorteios/:id/",
+			"id": "330fa854-5bb9-491d-a343-32074d123b70",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status Code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"438",
+				"461",
+				"437",
+				"435",
+				"448",
+				"471",
+				"448",
+				"415",
+				"547",
+				"414",
+				"1428",
+				"418",
+				"426",
+				"425",
+				"1421",
+				"407",
+				"421",
+				"426",
+				"419",
+				"434"
+			],
+			"allTests": [
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				}
+			],
+			"time": "434",
+			"totalRequestTime": 10739,
+			"iterationResults": {}
+		},
+		{
+			"name": "/user/:id/sorteios/:id/",
+			"id": "76f17339-15b0-41ac-8d36-97a671f1dbac",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status Code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"493",
+				"455",
+				"433",
+				"453",
+				"450",
+				"436",
+				"432",
+				"444",
+				"1225",
+				"427",
+				"427",
+				"453",
+				"431",
+				"440",
+				"830",
+				"439",
+				"429",
+				"456",
+				"436",
+				"428"
+			],
+			"allTests": [
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				}
+			],
+			"time": "428",
+			"totalRequestTime": 10017,
+			"iterationResults": {}
+		},
+		{
+			"name": "/sorteios/:id/resultado/",
+			"id": "98660346-17de-47a4-b359-ffc2baac95a8",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {
+				"Status Code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 404": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"421",
+				"530",
+				"422",
+				"419",
+				"809",
+				"439",
+				"463",
+				"434",
+				"1369",
+				"424",
+				"432",
+				"425",
+				"1077",
+				"424",
+				"412",
+				"411",
+				"1602",
+				"409",
+				"1310",
+				"425"
+			],
+			"allTests": [
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				},
+				{
+					"Status Code is 404": true
+				}
+			],
+			"time": "425",
+			"totalRequestTime": 12657,
+			"iterationResults": {}
+		},
+		{
+			"name": "/sorteios/:id/resultado/",
+			"id": "510995cc-5a9d-42b8-afb1-97872acf755e",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"tests": {
+				"Status Code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 201": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"565",
+				"458",
+				"423",
+				"450",
+				"483",
+				"456",
+				"438",
+				"446",
+				"493",
+				"447",
+				"2268",
+				"452",
+				"420",
+				"431",
+				"450",
+				"425",
+				"443",
+				"435",
+				"426",
+				"435"
+			],
+			"allTests": [
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				},
+				{
+					"Status Code is 201": true
+				}
+			],
+			"time": "435",
+			"totalRequestTime": 10844,
+			"iterationResults": {}
+		},
+		{
+			"name": "/sorteios/:id/resultado/",
+			"id": "0fbeeeed-6129-4ba9-b403-e3882ad642fe",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status Code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"465",
+				"484",
+				"1436",
+				"434",
+				"425",
+				"416",
+				"1193",
+				"428",
+				"426",
+				"437",
+				"417",
+				"1810",
+				"417",
+				"420",
+				"411",
+				"431",
+				"425",
+				"446",
+				"440",
+				"436"
+			],
+			"allTests": [
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				},
+				{
+					"Status Code is 200": true
+				}
+			],
+			"time": "436",
+			"totalRequestTime": 11797,
+			"iterationResults": {}
+		},
+		{
+			"name": "/user/:id/sorteios/:id/",
+			"id": "a3ea1058-270d-4671-954a-c406914ea33d",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"Status Code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 400": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"420",
+				"1685",
+				"459",
+				"10653",
+				"447",
+				"421",
+				"1206",
+				"443",
+				"6451",
+				"419",
+				"428",
+				"2172",
+				"415",
+				"430",
+				"429",
+				"413",
+				"422",
+				"412",
+				"453",
+				"435"
+			],
+			"allTests": [
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				},
+				{
+					"Status Code is 400": true
+				}
+			],
+			"time": "435",
+			"totalRequestTime": 28613,
+			"iterationResults": {}
+		},
+		{
+			"name": "/sorteios/:id",
+			"id": "e417447b-0677-43bb-8e7c-3f00d365ff93",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"tests": {
+				"Status Code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status Code is 204": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				"480",
+				"831",
+				"468",
+				"3490",
+				"1433",
+				"437",
+				"431",
+				"500",
+				"1540",
+				"438",
+				"445",
+				"3403",
+				"433",
+				"439",
+				"436",
+				"450",
+				"436",
+				"433",
+				"441",
+				"431"
+			],
+			"allTests": [
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				},
+				{
+					"Status Code is 204": true
+				}
+			],
+			"time": "431",
+			"totalRequestTime": 17395,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 240,
+	"totalFail": 0,
+	"totalTime": 151801,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "/sorteios/",
+			"id": "efd8bc20-e521-49eb-a1ae-f1010531e814",
+			"url": "http://68.183.172.30:7000/api/v1/sorteios/",
+			"time": "425",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/sorteios/",
+			"id": "c8991f06-7b35-4f17-85f3-86b795dd458c",
+			"url": "http://68.183.172.30:7000/api/v1/sorteios/",
+			"time": "437",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 201": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/sorteios/",
+			"id": "e026302b-b6e1-4305-8b85-17dd828ad6e3",
+			"url": "http://68.183.172.30:7000/api/v1/sorteios/",
+			"time": "419",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				},
+				"List has grown": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/user/:id/sorteios/",
+			"id": "18e60009-0381-4923-8f30-49e490492691",
+			"url": "http://68.183.172.30:7000/api/v1/user/1/sorteios/",
+			"time": "446",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/user/:id/sorteios/:id/",
+			"id": "330fa854-5bb9-491d-a343-32074d123b70",
+			"url": "http://68.183.172.30:7000/api/v1/user/1/sorteios/5/",
+			"time": "434",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/user/:id/sorteios/:id/",
+			"id": "76f17339-15b0-41ac-8d36-97a671f1dbac",
+			"url": "http://68.183.172.30:7000/api/v1/user/1/sorteios/5/",
+			"time": "428",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/sorteios/:id/resultado/",
+			"id": "98660346-17de-47a4-b359-ffc2baac95a8",
+			"url": "http://68.183.172.30:7000/api/v1/sorteios/5/resultado/",
+			"time": "425",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 404": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/sorteios/:id/resultado/",
+			"id": "510995cc-5a9d-42b8-afb1-97872acf755e",
+			"url": "http://68.183.172.30:7000/api/v1/sorteios/5/resultado/",
+			"time": "435",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 201": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/sorteios/:id/resultado/",
+			"id": "0fbeeeed-6129-4ba9-b403-e3882ad642fe",
+			"url": "http://68.183.172.30:7000/api/v1/sorteios/5/resultado/",
+			"time": "436",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 200": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/user/:id/sorteios/:id/",
+			"id": "a3ea1058-270d-4671-954a-c406914ea33d",
+			"url": "http://68.183.172.30:7000/api/v1/user/1/sorteios/5/",
+			"time": "435",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 400": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "/sorteios/:id",
+			"id": "e417447b-0677-43bb-8e7c-3f00d365ff93",
+			"url": "http://68.183.172.30:7000/api/v1/user/1/sorteios/5/",
+			"time": "431",
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"testPassFailCounts": {
+				"Status Code is 204": {
+					"pass": 20,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}

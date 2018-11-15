@@ -1,25 +1,65 @@
-# Onyo Challenge #
+# Tutorial de Deploy e Instalação
 
-Here we have some challenges for the following areas Backend, iOS and Android. Please feel free to enjoy our challenge and let us know if you have any question.
+## Requerimentos
 
+- Ubuntu 16.04
+- Git
 
-# Backend Challenge #
-The Backend Challenge is available at: [backend-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/backend-challenge.md)
+### Logue no seu servidor (ssh) e instale os pacotes (ubuntu)
 
+### Instalando o Docker
 
-# Android Challenge #
+```sh
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+sudo apt-get update
+sudo apt-get install -y docker-engine
+```
 
-The Android Challenge is available at: [android-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/android-challenge.md)
+Dando um check no status do Docker
 
-# Design Challenge #
+```sh
+sudo systemctl status docker
+```
 
-The Design Challenge is available at: [design-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/design-challenge.md)
+### Instalando o Docker Compose
 
-# iOS Challenge #
+```sh
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
-The iOS Challenge is available at: [ios-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/ios-challenge.md)
+Instalando o repositório
 
-# QA Challenge #
+```sh
+mkdir /apps
+cd /apps
+git clone https://github.com/VIMGAS/onyo-challenges.git
+cd onyo-challenges
+```
 
-The Quality Assurance Challenge is available at: [qa-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/qa-challenge.md)
+### Configurando o IP da API de Sorteios
 
+No arquivo `onyo-challenge-main-service/api/views.py` altere a linha `12` para o endereço de IP onde o código estará deployado
+
+```python
+API_URL = 'http://0.0.0.0:7000/api/v1' # Substituir o 0.0.0.0 pelo ip ou domínio do host
+```
+
+### Iniciando os servidores
+
+```sh
+cd /apps/onyo-challenges
+sudo docker-compose up -d
+```
+
+### Como explorar a API
+
+Na pasta raíz do repositório existem dois arquivos com a API discriminada e pronta para ser testada pelo POSTMAN:
+
+- `Main API.postman_collection.json`
+- `Sorteios API.postman_collection.json`
+
+### Código Deployado
+
+A API online pode ser acessada pelo IP `68.183.172.30` nas portas `7000` para o microserviço e `8000` para a aplicação principal

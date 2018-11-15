@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  micro:
+    build: ./onyo-challenge-micro-service/
+    command: bash -c "pipenv run sh start.sh"
+    container_name: sorteio_microservice
+    ports:
+      - "7000:7000"
+  main:
+    build: ./onyo-challenge-main-service/
+    command: bash -c "pipenv run sh start.sh"
+    container_name: onyo_mainservice
+    ports:
+      - "8000:8000"

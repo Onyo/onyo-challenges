@@ -1,0 +1,660 @@
+{
+	"info": {
+		"_postman_id": "f4a4aa6d-6066-4c31-a6bc-2b6337adb405",
+		"name": "Sorteios API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "a5e25531-ce56-4473-893b-c30b8fdcec85",
+			"name": "/sorteios/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "67530e05-7336-46fd-bf0b-5b618ceaae64",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.environment.set(\"QUANTIDADE_INICIAL\", pm.response.json().length);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d2bc649b-3902-48a6-9f7f-4453a446c52f",
+			"name": "/sorteios/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7bde41b-0b42-4185-b3e7-4b35049ff87f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"ID_SORTEIO\", pm.response.json().id);",
+							"pm.test(\"Status Code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"{{NOME_SORTEIO}}\",\n\t\"minimo\": {{MINIMO_SORTEIO}},\n\t\"maximo\": {{MAXIMO_SORTEIO}},\n\t\"quantidadeValores\": {{QUANTIDADE_SORTEIO}},\n\t\"owner\": {{OWNER_SORTEIO}}\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "c0249ae8-d480-4c2f-bdee-37d3cad7542b",
+			"name": "/sorteios/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "574df976-1ee6-42d5-81e1-c816f334079a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"List has grown\", function () {",
+							"    pm.expect(pm.environment.get(\"QUANTIDADE_INICIAL\")).to.be.lessThan(pm.response.json().length);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						""
+					]
+				},
+				"description": "Retorna a lista de sorteios cadastrados na API"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7828d21e-21b0-4cc4-8e74-bc354b28d9ff",
+			"name": "/user/:id/sorteios/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1afaf6b1-88ff-4085-a36c-02c4ee50748b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/user/{{OWNER_SORTEIO}}/sorteios/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"user",
+						"{{OWNER_SORTEIO}}",
+						"sorteios",
+						""
+					]
+				},
+				"description": "Retorna um sorteio especificado pelo id de um usuário especificado pelo id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "f8c3ee12-0b90-4fe0-bf15-6a5f1805626e",
+			"name": "/user/:id/sorteios/:id/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7606343-b20c-4f11-9666-523217f48deb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/user/{{OWNER_SORTEIO}}/sorteios/{{ID_SORTEIO}}/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"user",
+						"{{OWNER_SORTEIO}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						""
+					]
+				},
+				"description": "Retorna um sorteio especificado pelo id de um usuário especificado pelo id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "d2ad071b-8274-4440-9198-ebbdaaac8554",
+			"name": "/user/:id/sorteios/:id/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c9f0b1f6-f576-4a05-9059-160271bb9968",
+						"type": "text/javascript",
+						"exec": [
+							"let qntd = pm.variables.get('QUANTIDADE_SORTEIO');",
+							"pm.environment.set('QUANTIDADE_SORTEIO',  qntd - 1);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "93ea6687-78cf-42d5-99c9-330f43f1d8b6",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.unset('QUANTIDADE_SORTEIO');",
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"{{NOME_SORTEIO}}\",\n\t\"minimo\": {{MINIMO_SORTEIO}},\n\t\"maximo\": {{MAXIMO_SORTEIO}},\n\t\"quantidadeValores\": {{QUANTIDADE_SORTEIO}},\n\t\"owner\": {{OWNER_SORTEIO}}\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/user/{{OWNER_SORTEIO}}/sorteios/{{ID_SORTEIO}}/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"user",
+						"{{OWNER_SORTEIO}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						""
+					]
+				},
+				"description": "Edita um sorteio especificado pelo id de um usuário especificado pelo id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8f6601ba-ce4b-4dc0-9337-14c42438d134",
+			"name": "/sorteios/:id/resultado/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "564c1afa-2e1c-4a57-9ed8-e396e21caaaa",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/resultado/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						"resultado",
+						""
+					]
+				},
+				"description": "Retorna o resultado de um sorteio especificado pelo id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "47842208-2d85-4c86-88d0-b0fe38617d4d",
+			"name": "/sorteios/:id/resultado/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b233e693-0474-4227-a3a5-f22151b5ec99",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/resultado/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						"resultado",
+						""
+					]
+				},
+				"description": "Realiza o sorteio de um determinado id e retorna o seu resultado."
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "8065eb5d-cf48-418d-a179-76fc39f72541",
+			"name": "/sorteios/:id/resultado/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a9b8d8f-0bd5-4f74-b9b6-51bd8785747c",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status Code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/sorteios/{{ID_SORTEIO}}/resultado/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						"resultado",
+						""
+					]
+				},
+				"description": "Retorna o resultado de um sorteio especificado pelo id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "ea6ae30e-fadc-41d8-9a12-0e10c89daaa7",
+			"name": "/user/:id/sorteios/:id/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ce4070d8-8856-47a4-ab8d-53fe8e9299f6",
+						"type": "text/javascript",
+						"exec": [
+							"let qntd = pm.variables.get('QUANTIDADE_SORTEIO');",
+							"pm.environment.set('QUANTIDADE_SORTEIO',  qntd - 1);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4752105a-a123-4918-b9b7-342274f326f1",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.unset('QUANTIDADE_SORTEIO');",
+							"pm.test(\"Status Code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"{{NOME_SORTEIO}}\",\n\t\"minimo\": {{MINIMO_SORTEIO}},\n\t\"maximo\": {{MAXIMO_SORTEIO}},\n\t\"quantidadeValores\": {{QUANTIDADE_SORTEIO}},\n\t\"owner\": {{OWNER_SORTEIO}}\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/user/{{OWNER_SORTEIO}}/sorteios/{{ID_SORTEIO}}/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"user",
+						"{{OWNER_SORTEIO}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						""
+					]
+				},
+				"description": "Edita um sorteio especificado pelo id de um usuário especificado pelo id"
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "cafd2c3b-5f66-4958-bdd0-a1bb07a14464",
+			"name": "/sorteios/:id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "02371070-2a8c-4480-822b-bceb1913e104",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.unset('ID_SORTEIO');",
+							"pm.test(\"Status Code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{PORT}}/{{API_TARGET}}/user/{{OWNER_SORTEIO}}/sorteios/{{ID_SORTEIO}}/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"{{API_TARGET}}",
+						"user",
+						"{{OWNER_SORTEIO}}",
+						"sorteios",
+						"{{ID_SORTEIO}}",
+						""
+					]
+				},
+				"description": "Deleta um sorteio especificado pelo id"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5108a9e2-c2fc-4b5c-b323-e83fc2ff8d74",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9ac5797a-c46b-40c2-ac3c-c87a077873c9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5071f898-d54b-4869-8216-d28b87e30955",
+			"key": "PORT",
+			"value": "7000",
+			"type": "string"
+		},
+		{
+			"id": "f14945c9-b3ad-49b1-aa55-5975be31bbe7",
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1",
+			"type": "string"
+		},
+		{
+			"id": "a0b12f2b-45b2-4137-a349-7a35e0511d47",
+			"key": "API_TARGET",
+			"value": "api/v1",
+			"type": "string"
+		},
+		{
+			"id": "8362b297-7eab-4c80-bd2f-dbb1fdc9cb4f",
+			"key": "NOME_SORTEIO",
+			"value": "Mega Sena",
+			"type": "string"
+		},
+		{
+			"id": "b6611757-e2f2-4230-a9c2-2af12f111c67",
+			"key": "QUANTIDADE_SORTEIO",
+			"value": "6",
+			"type": "string"
+		},
+		{
+			"id": "bbe67a7a-d108-48b0-91f4-ef0706059b87",
+			"key": "MINIMO_SORTEIO",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"id": "17158c26-1834-4af5-ab48-83771560b95e",
+			"key": "MAXIMO_SORTEIO",
+			"value": "60",
+			"type": "string"
+		},
+		{
+			"id": "23447af5-a6a9-4515-a4ef-b8feed528a50",
+			"key": "OWNER_SORTEIO",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"id": "34951560-3649-4f99-aada-3a4ecde10562",
+			"key": "ID_SORTEIO",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
