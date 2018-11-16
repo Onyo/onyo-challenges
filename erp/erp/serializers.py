@@ -27,8 +27,9 @@ class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
     def validate(self, data):
         is_missing_data = not all(['city' in data, 'state' in data, 'public_place' in data, 'neighborhood' in data])
         if is_missing_data:
-            address = get_address_from_cep(data['cep'])
-            if address is None:
+            try:
+                address = get_address_from_cep(data['cep'])
+            except:
                 raise serializers.ValidationError('Can not access the CEP service or cep is unknown, please add all address info')
             data['city'] = address.city.name
             data['state'] = address.city.state.name

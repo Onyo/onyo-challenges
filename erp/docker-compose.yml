@@ -39,6 +39,7 @@ services:
       DATABASE_URL: postgres://dev-cep-user:dev-cep-password@cep-db:5432/dev-cep
       DEBUG: '${DEBUG:-True}'
       TIME_ZONE: '${TIME_ZONE:-UTC}'
+      PORT: 8000
       ALLOWED_HOSTS: '*'
     ports:
       - 9001:8000
