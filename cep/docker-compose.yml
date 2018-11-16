@@ -9,12 +9,7 @@ services:
     volumes:
       - .:/app
     environment:
-      DEFAULT_DATABASE_ENGINE: django.db.backends.postgresql
-      DEFAULT_DATABASE_NAME: dev-cep
-      DEFAULT_DATABASE_USER: dev-cep-user
-      DEFAULT_DATABASE_PASSWORD: dev-cep-password
-      DEFAULT_DATABASE_HOST: cep-db
-      DEFAULT_DATABASE_PORT: 5432
+      DATABASE_URL: postgres://dev-cep-user:dev-cep-password@cep-db:5432/dev-cep
       DEBUG: '${DEBUG:-True}'
       TIME_ZONE: '${TIME_ZONE:-UTC}'
       ALLOWED_HOSTS: '*'

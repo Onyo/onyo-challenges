@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from decouple import config, Csv
+
+from decouple import Csv, config
+from dj_database_url import parse as db_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -74,14 +76,8 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DEFAULT_DATABASE_NAME', 'dev-cep'),
-        'USER': config('DEFAULT_DATABASE_USER', 'dev-cep-user'),
-        'PASSWORD': config('DEFAULT_DATABASE_PASSWORD', 'dev-cep-password'),
-        'HOST': config('DEFAULT_DATABASE_HOST', 'localhost'),
-        'PORT': config('DEFAULT_DATABASE_PORT', '5432'),
-    }
+    'default':
+    config('DATABASE_URL', default='postgres://dev-cep-user:dev-cep-password@localhost:5432/dev-cep', cast=db_url)
 }
 
 # Password validation
