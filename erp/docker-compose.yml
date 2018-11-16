@@ -5,6 +5,7 @@ services:
       context: .
       args:
         requirement: requirements-dev.txt
+        UID: ${UID:-1000}
     image: robsonpeixoto/onyo-erp
     volumes:
       - .:/app
@@ -14,6 +15,7 @@ services:
       TIME_ZONE: '${TIME_ZONE:-UTC}'
       ALLOWED_HOSTS: '*'
       CEP_URL: http://cep:8000
+      PORT: 8000
     depends_on:
       - erp-db
       - cep

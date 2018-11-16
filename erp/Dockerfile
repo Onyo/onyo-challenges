@@ -1,7 +1,5 @@
 FROM python:3.7.1-alpine
 
-# FIXME: never use root in production
-
 WORKDIR /app
 ARG requirement=requirements.txt
 COPY requirement*.txt ./
@@ -25,3 +23,9 @@ RUN set -x \
         && apk del .build-deps
 
 COPY . .
+
+ARG UID=1000
+RUN adduser -D erpuser -u ${UID}
+USER erpuser
+
+CMD ["./migrate-and-run.sh"]
