@@ -9,11 +9,7 @@ services:
     volumes:
       - .:/app
     environment:
-      DEFAULT_DATABASE_NAME: dev-erp
-      DEFAULT_DATABASE_USER: dev-erp-user
-      DEFAULT_DATABASE_PASSWORD: dev-erp-password
-      DEFAULT_DATABASE_HOST: erp-db
-      DEFAULT_DATABASE_PORT: 5432
+      DATABASE_URL: postgres://dev-erp-user:dev-erp-password@erp-db:5432/dev-erp
       DEBUG: '${DEBUG:-True}'
       TIME_ZONE: '${TIME_ZONE:-UTC}'
       ALLOWED_HOSTS: '*'
@@ -38,11 +34,7 @@ services:
   cep:
     image: robsonpeixoto/onyo-cep
     environment:
-      DEFAULT_DATABASE_NAME: dev-cep
-      DEFAULT_DATABASE_USER: dev-cep-user
-      DEFAULT_DATABASE_PASSWORD: dev-cep-password
-      DEFAULT_DATABASE_HOST: cep-db
-      DEFAULT_DATABASE_PORT: 5432
+      DATABASE_URL: postgres://dev-cep-user:dev-cep-password@cep-db:5432/dev-cep
       DEBUG: '${DEBUG:-True}'
       TIME_ZONE: '${TIME_ZONE:-UTC}'
       ALLOWED_HOSTS: '*'

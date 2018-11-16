@@ -10,6 +10,7 @@ python-decouple = "*"
 djangorestframework = "*"
 requests = "*"
 cachetools = "*"
+dj-database-url = "*"
 
 [dev-packages]
 "psycopg2-binary" = "*"
