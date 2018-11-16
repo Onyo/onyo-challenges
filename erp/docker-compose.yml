@@ -17,6 +17,7 @@ services:
       DEBUG: '${DEBUG:-True}'
       TIME_ZONE: '${TIME_ZONE:-UTC}'
       ALLOWED_HOSTS: '*'
+      CEP_URL: http://cep:8000
     depends_on:
       - erp-db
       - cep

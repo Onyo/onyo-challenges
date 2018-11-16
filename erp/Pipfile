@@ -8,6 +8,8 @@ django = "*"
 "psycopg2" = "*"
 python-decouple = "*"
 djangorestframework = "*"
+requests = "*"
+cachetools = "*"
 
 [dev-packages]
 "psycopg2-binary" = "*"
