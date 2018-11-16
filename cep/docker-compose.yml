@@ -5,6 +5,7 @@ services:
       context: .
       args:
         requirement: requirements-dev.txt
+        UID: ${UID:-1000}
     image: robsonpeixoto/onyo-cep
     volumes:
       - .:/app
@@ -13,6 +14,7 @@ services:
       DEBUG: '${DEBUG:-True}'
       TIME_ZONE: '${TIME_ZONE:-UTC}'
       ALLOWED_HOSTS: '*'
+      PORT: 8000
     depends_on:
       - cep-db
     ports:
