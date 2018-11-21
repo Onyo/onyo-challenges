@@ -6,6 +6,8 @@ Here we have some challenges for the following areas Backend, iOS and Android. P
 # Backend Challenge #
 The Backend Challenge is available at: [backend-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/backend-challenge.md)
 
+# Frontend Challenge #
+The Frontend Challenge is available at: [frontend-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/frontend-challenge.md)
 
 # Android Challenge #
 
