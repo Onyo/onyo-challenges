@@ -26,9 +26,19 @@ def get_post_employees(request):
 @api_view(['GET', 'DELETE', 'PATCH'])
 def get_delete_patch_employee(request, id):
     try:
-        employees = Employee.objects.get(id=id)
+        employee = Employee.objects.get(id=id)
     except Employee.DoesNotExist:    
         return Response(status=status.HTTP_404_NOT_FOUND)
     
-    serializer = EmployeeSerializer(employees)
-    return Response(serializer.data)
+    if request.method == 'GET':
+        serializer = EmployeeSerializer(employee)
+        return Response(serializer.data)
+
+    if request.method == 'PATCH':
+        serializer = EmployeeSerializer(employee, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
