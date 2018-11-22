@@ -9,15 +9,22 @@ from .models import Employee
 from .serializers import EmployeeSerializer
 
 
-@api_view(['GET'])
-def get_all_employees(request):
-    employees = Employee.objects.all()
-    serializer = EmployeeSerializer(employees, many=True)
-    return Response(serializer.data)
+@api_view(['GET', 'POST'])
+def get_post_employees(request):
+    if request.method == 'GET':
+        employees = Employee.objects.all()
+        serializer = EmployeeSerializer(employees, many=True)
+        return Response(serializer.data)
+    if request.method == 'POST':
+        serializer = EmployeeSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET'])
-def get_one_employee(request, id):
+@api_view(['GET', 'DELETE', 'PATCH'])
+def get_delete_patch_employee(request, id):
     try:
         employees = Employee.objects.get(id=id)
     except Employee.DoesNotExist:    
@@ -25,6 +32,3 @@ def get_one_employee(request, id):
     
     serializer = EmployeeSerializer(employees)
     return Response(serializer.data)
-
-
-
