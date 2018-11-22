@@ -6,7 +6,7 @@ from django.db import models
 
 class Employee(models.Model):
     
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
     zip_code = models.CharField(max_length=255)
