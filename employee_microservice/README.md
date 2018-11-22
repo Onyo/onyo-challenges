@@ -41,8 +41,8 @@ DELETE /<numero_rifa> remove uma rifa
 
 ## Objetos
 
-### funcionario
-{"id": number, "nome": string, "endereco": number}
+### employee
+{"id": number, "name": string, "zip_code": string, "address": number, "created_at": datetime, "updated_at": datetime}
 
 ### cep
 {"id": number, "cep": number, "endereco": string}
