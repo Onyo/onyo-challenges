@@ -86,3 +86,21 @@ class PatchEmployeeTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
+class DeleteEmployeeTest(TestCase):
+    
+    def setUp(self):
+        self.employee_1 = Employee.objects.create(name="Employee1", address="Davi street", zip_code="41320480")
+
+
+    def test_delete_valid(self):
+        response = client.delete(
+            reverse('get_delete_patch_employee', kwargs={'id': self.employee_1.id})
+        )
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    
+    def test_delete_invalid(self):
+        response = client.delete(
+            reverse('get_delete_patch_employee', kwargs={'id': 999})
+        )
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
