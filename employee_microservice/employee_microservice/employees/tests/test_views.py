@@ -38,9 +38,8 @@ class GetEmployees(TestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
 
-class CreateEmployeeTest(TestCase):
+class PostEmployeeTest(TestCase):
     
-
     def test_create_employee_valid(self):
         ''' Test POST Employee API '''
         response = client.post(
@@ -61,18 +60,29 @@ class CreateEmployeeTest(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     
-class UpdateEmployeeTest(TestCase):
-
+class PatchEmployeeTest(TestCase):
 
     def setUp(self):
         self.employee_1 = Employee.objects.create(name="Employee1", address="Davi street", zip_code="41320480")
 
 
     def test_update_employee_valid(self):
-        ''' Test PATCH Employee INVALID API '''
+        ''' Test PATCH Employee VALID API '''
         response = client.patch(
             reverse('get_delete_patch_employee', kwargs={'id':self.employee_1.id}),
-            data=json.dumps({'name':'Employee modified', 'address':'Davi street', 'zip_code':'41320480'}),
+            data=json.dumps({'name':'Employee modified'}),
             content_type='application/json'
         )
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    
+    def test_update_employee_invalid(self):
+        ''' Test PATCH Employee INVALID API '''
+        response = client.patch(
+            reverse('get_delete_patch_employee', kwargs={'id': self.employee_1.id}),
+            data=json.dumps({'name': ''}),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+

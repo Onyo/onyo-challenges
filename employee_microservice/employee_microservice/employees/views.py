@@ -35,7 +35,7 @@ def get_delete_patch_employee(request, id):
         return Response(serializer.data)
 
     if request.method == 'PATCH':
-        serializer = EmployeeSerializer(employee, data=request.data)
+        serializer = EmployeeSerializer(employee, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
