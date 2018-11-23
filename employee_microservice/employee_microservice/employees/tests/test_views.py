@@ -93,6 +93,7 @@ class DeleteEmployeeTest(TestCase):
 
 
     def test_delete_valid(self):
+        ''' Test DELETE Employee VALID API '''
         response = client.delete(
             reverse('get_delete_patch_employee', kwargs={'id': self.employee_1.id})
         )
@@ -100,6 +101,7 @@ class DeleteEmployeeTest(TestCase):
 
     
     def test_delete_invalid(self):
+        ''' Test DELETE Employee INVALID API '''
         response = client.delete(
             reverse('get_delete_patch_employee', kwargs={'id': 999})
         )
