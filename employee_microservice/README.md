@@ -65,7 +65,8 @@ DELETE /<numero_rifa> remove uma rifa
 ## Tarefas
 
   - [x] Criar ambiente Django
-  - [] TDD funcionário serviço
+  - [x] TDD funcionário serviço
+  - [] Comunicação assíncrona 
   - [] TDD cep serviço
   - [] TDD sorteio serviço
   - [] TDD rifa serviço
