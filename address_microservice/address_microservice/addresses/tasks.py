@@ -17,5 +17,5 @@ def check_address(self, msg):
         
         if address:
             task = TaskQueuePub('task_addresses', 'address')
-            message = {'funcionario_id': msg['funcionario_id'], 'address': address.name}
+            message = {'funcionario_id': msg['funcionario_id'], 'address': address.address}
             task.send_message(json.dumps(message))
