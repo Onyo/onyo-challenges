@@ -15,7 +15,7 @@ class TaskQueuePubTest(TestCase):
 
     
     def test_send_message(self):
-        result = self.task_queue.send_message(json.dumps({"funcionario_id": 1, "zip_code": "41250270"}))
+        result = self.task_queue.send_message(json.dumps({"id_funcionario": 1, "zip_code": "41250240"}))
         self.assertEqual(result, "Sent")
 
 client = Client()
