@@ -9,6 +9,7 @@ from rest_framework import status
 from .models import Employee
 from .serializers import EmployeeSerializer
 from task_queue import TaskQueue
+from django.core.cache import cache
 
 
 @api_view(['GET', 'POST'])
@@ -21,8 +22,11 @@ def get_post_employees(request):
     Create a new Employee.
     """
     if request.method == 'GET':
+        if cache.get('employees'):
+            return Response(cache.get('employees'))
         employees = Employee.objects.all()
         serializer = EmployeeSerializer(employees, many=True)
+        cache.set('employees', serializer.data, 30) # 30 seconds
         return Response(serializer.data)
     if request.method == 'POST':
         serializer = EmployeeSerializer(data=request.data)
