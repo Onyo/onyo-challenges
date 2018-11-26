@@ -44,8 +44,8 @@ DELETE /<numero_rifa> remove uma rifa
 ### employee
 {"id": number, "name": string, "zip_code": string, "address": number, "created_at": datetime, "updated_at": datetime}
 
-### cep
-{"id": number, "cep": number, "endereco": string}
+### zip_code
+{"id": number, "zip_code": number, "address": string}
 
 ### sorteio
 {"id": number, "numero_rifa":"", "data":""}
@@ -66,7 +66,7 @@ DELETE /<numero_rifa> remove uma rifa
 
   - [x] Criar ambiente Django
   - [x] TDD funcionário serviço
-  - [] Comunicação assíncrona 
+  - [x] Comunicação assíncrona 
   - [] TDD cep serviço
   - [] TDD sorteio serviço
   - [] TDD rifa serviço
