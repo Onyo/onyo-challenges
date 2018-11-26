@@ -13,6 +13,13 @@ from task_queue import TaskQueue
 
 @api_view(['GET', 'POST'])
 def get_post_employees(request):
+    """
+    get:
+    Return a list of all the existing Employees.
+
+    post:
+    Create a new Employee.
+    """
     if request.method == 'GET':
         employees = Employee.objects.all()
         serializer = EmployeeSerializer(employees, many=True)
@@ -37,6 +44,16 @@ def get_post_employees(request):
 
 @api_view(['GET', 'DELETE', 'PATCH'])
 def get_delete_patch_employee(request, id):
+    """
+    get:
+    Return one existing Employee.
+
+    patch:
+    Update one Employee.
+
+    delete:
+    Delete an Employee.
+    """
     try:
         employee = Employee.objects.get(id=id)
     except Employee.DoesNotExist:    
