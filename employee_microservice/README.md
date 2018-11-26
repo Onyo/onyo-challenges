@@ -68,12 +68,12 @@ DELETE /<numero_rifa> remove uma rifa
   - [x] TDD funcionário serviço
   - [x] Comunicação assíncrona
   - [x] Documentação Api
+  - [x] Adicionar cache
   - [] TDD cep serviço
   - [] TDD sorteio serviço
   - [] TDD rifa serviço
   - [] Criar ambiente banco
   - [] Integrar banco
-  - [] Adicionar memcached
   - [] Criar ambiente docker e docker-compose
   - [] Criar make file
   - [] Deploy no Heroku
