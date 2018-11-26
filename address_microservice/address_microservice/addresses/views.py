@@ -10,7 +10,13 @@ from .serializers import AddressSerializer
 
 @api_view(['GET', 'POST'])
 def get_post_address(request):
-    
+    """
+    get:
+    Return a list of all the existing Addresses.
+
+    post:
+    Create a new Address.
+    """
     if request.method == 'GET':
         address = Address.objects.all()
         serializer = AddressSerializer(address, many=True)
