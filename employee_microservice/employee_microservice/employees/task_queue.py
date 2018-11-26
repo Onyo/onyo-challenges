@@ -3,20 +3,23 @@ import sys
 
 class TaskQueue:
 
-    def __init__(self, task_queue_name):
-        self.task_queue_name = task_queue_name
+    def __init__(self):
         self.connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
         self.channel = self.connection.channel()
-        self.channel.queue_declare(queue=task_queue_name, durable=True)
+        self.channel.exchange_declare(exchange='topic_zip_codes', exchange_type='topic', durable=True)
 
 
     def send_message(self, message):
         self.channel.basic_publish(
-            exchange='',
-            routing_key=self.task_queue_name,
+            exchange='topic_zip_codes',
+            routing_key='zip_code',
             body=message,
             properties=pika.BasicProperties(
-                delivery_mode = 2, # make message persistent
+                headers={'tasks.add': {'exchange': 'topic_zip_codes', 'routing_key': 'zip_code'}},
+                content_type="application/json",
+                content_encoding='UTF-8',
+                delivery_mode=2,
+                priority=0,
             )
         )
         return "Sent"

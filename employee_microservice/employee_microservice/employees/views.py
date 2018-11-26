@@ -22,7 +22,7 @@ def get_post_employees(request):
         if serializer.is_valid():
             serializer.save()
             # persist address
-            zip_code_queue = TaskQueue('zip_code_queue')
+            zip_code_queue = TaskQueue()
             zip_code_queue.send_message(
                 json.dumps({
                     "id_funcionario": serializer.data['id'],
