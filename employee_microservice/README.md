@@ -8,19 +8,29 @@ Mostar conhecimento em APIs REST, Microserviços e Integração de serviços, at
 
 REST conceitos, arquitetura, organização do código.
 
+## Arquitetura da solução
+
+Comunicação assíncrona dos serviços:
+- Serviço Funcionário cadastra e envia o cep para a queue  
+- Serviço Endereço encontra o endereço do cep que está na queue
+- Serviço Endereço envia endereço para queue
+- Serviço Funcionário atualiza funcionário com o endereço
+- RabbitMQ
+- Lib Celery para consumir a queue e executar uma task
+
 ## Comportamento
 
 ### *funcionario_servico:*
 
 
-GET /cep/<numero_cep> - retorna o endereço para um cep selecionado
+GET / - retorna todos os funcionários
 POST / - salva um funcionario  
 PATCH /<id> atualiza um funcionario  
 DELETE /<id> remove um funcionario  
 
-### *cep_servico:*
+### *endereco_servico:*
 
-GET /<numero_cep> - retorna o endereço relacionado ao cep passado
+GET / - retorna todos os endereços
 POST / - salva um endereço
 PATCH /<id> atualiza um endereço
 DELETE /<id> remove um endereço
