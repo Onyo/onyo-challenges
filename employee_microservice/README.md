@@ -79,7 +79,7 @@ DELETE /<numero_rifa> remove uma rifa
   - [x] Comunicação assíncrona
   - [x] Documentação Api
   - [x] Adicionar cache
-  - [] TDD cep serviço
+  - [x] TDD cep serviço
   - [] TDD sorteio serviço
   - [] TDD rifa serviço
   - [] Criar ambiente banco
