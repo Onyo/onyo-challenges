@@ -93,6 +93,8 @@ DELETE /<numero_rifa> remove uma rifa
 
 ```sh
 $ cd employee_microservice
+$ make instructions
 $ make install
+$ make celery
 $ make run
 ```
