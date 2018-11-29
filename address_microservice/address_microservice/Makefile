@@ -15,6 +15,8 @@ install:
 	@pip install -U -r requirements.txt
 
 run:
+	@python manage.py makemigrations
+	@python manage.py migrate
 	@python manage.py runserver
 
 celery:
