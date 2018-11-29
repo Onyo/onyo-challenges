@@ -80,13 +80,6 @@ DELETE /<numero_rifa> remove uma rifa
   - [x] Documentação Api
   - [x] Adicionar cache
   - [x] TDD cep serviço
-  - [] TDD sorteio serviço
-  - [] TDD rifa serviço
-  - [] Criar ambiente banco
-  - [] Integrar banco
-  - [] Criar ambiente docker e docker-compose
-  - [] Criar make file
-  - [] Deploy no Heroku
 
 
 ## Instalação
@@ -98,3 +91,13 @@ $ make install
 $ make celery
 $ make run
 ```
+
+## TODO
+
+  - [] TDD sorteio serviço
+  - [] TDD rifa serviço
+  - [] Criar ambiente banco
+  - [] Integrar banco
+  - [] Criar ambiente docker e docker-compose
+  - [] Criar make file
+  - [] Deploy no Heroku
