@@ -32,6 +32,5 @@ Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois
 
 
 ## Processo de submissão:
-  1. Crie o(s) repositório(s)
-  2. Abra um PR para esse repositório com os links dele(s) e das apis deployadas.
+  - Nos envie um link para um ou mais repositórios públicos que contenham o seu código.
 
