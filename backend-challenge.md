@@ -32,5 +32,6 @@ Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois
 
 
 ## Processo de submissão:
-  - Nos envie um link para um ou mais repositórios públicos que contenham o seu código.
+  - Envie os links para os repositórios que contenham o seu código.
+  - Envie os links de onde o código está rodando.
 
