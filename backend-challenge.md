@@ -14,6 +14,7 @@ Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois
 ## Requisitos **obrigatórios**:
 
   - Cada microsserviço deve possuir o próprio banco de dados e se comunicar com o outro apenas através de APIs REST.
+  - Se você utilizar um banco relacional recomendamos o uso do Postgres. Evite o SQlite.
   - A comunicação deve ser feita através de HTTP com `Content-type: application/json`.
   - Ambos devem suportar chamadas CRUD simples: `GET`, `POST`, `PATCH`, `DELETE`.
   - O microsserviço deve ter sempre a mesma resposta para uma mesma consulta.
