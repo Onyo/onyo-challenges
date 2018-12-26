@@ -33,6 +33,5 @@ Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois
 
 
 ## Processo de submissão:
-  - Envie os links para os repositórios que contenham o seu código.
-  - Envie os links de onde o código está rodando.
-
+  - Preencha o formulário do [Google Forms](https://goo.gl/forms/pFvJU1w5RnwqXVae2).
+  - Envie um e-mail confirmando sua submissão.
