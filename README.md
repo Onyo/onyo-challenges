@@ -9,17 +9,13 @@ The Backend Challenge is available at: [backend-challenge.md](https://github.com
 # Frontend Challenge #
 The Frontend Challenge is available at: [frontend-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/frontend-challenge.md)
 
-# Android Challenge #
+# Mobile Challenge #
 
-The Android Challenge is available at: [android-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/android-challenge.md)
+The Mobile Challenge is available at: [mobile-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/mobile-challenge.md)
 
 # Design Challenge #
 
 The Design Challenge is available at: [design-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/design-challenge.md)
-
-# iOS Challenge #
-
-The iOS Challenge is available at: [ios-challenge.md](https://github.com/Onyo/onyo-challenges/blob/master/ios-challenge.md)
 
 # QA Challenge #
 
