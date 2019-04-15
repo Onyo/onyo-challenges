@@ -2,7 +2,7 @@
 
 The main goal of the challenge is to create an iOS app to fetch the API information of companies and categories and show them according to the provided screenshots.
 
-![ios-challenge-image.png](ios-challenge-image.png)
+![ios-challenge-new-image.png](ios-challenge-new-image.png)
 
 ### **API** ###
 
