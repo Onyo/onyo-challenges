@@ -23,6 +23,7 @@ The main goal of the challenge is to create an iOS app to fetch the API informat
 
 ## Bonus ##
 
+* Instead of using REST API, use our Graphql endpoint to retrieve the necessary information: https://graphql.staging.onyo.com/graphql
 * Best offers carrousel
 * Search field by products and categories
 * Customized tabs
