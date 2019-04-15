@@ -3,6 +3,7 @@
 The main goal of the challenge is to create an iOS app to fetch the API information of companies and categories and show them according to the provided screenshots.
 
 ![ios-challenge-image.png](ios-challenge-image.png)
+
 ### **API** ###
 
 Company list: [http://api.staging.onyo.com/v1/mobile/brand/1/company](http://api.staging.onyo.com/v1/mobile/brand/1/company)
