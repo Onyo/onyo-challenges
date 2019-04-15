@@ -34,4 +34,4 @@ The main goal of the challenge is to create an iOS app to fetch the API informat
 
 ## Submission Process ##
 
-* The candidate must implement the app, fill [this form](TODO) and notify us via e-mail.
+* The candidate must implement the app, fill [this form](https://docs.google.com/forms/d/e/1FAIpQLSfBKgVXLZC9jz5h1bkhE2mm0EOg2MUHH0-NnAq0-juldVcQAA/viewform?usp=sf_link) and notify us via e-mail.
