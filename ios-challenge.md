@@ -6,9 +6,8 @@ The main goal of the challenge is to create an iOS app to fetch the API informat
 
 ## API ##
 
-Retrieve company products: [https://api.staging.onyo.com/v2/mobile/company/121/products](https://api.staging.onyo.com/v2/mobile/company/121/products)
-
-Retrieve company product categories: [https://api.staging.onyo.com/v1/mobile/company/121](https://api.staging.onyo.com/v1/mobile/company/121)
+* Retrieve company products: [https://api.staging.onyo.com/v2/mobile/company/121/products](https://api.staging.onyo.com/v2/mobile/company/121/products)
+* Retrieve company product categories: [https://api.staging.onyo.com/v1/mobile/company/121](https://api.staging.onyo.com/v1/mobile/company/121)
 
 ## Must have ##
 
