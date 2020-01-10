@@ -43,5 +43,6 @@ Valorizamos o básico bem feito. Porém, habilidades extras são muito bem vinda
 
 ## Processo de submissão
 
-* Preencha o formulário do Google Forms.
+* Compartilhe conosco os repositórios que você criou para o desafio.
+* Preencha o formulário do [Google Forms](https://forms.gle/QSQqdpSG5tr51C8fA).
 * Envie um e-mail confirmando sua submissão.
