@@ -7,7 +7,6 @@ O domínio fica a seu critério, use sua critividade à vontade. Você pode impl
 * Uma aplicação de cadastro de funcionários que permite a consulta, edição ou adição de novos funcionários. Ela pode conter dados como nome, CEP, RG, CPF, etc.
 * Uma aplicação de rifas que realiza o cadastro e o sorteio.
 
-
 ## Requisitos Frontend
 
 * Design responsivo
@@ -41,3 +40,8 @@ Valorizamos o básico bem feito. Porém, habilidades extras são muito bem vinda
 * Decisões arquiteturais.
 * Escolha de tecnologias.
 * Sua comunicação e outras soft skills.
+
+## Processo de submissão
+
+* Preencha o formulário do Google Forms.
+* Envie um e-mail confirmando sua submissão.
