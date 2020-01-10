@@ -1,50 +1,43 @@
-# Desafio Full Stack
+# Desafio Técnico: Full Stack
 
-O objetivo desse desafio é exercitar alguns conceitos de APIs, integrações e desenvolvimento de interfaces web.
+O objetivo desse desafio é exercitar alguns conceitos que estão no nosso dia a dia como APIs, integrações e desenvolvimento de interfaces web. Você deve desenvolver uma Single Page Application que utiliza uma API como backend.
 
-Nele, você deve criar uma API usando Django Rest Framework ou algum outro framework similar e um web app que a utiliza.
+O domínio fica a seu critério, use sua critividade à vontade. Você pode implementar as sugestões abaixo ou implementar uma ideia sua:
 
-Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois estamos mais interessados em observar os conceitos, a arquitetura e a organização do código do que nas aplicações em si. Você pode implementar as ideias abaixo ou inventar sua própria ideia de aplicação:
+* Uma aplicação de cadastro de funcionários que permite a consulta, edição ou adição de novos funcionários. Ela pode conter dados como nome, CEP, RG, CPF, etc.
+* Uma aplicação de rifas que realiza o cadastro e o sorteio.
 
-- Uma aplicação de cadastro de funcionários que permite a consulta, edição ou adição de novos funcionários. Ele pode conter dados como nome, CEP, RG, CPF, etc.
-- Uma aplicação de rifas que realiza o seu cadastro e o seu sorteio.
 
-## Requisitos obrigatórios
+## Requisitos Frontend
 
-### Geral
+* Design responsivo
+* Utilizar algum SPA como Angular ou React.
+* Gerenciamento de estado por meio de algum framework à sua escolha (e.g. Redux, MobX, Apollo, etc.).
+* Testes automatizados.
 
-- O código deve ser bem coberto com testes unitários.
-- Todos os testes devem passar.
-- O código deve possuir documentação explicando como instalar e rodar a API e o frontend.
-- Tanto o backend como o frontend devem estar publicados em uma plataforma à sua escolha, como Heroku, Firebase, Digital Ocean, AWS, etc.
+## Requisitos Backend
 
-### Backend
+* Você deve usar a linguagem Python. O framework fica a seu critério.
+* Utilizar um banco de dados relacional exceto o SQlite.
+* O backend deve ser uma API que permita obter, criar, atualizar e deletar recursos. Escolha a arquitetura que estiver mais familiarizado, REST ou GraphQL.
+* Testes automatizados.
+* Sua aplicação deve estar no Docker.
+* Seu modelo não pode ser uma única tabela.
 
-- A API deverá possuir um banco de dados para realizar a persitência dos seus dados.
-- Se você utilizar um banco relacional recomendamos o uso do Postgres. Evite o SQlite.
-- A comunicação deve ser feita através de HTTP com `Content-type: application/json`.
-- Ambos devem suportar chamadas CRUD simples: `GET`, `POST`, `PATCH`, `DELETE`.
-- A API deve ter sempre a mesma resposta para uma mesma consulta.
-- A API deve cachear as chamadas para o microsserviço para evitar refazer a mesma consulta diversas vezes.
+## Requisitos Bonus
 
-### Frontend
+Valorizamos o básico bem feito. Porém, habilidades extras são muito bem vindas:
 
-- O design da aplicação deve ser responsivo.
-- Utilize algum framework de SPA como Angular ou React.
-- O estado do frontend deverá ser gerenciado por um framework à sua escolha, como Redux, Mobix, Apollo, etc.
+* Typescript no front-end.
+* GraphQL.
+* Deploy em alguma plataforma (e.g. Heroku, Aws, Digital Ocean, etc).
 
-## Requisitos Bônus
+## O que iremos avaliar
 
-- Documentação dos endpoints das APIs.
-- Docker / Kubernetes.
-- Interface para exploração da API.
-- Django Rest Framework.
-- Typescript.
-- Graphql.
-- PWA.
-
-## Processo de submissão
-
-- Preencha o formulário do [Google Forms](https://forms.gle/QSQqdpSG5tr51C8fA).
-- Envie um e-mail confirmando sua submissão.
-
+* Qualidade do código.
+* Commits claros.
+* Testes.
+* Documentação.
+* Decisões arquiteturais.
+* Escolha de tecnologias.
+* Sua comunicação e outras soft skills.
