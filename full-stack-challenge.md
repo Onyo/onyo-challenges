@@ -14,6 +14,8 @@ O domínio fica a seu critério, use sua critividade à vontade. Você pode impl
 * Gerenciamento de estado por meio de algum framework à sua escolha (e.g. Redux, MobX, Apollo, etc.).
 * Testes automatizados.
 
+>OBS: Se quiser, fique a vontadade para usar algum framework de estilo, como [Bootstrap](https://getbootstrap.com/) ou [Material UI](https://material-ui.com/), mas não use um template pronto, como [ngx-admin](https://github.com/akveo/ngx-admin) ou [CoreUI](https://github.com/coreui/coreui-free-react-admin-template).
+
 ## Requisitos Backend
 
 * Você deve usar a linguagem Python. O framework fica a seu critério.
