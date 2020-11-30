@@ -1,37 +1,31 @@
-# Desafio de Backend 
+# Desafio de Backend
 
-O objetivo desse desafio é exercitar alguns conceitos de APIs REST, microsserviços e integrações.
+O objetivo desse desafio é exercitar alguns conceitos de desenvolvimento de APIs. Nele você deverá desenvolver uma API usando algum framework web de Python como Django ou Flask.
 
-Nele, você deve criar duas APIs usando Django Rest Framework ou algum outro framework similar.
-Uma das APIs deve ser uma aplicação que usa a outra como um microsserviço para abstrair parte de sua lógica.
+Os modelos de dados e regras de negócio ficam a seu critério, pois estamos mais interessados em observar os conceitos, a arquitetura e a organização do seu código do que na aplicação em si. Você pode implementar a sugestão abaixo ou inventar sua própria ideia:
 
-Os modelos de dados e regras de negócio de cada uma ficam a seu critério, pois estamos mais interessados em observar os conceitos REST, a arquitetura e a organização do código do que nas aplicações em si. Você pode implementar as ideias abaixo ou inventar sua própria ideia de aplicação:
+- Um serviço de cadastro de cardápio com suporte para uma três níveis de produtos e que faça o processamento de um pedido de forma assíncrona:
+  1. Menu items: itens principais que podem ser escolhidos em um pedido, como "frango à milanesa" ou "refrigerante".
+  2. Choosables: itens que permitem que o usuário faça uma escolha, como "escolha o seu acompanhamento".
+  3. Simples: itens secundários que são escolhidos dentro de um choosable pelo usuário, como "batata sautê" ou "legumes no vapor".
 
-  - Um microsserviço de consulta de CEPs, e um serviço de cadastro de funcionários que usa o microsserviço de CEP para consultar endereços no cadastro de novos funcionários.
-  - Um microsserviço de sorteios e um serviço de rifas que permite cadastrar e sortear rifas.
+## Requisitos **obrigatórios**
 
+- Se você utilizar um banco relacional recomendamos o uso do Postgres. Evite o SQlite.
+- A API deve suportar chamadas REST e/ou Graphql.
+- O código deve ser bem coberto com testes unitários.
+- A API deverá ser modularizada e deverá seguir os princípios SOLID.
+- O código deve possuir documentação explicando como deve ser feita a sua instalação e execução.
 
-## Requisitos **obrigatórios**:
+## Requisitos Bônus
 
-  - Cada microsserviço deve possuir o próprio banco de dados e se comunicar com o outro apenas através de APIs REST.
-  - Se você utilizar um banco relacional recomendamos o uso do Postgres. Evite o SQlite.
-  - A comunicação deve ser feita através de HTTP com `Content-type: application/json`.
-  - Ambos devem suportar chamadas CRUD simples: `GET`, `POST`, `PATCH`, `DELETE`.
-  - O microsserviço deve ter sempre a mesma resposta para uma mesma consulta.
-  - O serviço de aplicação deve cachear as chamadas para o microsserviço para evitar refazer a mesma consulta diversas vezes.
-  - O código deve ser bem coberto com testes unitários.
-  - Os serviços devem ser bem desacoplados e cada um deve ter sua própria pasta ou estrutura de módulos.
-  - O código deve estar deployado (e.g. Heroku, OpenShift, Digital Ocean, ou qualquer outra plataforma de sua preferência).
-  - O código deve possuir documentação explicando como instalar e rodar as duas APIs.
+- Utilizar uma interface Graphql.
+- Utilizar processamento assíncrono com Celery.
+- Usar docker.
+- Interface para exploração da API.
+- Publicar a API em algum PaaS como Heroku, Google App Engine, etc.
 
-## Bônus:
+## Processo de submissão
 
-  - Documentação dos endpoints das APIs
-  - Docker
-  - Interface para exploração da API
-  - Django Rest Framework
-
-
-## Processo de submissão:
-  - Preencha o formulário do [Google Forms](https://goo.gl/forms/pFvJU1w5RnwqXVae2).
-  - Envie um e-mail confirmando sua submissão.
+- Preencha o formulário do [Google Forms](https://forms.gle/4imQhNZKtahag1hH8).
+- Envie um e-mail confirmando sua submissão.
